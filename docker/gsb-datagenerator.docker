@@ -1,0 +1,10 @@
+FROM java
+
+ADD target/GeoSPARQLBenchmark-1.0.0-SNAPSHOT.jar /geosparql/GeoSPARQLBenchmark.jar
+
+COPY src/main/resources/gsb_dataset /geosparql/gsb_dataset
+COPY src/main/resources/gsb_queries /geosparql/gsb_queries
+
+WORKDIR /geosparql
+
+CMD java -cp GeoSPARQLBenchmark.jar org.hobbit.core.run.ComponentStarter org.hobbit.geosparql.GSBDataGenerator

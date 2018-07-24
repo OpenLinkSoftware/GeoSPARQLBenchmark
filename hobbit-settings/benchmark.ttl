@@ -1,0 +1,64 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix hobbit: <http://w3id.org/hobbit/vocab#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix bench:  <http://w3id.org/bench#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+#-------------------------------------------------------------------------------------------------------------------------------
+bench:GSBBenchmark  a   hobbit:Benchmark;
+    rdfs:label  "GeoSPARQL Benchmark v1.0"@en;
+    rdfs:comment    "GeoSPARQL Benchmark for the HOBBIT Platform"@en;
+    hobbit:hasAPI   <https://project-hobbit.eu/challenges/MOCHA2017-API>;
+    hobbit:imageName    "git.project-hobbit.eu:4567/mjovanovik/gsb-benchmarkcontroller";
+    hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-datagenerator";
+    hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-seqtaskgenerator";
+    hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-evaluationmodule";
+    hobbit:measuresKPI  bench:Q01Status ;
+    hobbit:measuresKPI  bench:Q02Status ;
+    hobbit:measuresKPI  bench:Q03Status ;
+    hobbit:measuresKPI  bench:Q04Status ;
+    hobbit:measuresKPI  bench:Q05Status ;
+    hobbit:measuresKPI  bench:Q06Status ;
+    hobbit:measuresKPI  bench:totalCorrectAnswers .
+
+<https://project-hobbit.eu/challenges/MOCHA2017-API>    a   hobbit:API .
+
+# --- Parameters ---
+# There are no parameters in the current version of the benchmark.
+
+# --- KPIs ---
+bench:Q01Status a   hobbit:KPI;
+    rdfs:label  "Q01 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q01"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q02Status a   hobbit:KPI;
+    rdfs:label  "Q02 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q02"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q03Status a   hobbit:KPI;
+    rdfs:label  "Q03 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q03"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q04Status a   hobbit:KPI;
+    rdfs:label  "Q04 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q04"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q05Status a   hobbit:KPI;
+    rdfs:label  "Q05 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q05"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q06Status a   hobbit:KPI;
+    rdfs:label  "Q06 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q06"@en;
+    rdfs:range  xsd:boolean .    			    			    			    			
+
+bench:totalCorrectAnswers   a   hobbit:KPI;
+    rdfs:label  "Correct Answers"@en;
+    rdfs:comment    "Total number of correct answers to all GeoSPARQL queries"@en;
+    rdfs:range  xsd:integer .
