@@ -20,12 +20,18 @@ bench:GSBBenchmark  a   hobbit:Benchmark;
     hobbit:measuresKPI  bench:Q04Status ;
     hobbit:measuresKPI  bench:Q05Status ;
     hobbit:measuresKPI  bench:Q06Status ;
-    hobbit:measuresKPI  bench:totalCorrectAnswers .
+    hobbit:measuresKPI  bench:totalCorrectAnswers ;
+    hobbit:hasParameter bench:name .
 
 <https://project-hobbit.eu/challenges/MOCHA2017-API>    a   hobbit:API .
 
 # --- Parameters ---
-# There are no parameters in the current version of the benchmark.
+bench:name  a   hobbit:Parameter, hobbit:FeatureParameter, hobbit:ConfigurableParameter;
+                rdfs:label  "What's your name?"@en;
+                rdfs:comment    "What's your name?"@en;
+                rdfs:domain hobbit:Experiment, hobbit:Challenge;
+                rdfs:range  xsd:string;
+                hobbit:defaultValue "..."^^xsd:string .
 
 # --- KPIs ---
 bench:Q01Status a   hobbit:KPI;

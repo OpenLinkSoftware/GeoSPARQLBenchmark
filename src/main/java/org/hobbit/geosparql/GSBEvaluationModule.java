@@ -97,9 +97,9 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
     protected void evaluateResponse(byte[] expectedData, byte[] receivedData, long taskSentTimestamp, long responseReceivedTimestamp) throws Exception {
         String eStr = RabbitMQUtils.readString(expectedData);
         String rStr = RabbitMQUtils.readString(receivedData);
-        String [] lines = eStr.split("\n\n", 2);
-        String queryIndexString = lines[0].substring(0, 4).trim();
-        int queryIndex = ((int)queryIndexString.charAt(queryIndexString.length() - 1)) - 1;
+        String [] lines = eStr.split("\n\n");
+        String queryIndexString = lines[0].trim().substring(2);
+        int queryIndex = Integer.parseInt(queryIndexString) - 1;
         
         eStr = lines[1];
         
@@ -141,15 +141,15 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         Literal q01eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[0], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q01E_STATUS, q01eStatusLiteral);
         Literal q02eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[1], XSDDatatype.XSDboolean);
-        finalModel.add(experiment, EVALUATION_Q01E_STATUS, q02eStatusLiteral);
+        finalModel.add(experiment, EVALUATION_Q02E_STATUS, q02eStatusLiteral);
         Literal q03eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[2], XSDDatatype.XSDboolean);
-        finalModel.add(experiment, EVALUATION_Q01E_STATUS, q03eStatusLiteral);
+        finalModel.add(experiment, EVALUATION_Q03E_STATUS, q03eStatusLiteral);
         Literal q04eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[3], XSDDatatype.XSDboolean);
-        finalModel.add(experiment, EVALUATION_Q01E_STATUS, q04eStatusLiteral);
+        finalModel.add(experiment, EVALUATION_Q04E_STATUS, q04eStatusLiteral);
         Literal q05eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[4], XSDDatatype.XSDboolean);
-        finalModel.add(experiment, EVALUATION_Q01E_STATUS, q05eStatusLiteral);
+        finalModel.add(experiment, EVALUATION_Q05E_STATUS, q05eStatusLiteral);
         Literal q06eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[5], XSDDatatype.XSDboolean);
-        finalModel.add(experiment, EVALUATION_Q01E_STATUS, q06eStatusLiteral);
+        finalModel.add(experiment, EVALUATION_Q06E_STATUS, q06eStatusLiteral);
         
         int totalCorrect = 0;
         for (int i=0; i < correctAnswers.length; i++) {
@@ -157,7 +157,7 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
                 totalCorrect += 1;
         }
         
-        Literal nbrCrrtAnswrsLiteral = finalModel.createTypedLiteral((int)(totalCorrect/GSBConstants.GSB_NUMBER_OF_QUERIES), XSDDatatype.XSDinteger);
+        Literal nbrCrrtAnswrsLiteral = finalModel.createTypedLiteral(totalCorrect, XSDDatatype.XSDinteger);
         finalModel.add(experiment, EVALUATION_NUMBER_OF_CORRECT_ANSWERS, nbrCrrtAnswrsLiteral);
 
         LOGGER.info(finalModel.toString());

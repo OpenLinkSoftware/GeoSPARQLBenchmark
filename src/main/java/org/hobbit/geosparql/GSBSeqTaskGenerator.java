@@ -16,8 +16,6 @@ import org.slf4j.LoggerFactory;
 public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GSBSeqTaskGenerator.class);
-
-    private boolean finished = false;
       
     String [][] params;
     String [] answers;
@@ -40,7 +38,9 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
         LOGGER.info("Initialization is over.");
     }
     
-    private void internalInit() {        
+    private void internalInit() {
+        answers = new String[GSBConstants.GSB_ANSWERS.length];
+        
     	// reading query answers
         try {
             for (int i=0; i < GSBConstants.GSB_ANSWERS.length; i++) {
@@ -66,10 +66,7 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
     }
 
     @Override
-    protected void generateTask(byte[] data) throws Exception {
-        if (finished)
-            return;
-        
+    protected void generateTask(byte[] data) throws Exception {      
         String taskIdString = getNextTaskId();
         long timestamp = System.currentTimeMillis();
 
@@ -82,7 +79,8 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
         // Locate the corresponding query answer
         // and send it to the Evaluation Store for evaluation
         String [] parts = dataString.split("\n");
-        int answerIndex = ((int)parts[0].charAt(parts[0].length() - 1)) - 1; // The first line is a comment denoting the query (#Q01, #Q02, ...)
+        String answerIndexString = parts[0].trim().substring(2);
+        int answerIndex = Integer.parseInt(answerIndexString) - 1; // The first line is a comment denoting the query (#Q01, #Q02, ...)
         String ans = answers[answerIndex];
         data = RabbitMQUtils.writeString("#Q0" + (answerIndex+1) + "\n\n" + ans);
         sendTaskToEvalStorage(taskIdString, timestamp, data);
