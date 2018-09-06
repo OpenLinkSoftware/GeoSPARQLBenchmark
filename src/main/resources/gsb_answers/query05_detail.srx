@@ -4,16 +4,16 @@
 </head>
 <results>
 <result>
-<binding name='f'><uri>http://somewhere/ApplicationSchema#D</uri></binding>
+<binding name='f'><uri>http://example.org/ApplicationSchema#D</uri></binding>
 </result>
 <result>
-<binding name='f'><uri>http://somewhere/ApplicationSchema#DExactGeom</uri></binding>
+<binding name='f'><uri>http://example.org/ApplicationSchema#DExactGeom</uri></binding>
 </result>
 <result>
-<binding name='f'><uri>http://somewhere/ApplicationSchema#E</uri></binding>
+<binding name='f'><uri>http://example.org/ApplicationSchema#E</uri></binding>
 </result>
 <result>
-<binding name='f'><uri>http://somewhere/ApplicationSchema#EExactGeom</uri></binding>
+<binding name='f'><uri>http://example.org/ApplicationSchema#EExactGeom</uri></binding>
 </result>
 </results>
 </sparql>
