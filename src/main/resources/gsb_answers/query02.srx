@@ -4,7 +4,7 @@
 </head>
 <results>
 <result>
-<binding name='f'><uri>http://somewhere/ApplicationSchema#D</uri></binding>
+<binding name='f'><uri>http://example.org/ApplicationSchema#D</uri></binding>
 </result>
 </results>
 </sparql>
