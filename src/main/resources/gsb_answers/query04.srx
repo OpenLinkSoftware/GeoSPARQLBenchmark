@@ -7,10 +7,10 @@
 <binding name='f'><uri>http://example.org/ApplicationSchema#A</uri></binding>
 </result>
 <result>
-<binding name='f'><uri>http://example.org/ApplicationSchema#D</uri></binding>
+<binding name='f'><uri>http://example.org/ApplicationSchema#E</uri></binding>
 </result>
 <result>
-<binding name='f'><uri>http://example.org/ApplicationSchema#E</uri></binding>
+<binding name='f'><uri>http://example.org/ApplicationSchema#D</uri></binding>
 </result>
 </results>
 </sparql>
