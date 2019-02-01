@@ -7,7 +7,7 @@
 @prefix qb: <http://purl.org/linked-data/cube#> .
 #-------------------------------------------------------------------------------------------------------------------------------
 bench:GSBBenchmark  a   hobbit:Benchmark;
-    rdfs:label  "GeoSPARQL Benchmark v1.0"@en;
+    rdfs:label  "GeoSPARQL Benchmark v2.0"@en;
     rdfs:comment    "GeoSPARQL Benchmark for the HOBBIT Platform"@en;
     hobbit:hasAPI   <https://project-hobbit.eu/challenges/MOCHA2017-API>;
     hobbit:imageName    "git.project-hobbit.eu:4567/mjovanovik/gsb-benchmarkcontroller";
