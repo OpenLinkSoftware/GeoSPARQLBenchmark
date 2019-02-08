@@ -1,0 +1,6 @@
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT ?f
+WHERE {
+  ?f rdf:type geo:Geometry
+}
+ORDER BY ?f

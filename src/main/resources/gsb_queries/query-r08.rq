@@ -1,0 +1,7 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT ?geom ?defaultGeom
+WHERE {
+  my:A geo:hasGeometry ?geom .
+  my:A geo:hasDefaultGeometry ?defaultGeom .
+}

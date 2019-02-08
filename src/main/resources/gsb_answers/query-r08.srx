@@ -1,0 +1,12 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+ <head>
+  <variable name="geom"/>
+  <variable name="defaultGeom"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#APointGeom</uri></binding>
+   <binding name="defaultGeom"><uri>http://example.org/ApplicationSchema#AExactGeom</uri></binding>
+  </result>
+ </results>
+</sparql>
