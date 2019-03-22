@@ -1,0 +1,20 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+ <head>
+  <variable name="f"/>
+  <variable name="distance"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#A</uri></binding>
+   <binding name="distance"><literal datatype="http://www.w3.org/2001/XMLSchema#double">0.0</literal></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#E</uri></binding>
+   <binding name="distance"><literal datatype="http://www.w3.org/2001/XMLSchema#double">10194.1</literal></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#D</uri></binding>
+   <binding name="distance"><literal datatype="http://www.w3.org/2001/XMLSchema#double">10935.8</literal></binding>
+  </result>
+ </results>
+</sparql>
