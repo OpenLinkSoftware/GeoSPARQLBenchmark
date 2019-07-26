@@ -9,5 +9,29 @@
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#APointGeom</uri></binding>
   </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#BExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#BPointGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#CExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#CPointGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#DExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#DPointGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#EExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#FExactGeom</uri></binding>
+  </result>
  </results>
 </sparql>

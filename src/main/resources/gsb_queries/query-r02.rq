@@ -3,3 +3,4 @@ SELECT ?f
 WHERE {
   ?f rdf:type geo:SpatialObject
 }
+ORDER BY ?f

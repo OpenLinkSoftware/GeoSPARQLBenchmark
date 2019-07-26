@@ -29,9 +29,9 @@
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
     <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#AExactGeom"/>
-    <geo:hasDefaultGeometry rdf:resource="http://example.org/ApplicationSchema#AExactGeom"/>
     <my:hasPointGeometry rdf:resource="http://example.org/ApplicationSchema#APointGeom"/>
-    <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#APointGeom"/>
+    <geo:hasDefaultGeometry rdf:resource="http://example.org/ApplicationSchema#AExactGeom"/>
+    <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#AExactGeom"/>
 </my:PlaceOfInterest>
 
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#AExactGeom">
@@ -60,11 +60,16 @@
 <!-- B -->
 
 <my:PlaceOfInterest rdf:about="http://example.org/ApplicationSchema#B">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
     <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#BExactGeom"/>
     <my:hasPointGeometry rdf:resource="http://example.org/ApplicationSchema#BPointGeom"/>
+    <geo:hasDefaultGeometry rdf:resource="http://example.org/ApplicationSchema#BExactGeom"/>
+    <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#BExactGeom"/>
 </my:PlaceOfInterest>
 
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#BExactGeom">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
         <![CDATA[
             <http://www.opengis.net/def/crs/OGC/1.3/CRS84> Polygon((-83.6 34.1, -83.4 34.1, -83.4 34.3, -83.6 34.3, -83.6 34.1))
@@ -73,6 +78,7 @@
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#BPointGeom">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
         <![CDATA[
             <http://www.opengis.net/def/crs/OGC/1.3/CRS84> Point(-83.5 34.2)
@@ -83,11 +89,16 @@
 <!-- C -->
 
 <my:PlaceOfInterest rdf:about="http://example.org/ApplicationSchema#C">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
     <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#CExactGeom"/>
     <my:hasPointGeometry rdf:resource="http://example.org/ApplicationSchema#CPointGeom"/>
+    <geo:hasDefaultGeometry rdf:resource="http://example.org/ApplicationSchema#CExactGeom"/>
+    <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#CExactGeom"/>
 </my:PlaceOfInterest>
 
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#CExactGeom">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
         <![CDATA[
             <http://www.opengis.net/def/crs/OGC/1.3/CRS84> Polygon((-83.2 34.3, -83.0 34.3, -83.0 34.5, -83.2 34.5, -83.2 34.3))
@@ -96,6 +107,7 @@
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#CPointGeom">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
         <![CDATA[
             <http://www.opengis.net/def/crs/OGC/1.3/CRS84> Point(-83.1 34.4)
@@ -106,11 +118,16 @@
 <!-- D -->
 
 <my:PlaceOfInterest rdf:about="http://example.org/ApplicationSchema#D">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
     <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#DExactGeom"/>
     <my:hasPointGeometry rdf:resource="http://example.org/ApplicationSchema#DPointGeom"/>
+    <geo:hasDefaultGeometry rdf:resource="http://example.org/ApplicationSchema#DExactGeom"/>
+    <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#DExactGeom"/>
 </my:PlaceOfInterest>
 
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#DExactGeom">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
         <![CDATA[
             <http://www.opengis.net/def/crs/OGC/1.3/CRS84> Polygon((-83.3 34.0, -83.1 34.0, -83.1 34.2, -83.3 34.2, -83.3 34.0))
@@ -119,6 +136,7 @@
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#DPointGeom">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
         <![CDATA[
             <http://www.opengis.net/def/crs/OGC/1.3/CRS84> Point(-83.2 34.1)
@@ -129,10 +147,15 @@
 <!-- E -->
 
 <my:PlaceOfInterest rdf:about="http://example.org/ApplicationSchema#E">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
     <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#EExactGeom"/>
+    <geo:hasDefaultGeometry rdf:resource="http://example.org/ApplicationSchema#EExactGeom"/>
+    <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#EExactGeom"/>
 </my:PlaceOfInterest>
 
 <sf:LineString rdf:about="http://example.org/ApplicationSchema#EExactGeom">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
         <![CDATA[
             <http://www.opengis.net/def/crs/OGC/1.3/CRS84> LineString((-83.4 34.0, -83.3 34.3))
@@ -143,10 +166,15 @@
 <!-- F -->
 
 <my:PlaceOfInterest rdf:about="http://example.org/ApplicationSchema#F">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
     <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#FExactGeom"/>
+    <geo:hasDefaultGeometry rdf:resource="http://example.org/ApplicationSchema#FExactGeom"/>
+    <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#FExactGeom"/>
 </my:PlaceOfInterest>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#FExactGeom">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
         <![CDATA[
             <http://www.opengis.net/def/crs/OGC/1.3/CRS84> Point(-83.4 34.4)
