@@ -1,11 +1,11 @@
 PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-SELECT ?within
+SELECT xsd:boolean(?within)
 WHERE {
-  my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
   my:B geo:hasDefaultGeometry ?bGeom .
   ?bGeom geo:asWKT ?bWKT .
-  BIND (geof:sfWithin(?aWKT, ?bWKT) as ?within)
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom geo:asWKT ?aWKT .
+  BIND (geof:sfWithin(?bWKT, ?aWKT) as ?within)
 }
