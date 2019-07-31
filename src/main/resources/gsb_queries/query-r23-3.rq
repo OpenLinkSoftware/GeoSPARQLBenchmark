@@ -1,11 +1,11 @@
 PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-SELECT ?meet
+SELECT xsd:boolean(?ehMeet) as ?meet
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
   ?aGeom geo:asWKT ?aWKT .
-  my:B geo:hasDefaultGeometry ?bGeom .
-  ?bGeom geo:asWKT ?bWKT .
-  BIND (geof:ehMeet(?aWKT, ?bWKT) as ?meet)
+  my:C geo:hasDefaultGeometry ?cGeom .
+  ?cGeom geo:asWKT ?cWKT .
+  BIND (geof:ehMeet(?aWKT, ?cWKT) as ?ehMeet)
 }
