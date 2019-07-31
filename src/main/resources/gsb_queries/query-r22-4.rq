@@ -1,11 +1,11 @@
 PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-SELECT xsd:boolean(?touches)
+SELECT xsd:boolean(?sfTouches) as ?touches
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
   ?aGeom geo:asWKT ?aWKT .
   my:C geo:hasDefaultGeometry ?cGeom .
   ?cGeom geo:asWKT ?cWKT .
-  BIND (geof:sfTouches(?aWKT, ?cWKT) as ?touches)
+  BIND (geof:sfTouches(?aWKT, ?cWKT) as ?sfTouches)
 }

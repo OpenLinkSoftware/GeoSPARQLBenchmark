@@ -1,11 +1,11 @@
 PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-SELECT xsd:boolean(?overlaps)
+SELECT xsd:boolean(?sfOverlaps) as ?overlaps
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
   ?aGeom geo:asWKT ?aWKT .
   my:D geo:hasDefaultGeometry ?dGeom .
   ?dGeom geo:asWKT ?dWKT .
-  BIND (geof:sfOverlaps(?aWKT, ?dWKT) as ?overlaps)
+  BIND (geof:sfOverlaps(?aWKT, ?dWKT) as ?sfOverlaps)
 }

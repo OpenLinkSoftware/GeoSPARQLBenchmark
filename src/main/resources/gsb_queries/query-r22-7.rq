@@ -1,11 +1,11 @@
 PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-SELECT xsd:boolean(?contains)
+SELECT xsd:boolean(?sfContains) as ?contains
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
   ?aGeom geo:asWKT ?aWKT .
   my:F geo:hasDefaultGeometry ?fGeom .
   ?fGeom geo:asWKT ?fWKT .
-  BIND (geof:sfContains(?aWKT, ?fWKT) as ?contains)
+  BIND (geof:sfContains(?aWKT, ?fWKT) as ?sfContains)
 }

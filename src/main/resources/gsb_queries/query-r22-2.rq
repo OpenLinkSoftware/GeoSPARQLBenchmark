@@ -1,11 +1,11 @@
 PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-SELECT xsd:boolean(?disjoint)
+SELECT xsd:boolean(?sfDisjoint) as ?disjoint
 WHERE {
   my:C geo:hasDefaultGeometry ?cGeom .
   ?cGeom geo:asWKT ?cWKT .
   my:F geo:hasDefaultGeometry ?fGeom .
   ?fGeom geo:asWKT ?fWKT .
-  BIND (geof:sfDisjoint(?cWKT, ?fWKT) as ?disjoint)
+  BIND (geof:sfDisjoint(?cWKT, ?fWKT) as ?sfDisjoint)
 }

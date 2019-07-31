@@ -1,10 +1,10 @@
 <sparql xmlns="http://www.w3.org/2005/sparql-results#">
  <head>
-  <variable name="callret-0"/>
+  <variable name="equals"/>
  </head>
  <results distinct="false" ordered="true">
   <result>
-   <binding name="callret-0"><literal datatype="http://www.w3.org/2001/XMLSchema#boolean">false</literal></binding>
+   <binding name="equals"><literal datatype="http://www.w3.org/2001/XMLSchema#boolean">false</literal></binding>
   </result>
  </results>
 </sparql>
