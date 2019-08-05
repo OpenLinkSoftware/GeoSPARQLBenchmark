@@ -1,11 +1,11 @@
 PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-SELECT ?rcc8dc
+SELECT xsd:boolean(?rcc8dc) as ?disconnected
 WHERE {
-  my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
   my:B geo:hasDefaultGeometry ?bGeom .
   ?bGeom geo:asWKT ?bWKT .
-  BIND (geof:rcc8dc(?aWKT, ?bWKT) as ?rcc8dc)
+  my:C geo:hasDefaultGeometry ?cGeom .
+  ?cGeom geo:asWKT ?cWKT .
+  BIND (geof:rcc8dc(?bWKT, ?cWKT) as ?rcc8dc)
 }

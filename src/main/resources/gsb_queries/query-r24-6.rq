@@ -1,11 +1,11 @@
 PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-SELECT ?rcc8tpp
+SELECT xsd:boolean(?rcc8tpp) as ?tangentialProperPart
 WHERE {
-  my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
   my:B geo:hasDefaultGeometry ?bGeom .
   ?bGeom geo:asWKT ?bWKT .
-  BIND (geof:rcc8tpp(?aWKT, ?bWKT) as ?rcc8tpp)
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom geo:asWKT ?aWKT .
+  BIND (geof:rcc8tpp(?bWKT, ?aWKT) as ?rcc8tpp)
 }
