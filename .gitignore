@@ -13,3 +13,4 @@ dependency-reduced-pom.xml
 .settings/
 .idea/
 GeoSPARQLBenchmark.iml
+src/main/resources/.DS_Store
