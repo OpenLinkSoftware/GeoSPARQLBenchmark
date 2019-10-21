@@ -3,9 +3,9 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
 SELECT xsd:boolean(?rcc8ntpp) as ?nonTangentialProperPart
 WHERE {
-  my:B geo:hasDefaultGeometry ?bGeom .
-  ?bGeom geo:asWKT ?bWKT .
+  my:G geo:hasDefaultGeometry ?gGeom .
+  ?gGeom geo:asWKT ?gWKT .
   my:A geo:hasDefaultGeometry ?aGeom .
   ?aGeom geo:asWKT ?aWKT .
-  BIND (geof:rcc8ntpp(?bWKT, ?aWKT) as ?rcc8ntpp)
+  BIND (geof:rcc8ntpp(?gWKT, ?aWKT) as ?rcc8ntpp)
 }
