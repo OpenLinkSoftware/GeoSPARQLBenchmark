@@ -4,3 +4,5 @@ SELECT ?f
 WHERE {
   my:B geo:sfDisjoint ?f
 }
+ORDER BY ?f
+LIMIT 1

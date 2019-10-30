@@ -2,8 +2,7 @@ PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 SELECT ?f
 WHERE {
-  my:A geo:sfContains ?f
-  FILTER (?f != my:A)
+  my:A geo:sfIntersects ?f
+  FILTER (?f != my:A )
 }
 ORDER BY ?f
-LIMIT 1

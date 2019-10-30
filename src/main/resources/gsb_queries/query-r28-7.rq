@@ -6,4 +6,3 @@ WHERE {
   FILTER (?f != my:A)
 }
 ORDER BY ?f
-LIMIT 1

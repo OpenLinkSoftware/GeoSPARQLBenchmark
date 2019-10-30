@@ -4,3 +4,5 @@ SELECT ?f
 WHERE {
   my:E geo:sfCrosses ?f
 }
+ORDER BY ?f
+LIMIT 1
