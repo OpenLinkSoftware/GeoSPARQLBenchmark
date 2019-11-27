@@ -4,3 +4,5 @@ SELECT ?f
 WHERE {
   my:A geo:ehCovers ?f
 }
+ORDER BY ?f
+LIMIT 1

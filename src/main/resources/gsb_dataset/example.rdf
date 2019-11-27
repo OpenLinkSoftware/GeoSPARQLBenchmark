@@ -126,7 +126,7 @@
     <geo:ehDisjoint rdf:resource="http://example.org/ApplicationSchema#B"/>
     <geo:rcc8dc rdf:resource="http://example.org/ApplicationSchema#B"/>
     <!-- <geo:sfTouches rdf:resource="http://example.org/ApplicationSchema#A"/> -->
-    <geo:ehMeet rdf:resource="http://example.org/ApplicationSchema#A"/>
+    <!-- <geo:ehMeet rdf:resource="http://example.org/ApplicationSchema#A"/> -->
     <geo:rcc8ec rdf:resource="http://example.org/ApplicationSchema#A"/>
 </my:PlaceOfInterest>
 

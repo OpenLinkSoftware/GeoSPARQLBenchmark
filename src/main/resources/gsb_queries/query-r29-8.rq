@@ -5,4 +5,3 @@ WHERE {
   my:A geo:ehContains ?f
 }
 ORDER BY ?f
-LIMIT 1
