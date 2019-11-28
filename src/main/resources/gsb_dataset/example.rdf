@@ -127,7 +127,7 @@
     <geo:rcc8dc rdf:resource="http://example.org/ApplicationSchema#B"/>
     <!-- <geo:sfTouches rdf:resource="http://example.org/ApplicationSchema#A"/> -->
     <!-- <geo:ehMeet rdf:resource="http://example.org/ApplicationSchema#A"/> -->
-    <geo:rcc8ec rdf:resource="http://example.org/ApplicationSchema#A"/>
+    <!-- <geo:rcc8ec rdf:resource="http://example.org/ApplicationSchema#A"/> -->
 </my:PlaceOfInterest>
 
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#CExactGeom">
@@ -238,7 +238,7 @@
     <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#GExactGeom"/>
     <!-- <geo:sfEquals rdf:resource="http://example.org/ApplicationSchema#G"/> -->
     <!-- <geo:ehEquals rdf:resource="http://example.org/ApplicationSchema#G"/> -->
-    <geo:rcc8eq rdf:resource="http://example.org/ApplicationSchema#G"/>
+    <!-- <geo:rcc8eq rdf:resource="http://example.org/ApplicationSchema#G"/> -->
     <geo:rcc8ntpp rdf:resource="http://example.org/ApplicationSchema#A"/>
 </my:PlaceOfInterest>
 

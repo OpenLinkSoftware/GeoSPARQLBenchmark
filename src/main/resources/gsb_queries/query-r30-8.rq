@@ -2,7 +2,7 @@ PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 SELECT ?f
 WHERE {
-  my:A geo:rcc8tppi ?f
+  my:A geo:rcc8ntppi ?f
+  FILTER (?f != my:A)
 }
 ORDER BY ?f
-LIMIT 1

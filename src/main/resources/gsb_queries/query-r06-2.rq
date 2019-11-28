@@ -4,3 +4,5 @@ SELECT ?f
 WHERE {
   my:B geo:rcc8dc ?f
 }
+ORDER BY ?f
+LIMIT 1
