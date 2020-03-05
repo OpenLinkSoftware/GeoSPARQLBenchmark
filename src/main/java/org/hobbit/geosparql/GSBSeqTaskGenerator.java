@@ -79,10 +79,10 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
         // Locate the corresponding query answer
         // and send it to the Evaluation Store for evaluation
         String [] parts = dataString.split("\n");
-        String answerIndexString = parts[0].trim().substring(2);
-        int answerIndex = Integer.parseInt(answerIndexString) - 1; // The first line is a comment denoting the query (#Q01, #Q02, ...)
+        String answerIndexString = parts[0].trim().substring(3);
+        int answerIndex = Integer.parseInt(answerIndexString) - 1; // The first line is a comment denoting the query (#Q-1, #Q-2, ...)
         String ans = answers[answerIndex];
-        data = RabbitMQUtils.writeString("#Q0" + (answerIndex+1) + "\n\n" + ans);
+        data = RabbitMQUtils.writeString("#Q-" + (answerIndex+1) + "\n\n" + ans);
         sendTaskToEvalStorage(taskIdString, timestamp, data);
     }
 }
