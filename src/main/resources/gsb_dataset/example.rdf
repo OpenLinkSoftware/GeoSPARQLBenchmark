@@ -8,6 +8,14 @@
 
 <!-- Integration with GeoSPARQL classes and properties -->
 
+<rdfs:Class rdf:about="http://www.opengis.net/ont/sf#Polygon">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Surface"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="http://www.opengis.net/ont/sf#LineString">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Curve"/>
+</rdfs:Class>
+
 <rdfs:Class rdf:about="http://example.org/ApplicationSchema#PlaceOfInterest">
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
 </rdfs:Class>
