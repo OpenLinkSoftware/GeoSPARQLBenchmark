@@ -1,0 +1,5 @@
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT DISTINCT ?f
+WHERE {
+  ?f geo:hasDefaultGeometry ?g
+}

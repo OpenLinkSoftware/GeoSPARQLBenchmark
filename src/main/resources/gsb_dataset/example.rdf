@@ -498,11 +498,8 @@
 <!-- M -->
 
 <my:PlaceOfInterest rdf:about="http://example.org/ApplicationSchema#M">
-    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
     <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#MExactGeom"/>
-    <geo:hasDefaultGeometry rdf:resource="http://example.org/ApplicationSchema#MExactGeom"/>
-    <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#MExactGeom"/>
 </my:PlaceOfInterest>
 
 <sf:LineString rdf:about="http://example.org/ApplicationSchema#MExactGeom">
