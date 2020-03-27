@@ -20,6 +20,10 @@
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
 </rdfs:Class>
 
+<rdfs:Class rdf:about="http://www.opengis.net/ont/gml#Polygon">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/gml#Surface"/>
+</rdfs:Class>
+
 <rdf:Property rdf:about="http://example.org/ApplicationSchema#hasExactGeometry">
     <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
     <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#hasDefaultGeometry"/>
@@ -59,6 +63,7 @@
 
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#AExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Polygon"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -83,6 +88,7 @@
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#APointGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Point"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -117,6 +123,7 @@
 
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#BExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Polygon"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -131,6 +138,7 @@
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#BPointGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Point"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:spatialDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:spatialDimension>
@@ -164,6 +172,7 @@
 
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#CExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Polygon"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -178,6 +187,7 @@
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#CPointGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Point"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -207,6 +217,7 @@
 
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#DExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Polygon"/>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
     <geo:spatialDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:spatialDimension>
     <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
@@ -221,6 +232,7 @@
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#DPointGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Point"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -249,6 +261,7 @@
 
 <sf:LineString rdf:about="http://example.org/ApplicationSchema#EExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -277,6 +290,7 @@
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#FExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Point"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -306,6 +320,7 @@
 
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#GExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Polygon"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -325,6 +340,7 @@
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#GPointGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Point"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -350,6 +366,7 @@
 
 <sf:LineString rdf:about="http://example.org/ApplicationSchema#HExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -367,6 +384,7 @@
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#HPointGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Point"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -395,6 +413,7 @@
 
 <sf:LineString rdf:about="http://example.org/ApplicationSchema#IExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -414,6 +433,7 @@
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#IPointGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Point"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -443,6 +463,7 @@
 
 <sf:LineString rdf:about="http://example.org/ApplicationSchema#JExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -467,6 +488,7 @@
 
 <sf:LineString rdf:about="http://example.org/ApplicationSchema#KExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -491,6 +513,7 @@
 
 <sf:LineString rdf:about="http://example.org/ApplicationSchema#LExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
@@ -512,6 +535,7 @@
 
 <sf:LineString rdf:about="http://example.org/ApplicationSchema#MExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
     <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
