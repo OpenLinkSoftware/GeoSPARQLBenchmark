@@ -127,6 +127,7 @@ public class VirtuosoSysAda extends AbstractSystemAdapter {
             }
         }
         else {
+	    queryString = "DEFINE input:inference <myset>\n" + queryString;
             QueryExecution qe = queryExecFactory.createQueryExecution(queryString);
             ResultSet results = null;
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

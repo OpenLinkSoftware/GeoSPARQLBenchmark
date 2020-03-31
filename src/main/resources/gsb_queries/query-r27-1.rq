@@ -1,0 +1,5 @@
+PREFIX gml: <http://www.opengis.net/ont/gml#>
+SELECT DISTINCT ?f
+WHERE {
+  ?f rdf:type gml:Surface
+}

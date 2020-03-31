@@ -1,0 +1,4 @@
+SELECT DISTINCT ?f
+WHERE {
+  ?f rdf:type sf:Curve
+}
