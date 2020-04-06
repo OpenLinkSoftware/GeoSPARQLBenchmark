@@ -127,7 +127,10 @@ public class VirtuosoSysAda extends AbstractSystemAdapter {
             }
         }
         else {
-	    queryString = "DEFINE input:inference <myset>\n" + queryString;
+            if (queryString.contains("INFERENCE")) {
+                // Activate inference in Virtuoso
+                queryString = "DEFINE input:inference <myset>\n" + queryString;
+            }
             QueryExecution qe = queryExecFactory.createQueryExecution(queryString);
             ResultSet results = null;
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

@@ -1,4 +1,7 @@
+# INFERENCE
+PREFIX sf: <http://www.opengis.net/ont/sf#>
 SELECT DISTINCT ?f
 WHERE {
   ?f rdf:type sf:Curve
 }
+ORDER BY ?f

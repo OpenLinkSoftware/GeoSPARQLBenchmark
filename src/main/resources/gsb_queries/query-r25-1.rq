@@ -1,5 +1,7 @@
+# INFERENCE
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 SELECT DISTINCT ?f
 WHERE {
   ?f rdf:type geo:Feature 
 }
+ORDER BY ?f
