@@ -59,12 +59,12 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
     private Property EVALUATION_Q07E_STATUS = null;
     private Property EVALUATION_Q08_1E_STATUS = null;
     private Property EVALUATION_Q08_2E_STATUS = null;
-    // private Property EVALUATION_Q09_1E_STATUS = null;
-    // private Property EVALUATION_Q09_2E_STATUS = null;
-    // private Property EVALUATION_Q09_3E_STATUS = null;
-    // private Property EVALUATION_Q09_4E_STATUS = null;
-    // private Property EVALUATION_Q09_5E_STATUS = null;
-    // private Property EVALUATION_Q09_6E_STATUS = null;
+    private Property EVALUATION_Q09_1E_STATUS = null;
+    private Property EVALUATION_Q09_2E_STATUS = null;
+    private Property EVALUATION_Q09_3E_STATUS = null;
+    private Property EVALUATION_Q09_4E_STATUS = null;
+    private Property EVALUATION_Q09_5E_STATUS = null;
+    private Property EVALUATION_Q09_6E_STATUS = null;
     private Property EVALUATION_Q10E_STATUS = null;
     private Property EVALUATION_Q11E_STATUS = null;
     private Property EVALUATION_Q12E_STATUS = null;
@@ -111,9 +111,12 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
     private Property EVALUATION_Q24_6E_STATUS = null;
     private Property EVALUATION_Q24_7E_STATUS = null;
     private Property EVALUATION_Q24_8E_STATUS = null;
-    // private Property EVALUATION_Q25E_STATUS = null;
-    // private Property EVALUATION_Q26E_STATUS = null;
-    // private Property EVALUATION_Q27E_STATUS = null;
+    private Property EVALUATION_Q25_1E_STATUS = null;
+    private Property EVALUATION_Q25_2E_STATUS = null;
+    private Property EVALUATION_Q25_3E_STATUS = null;
+    private Property EVALUATION_Q26_1E_STATUS = null;
+    private Property EVALUATION_Q26_2E_STATUS = null;
+    private Property EVALUATION_Q27E_STATUS = null;
     private Property EVALUATION_Q28_1E_STATUS = null;
     private Property EVALUATION_Q28_2E_STATUS = null;
     private Property EVALUATION_Q28_3E_STATUS = null;
@@ -143,10 +146,10 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
     private Property EVALUATION_NUMBER_OF_CORRECT_ANSWERS = null;
 
     /* Property for number of correct requirements" */
-    private Property EVALUATION_NUMBER_OF_CORRECT_REQUIREMENTS = null;
+    private Property EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS = null;
 	
     private Boolean[] correctAnswers = new Boolean[GSBConstants.GSB_NUMBER_OF_QUERIES];
-    private Boolean[] correctRequirements = new Boolean[GSBConstants.GSB_NUMBER_OF_REQUIREMENTS];
+    private Boolean[] satisfiedRequirements = new Boolean[GSBConstants.GSB_NUMBER_OF_REQUIREMENTS];
     private Map<String, ArrayList<Long> > executionStatuses = new HashMap<>();
     
     private long loading_time;
@@ -258,24 +261,24 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         if (!env.containsKey(GSBConstants.EVALUATION_Q08_2E_STATUS)) {
             throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q08_2E_STATUS + "\" from the environment. Aborting.");
         }
-//        if (!env.containsKey(GSBConstants.EVALUATION_Q09_1E_STATUS)) {
-//            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_1E_STATUS + "\" from the environment. Aborting.");
-//        }
-//        if (!env.containsKey(GSBConstants.EVALUATION_Q09_2E_STATUS)) {
-//            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_2E_STATUS + "\" from the environment. Aborting.");
-//        }
-//        if (!env.containsKey(GSBConstants.EVALUATION_Q09_3E_STATUS)) {
-//            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_3E_STATUS + "\" from the environment. Aborting.");
-//        }
-//        if (!env.containsKey(GSBConstants.EVALUATION_Q09_4E_STATUS)) {
-//            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_4E_STATUS + "\" from the environment. Aborting.");
-//        }
-//        if (!env.containsKey(GSBConstants.EVALUATION_Q09_5E_STATUS)) {
-//            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_5E_STATUS + "\" from the environment. Aborting.");
-//        }
-//        if (!env.containsKey(GSBConstants.EVALUATION_Q09_6E_STATUS)) {
-//            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_6E_STATUS + "\" from the environment. Aborting.");
-//        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q09_1E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_1E_STATUS + "\" from the environment. Aborting.");
+        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q09_2E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_2E_STATUS + "\" from the environment. Aborting.");
+        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q09_3E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_3E_STATUS + "\" from the environment. Aborting.");
+        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q09_4E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_4E_STATUS + "\" from the environment. Aborting.");
+        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q09_5E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_5E_STATUS + "\" from the environment. Aborting.");
+        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q09_6E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q09_6E_STATUS + "\" from the environment. Aborting.");
+        }
         if (!env.containsKey(GSBConstants.EVALUATION_Q10E_STATUS)) {
             throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q10E_STATUS + "\" from the environment. Aborting.");
         }
@@ -414,15 +417,24 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         if (!env.containsKey(GSBConstants.EVALUATION_Q24_8E_STATUS)) {
             throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q24_8E_STATUS + "\" from the environment. Aborting.");
         }
-//        if (!env.containsKey(GSBConstants.EVALUATION_Q25E_STATUS)) {
-//            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q25E_STATUS + "\" from the environment. Aborting.");
-//        }
-//        if (!env.containsKey(GSBConstants.EVALUATION_Q26E_STATUS)) {
-//            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q26E_STATUS + "\" from the environment. Aborting.");
-//        }
-//        if (!env.containsKey(GSBConstants.EVALUATION_Q27E_STATUS)) {
-//            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q27E_STATUS + "\" from the environment. Aborting.");
-//        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q25_1E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q25_1E_STATUS + "\" from the environment. Aborting.");
+        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q25_2E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q25_2E_STATUS + "\" from the environment. Aborting.");
+        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q25_3E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q25_3E_STATUS + "\" from the environment. Aborting.");
+        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q26_1E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q26_1E_STATUS + "\" from the environment. Aborting.");
+        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q26_2E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q26_2E_STATUS + "\" from the environment. Aborting.");
+        }
+        if (!env.containsKey(GSBConstants.EVALUATION_Q27E_STATUS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q27E_STATUS + "\" from the environment. Aborting.");
+        }
         if (!env.containsKey(GSBConstants.EVALUATION_Q28_1E_STATUS)) {
             throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_Q28_1E_STATUS + "\" from the environment. Aborting.");
         }
@@ -525,12 +537,12 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         EVALUATION_Q07E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q07E_STATUS));
         EVALUATION_Q08_1E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q08_1E_STATUS));
         EVALUATION_Q08_2E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q08_2E_STATUS));
-        // EVALUATION_Q09_1E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_1E_STATUS));
-        // EVALUATION_Q09_2E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_2E_STATUS));
-        // EVALUATION_Q09_3E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_3E_STATUS));
-        // EVALUATION_Q09_4E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_4E_STATUS));
-        // EVALUATION_Q09_5E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_5E_STATUS));
-        // EVALUATION_Q09_6E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_6E_STATUS));
+        EVALUATION_Q09_1E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_1E_STATUS));
+        EVALUATION_Q09_2E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_2E_STATUS));
+        EVALUATION_Q09_3E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_3E_STATUS));
+        EVALUATION_Q09_4E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_4E_STATUS));
+        EVALUATION_Q09_5E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_5E_STATUS));
+        EVALUATION_Q09_6E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q09_6E_STATUS));
         EVALUATION_Q10E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q10E_STATUS));
         EVALUATION_Q11E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q11E_STATUS));
         EVALUATION_Q12E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q12E_STATUS));
@@ -577,9 +589,12 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         EVALUATION_Q24_6E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q24_6E_STATUS));
         EVALUATION_Q24_7E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q24_7E_STATUS));
         EVALUATION_Q24_8E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q24_8E_STATUS));
-        // EVALUATION_Q25E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q25E_STATUS));
-        // EVALUATION_Q26E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q26E_STATUS));
-        // EVALUATION_Q27E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q27E_STATUS));
+        EVALUATION_Q25_1E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q25_1E_STATUS));
+        EVALUATION_Q25_2E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q25_2E_STATUS));
+        EVALUATION_Q25_3E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q25_3E_STATUS));
+        EVALUATION_Q26_1E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q26_1E_STATUS));
+        EVALUATION_Q26_2E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q26_2E_STATUS));
+        EVALUATION_Q27E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q27E_STATUS));
         EVALUATION_Q28_1E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q28_1E_STATUS));
         EVALUATION_Q28_2E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q28_2E_STATUS));
         EVALUATION_Q28_3E_STATUS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_Q28_3E_STATUS));
@@ -612,10 +627,10 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         EVALUATION_NUMBER_OF_CORRECT_ANSWERS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_NUMBER_OF_CORRECT_ANSWERS));
 
         /* number of correct requirements */
-        if (!env.containsKey(GSBConstants.EVALUATION_NUMBER_OF_CORRECT_REQUIREMENTS)) {
-            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_NUMBER_OF_CORRECT_REQUIREMENTS + "\" from the environment. Aborting.");
+        if (!env.containsKey(GSBConstants.EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS + "\" from the environment. Aborting.");
         }
-        EVALUATION_NUMBER_OF_CORRECT_REQUIREMENTS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_NUMBER_OF_CORRECT_REQUIREMENTS));
+        EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS));
     }
 
     @Override
@@ -723,143 +738,167 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         finalModel.add(experiment, EVALUATION_Q08_1E_STATUS, q08_1eStatusLiteral);
         Literal q08_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[29], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q08_2E_STATUS, q08_2eStatusLiteral);
-        Literal q10eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[30], XSDDatatype.XSDboolean);
+        Literal q09_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[30], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q09_1E_STATUS, q09_1eStatusLiteral);
+        Literal q09_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[31], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q09_2E_STATUS, q09_2eStatusLiteral);
+        Literal q09_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[32], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q09_3E_STATUS, q09_3eStatusLiteral);
+        Literal q09_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[33], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q09_4E_STATUS, q09_4eStatusLiteral);
+        Literal q09_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[34], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q09_5E_STATUS, q09_5eStatusLiteral);
+        Literal q09_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[35], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q09_6E_STATUS, q09_6eStatusLiteral);
+        Literal q10eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[36], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q10E_STATUS, q10eStatusLiteral);
-        Literal q11eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[31], XSDDatatype.XSDboolean);
+        Literal q11eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[37], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q11E_STATUS, q11eStatusLiteral);
-        Literal q12eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[32], XSDDatatype.XSDboolean);
+        Literal q12eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[38], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q12E_STATUS, q12eStatusLiteral);
-        Literal q13_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[33], XSDDatatype.XSDboolean);
+        Literal q13_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[39], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q13_1E_STATUS, q13_1eStatusLiteral);
-        Literal q13_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[34], XSDDatatype.XSDboolean);
+        Literal q13_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[40], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q13_2E_STATUS, q13_2eStatusLiteral);
-        Literal q14eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[35], XSDDatatype.XSDboolean);
+        Literal q14eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[41], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q14E_STATUS, q14eStatusLiteral);
-        Literal q15eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[36], XSDDatatype.XSDboolean);
+        Literal q15eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[42], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q15E_STATUS, q15eStatusLiteral);
-        Literal q16_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[37], XSDDatatype.XSDboolean);
+        Literal q16_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[43], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q16_1E_STATUS, q16_1eStatusLiteral);
-        Literal q16_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[38], XSDDatatype.XSDboolean);
+        Literal q16_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[44], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q16_2E_STATUS, q16_2eStatusLiteral);
-        Literal q18eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[39], XSDDatatype.XSDboolean);
+        Literal q18eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[45], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q18E_STATUS, q18eStatusLiteral);
-        Literal q19_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[40], XSDDatatype.XSDboolean);
+        Literal q19_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[46], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q19_1E_STATUS, q19_1eStatusLiteral);
-        Literal q19_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[41], XSDDatatype.XSDboolean);
+        Literal q19_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[47], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q19_2E_STATUS, q19_2eStatusLiteral);
-        Literal q19_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[42], XSDDatatype.XSDboolean);
+        Literal q19_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[48], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q19_3E_STATUS, q19_3eStatusLiteral);
-        Literal q19_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[43], XSDDatatype.XSDboolean);
+        Literal q19_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[49], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q19_4E_STATUS, q19_4eStatusLiteral);
-        Literal q19_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[44], XSDDatatype.XSDboolean);
+        Literal q19_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[50], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q19_5E_STATUS, q19_5eStatusLiteral);
-        Literal q19_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[45], XSDDatatype.XSDboolean);
+        Literal q19_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[51], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q19_6E_STATUS, q19_6eStatusLiteral);
-        Literal q19_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[46], XSDDatatype.XSDboolean);
+        Literal q19_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[52], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q19_7E_STATUS, q19_7eStatusLiteral);
-        Literal q19_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[47], XSDDatatype.XSDboolean);
+        Literal q19_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[53], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q19_8E_STATUS, q19_8eStatusLiteral);
-        Literal q19_9eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[48], XSDDatatype.XSDboolean);
+        Literal q19_9eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[54], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q19_8E_STATUS, q19_9eStatusLiteral);
-        Literal q20eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[49], XSDDatatype.XSDboolean);
+        Literal q20eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[55], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q20E_STATUS, q20eStatusLiteral);
-        Literal q21eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[50], XSDDatatype.XSDboolean);
+        Literal q21eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[56], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q21E_STATUS, q21eStatusLiteral);
-        Literal q22_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[51], XSDDatatype.XSDboolean);
+        Literal q22_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[57], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q22_1E_STATUS, q22_1eStatusLiteral);
-        Literal q22_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[52], XSDDatatype.XSDboolean);
+        Literal q22_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[58], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q22_2E_STATUS, q22_2eStatusLiteral);
-        Literal q22_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[53], XSDDatatype.XSDboolean);
+        Literal q22_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[59], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q22_3E_STATUS, q22_3eStatusLiteral);
-        Literal q22_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[54], XSDDatatype.XSDboolean);
+        Literal q22_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[60], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q22_4E_STATUS, q22_4eStatusLiteral);
-        Literal q22_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[55], XSDDatatype.XSDboolean);
+        Literal q22_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[61], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q22_5E_STATUS, q22_5eStatusLiteral);
-        Literal q22_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[56], XSDDatatype.XSDboolean);
+        Literal q22_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[62], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q22_6E_STATUS, q22_6eStatusLiteral);
-        Literal q22_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[57], XSDDatatype.XSDboolean);
+        Literal q22_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[63], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q22_7E_STATUS, q22_7eStatusLiteral);
-        Literal q22_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[58], XSDDatatype.XSDboolean);
+        Literal q22_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[64], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q22_8E_STATUS, q22_8eStatusLiteral);
-        Literal q23_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[59], XSDDatatype.XSDboolean);
+        Literal q23_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[65], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q23_1E_STATUS, q23_1eStatusLiteral);
-        Literal q23_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[60], XSDDatatype.XSDboolean);
+        Literal q23_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[66], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q23_2E_STATUS, q23_2eStatusLiteral);
-        Literal q23_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[61], XSDDatatype.XSDboolean);
+        Literal q23_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[67], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q23_3E_STATUS, q23_3eStatusLiteral);
-        Literal q23_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[62], XSDDatatype.XSDboolean);
+        Literal q23_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[68], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q23_4E_STATUS, q23_4eStatusLiteral);
-        Literal q23_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[63], XSDDatatype.XSDboolean);
+        Literal q23_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[69], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q23_5E_STATUS, q23_5eStatusLiteral);
-        Literal q23_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[64], XSDDatatype.XSDboolean);
+        Literal q23_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[70], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q23_6E_STATUS, q23_6eStatusLiteral);
-        Literal q23_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[65], XSDDatatype.XSDboolean);
+        Literal q23_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[71], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q23_7E_STATUS, q23_7eStatusLiteral);
-        Literal q23_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[66], XSDDatatype.XSDboolean);
+        Literal q23_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[72], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q23_8E_STATUS, q23_8eStatusLiteral);
-        Literal q24_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[67], XSDDatatype.XSDboolean);
+        Literal q24_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[73], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q24_1E_STATUS, q24_1eStatusLiteral);
-        Literal q24_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[68], XSDDatatype.XSDboolean);
+        Literal q24_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[74], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q24_2E_STATUS, q24_2eStatusLiteral);
-        Literal q24_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[69], XSDDatatype.XSDboolean);
+        Literal q24_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[75], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q24_3E_STATUS, q24_3eStatusLiteral);
-        Literal q24_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[70], XSDDatatype.XSDboolean);
+        Literal q24_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[76], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q24_4E_STATUS, q24_4eStatusLiteral);
-        Literal q24_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[71], XSDDatatype.XSDboolean);
+        Literal q24_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[77], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q24_5E_STATUS, q24_5eStatusLiteral);
-        Literal q24_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[72], XSDDatatype.XSDboolean);
+        Literal q24_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[78], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q24_6E_STATUS, q24_6eStatusLiteral);
-        Literal q24_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[73], XSDDatatype.XSDboolean);
+        Literal q24_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[79], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q24_7E_STATUS, q24_7eStatusLiteral);
-        Literal q24_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[74], XSDDatatype.XSDboolean);
+        Literal q24_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[80], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q24_8E_STATUS, q24_8eStatusLiteral);
-        Literal q28_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[75], XSDDatatype.XSDboolean);
+        Literal q25_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[81], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q25_1E_STATUS, q25_1eStatusLiteral);
+        Literal q25_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[82], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q25_2E_STATUS, q25_2eStatusLiteral);
+        Literal q25_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[83], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q25_3E_STATUS, q25_3eStatusLiteral);
+        Literal q26_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[84], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q26_1E_STATUS, q26_1eStatusLiteral);
+        Literal q26_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[85], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q26_2E_STATUS, q26_2eStatusLiteral);
+        Literal q27eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[86], XSDDatatype.XSDboolean);
+        finalModel.add(experiment, EVALUATION_Q27E_STATUS, q27eStatusLiteral);
+        Literal q28_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[87], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q28_1E_STATUS, q28_1eStatusLiteral);
-        Literal q28_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[76], XSDDatatype.XSDboolean);
+        Literal q28_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[88], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q28_2E_STATUS, q28_2eStatusLiteral);
-        Literal q28_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[77], XSDDatatype.XSDboolean);
+        Literal q28_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[89], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q28_3E_STATUS, q28_3eStatusLiteral);
-        Literal q28_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[78], XSDDatatype.XSDboolean);
+        Literal q28_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[90], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q28_4E_STATUS, q28_4eStatusLiteral);
-        Literal q28_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[79], XSDDatatype.XSDboolean);
+        Literal q28_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[91], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q28_5E_STATUS, q28_5eStatusLiteral);
-        Literal q28_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[80], XSDDatatype.XSDboolean);
+        Literal q28_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[92], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q28_6E_STATUS, q28_6eStatusLiteral);
-        Literal q28_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[81], XSDDatatype.XSDboolean);
+        Literal q28_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[93], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q28_7E_STATUS, q28_7eStatusLiteral);
-        Literal q28_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[82], XSDDatatype.XSDboolean);
+        Literal q28_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[94], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q28_8E_STATUS, q28_8eStatusLiteral);
-        Literal q29_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[83], XSDDatatype.XSDboolean);
+        Literal q29_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[95], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q29_1E_STATUS, q29_1eStatusLiteral);
-        Literal q29_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[84], XSDDatatype.XSDboolean);
+        Literal q29_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[96], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q29_2E_STATUS, q29_2eStatusLiteral);
-        Literal q29_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[85], XSDDatatype.XSDboolean);
+        Literal q29_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[97], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q29_3E_STATUS, q29_3eStatusLiteral);
-        Literal q29_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[86], XSDDatatype.XSDboolean);
+        Literal q29_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[98], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q29_4E_STATUS, q29_4eStatusLiteral);
-        Literal q29_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[87], XSDDatatype.XSDboolean);
+        Literal q29_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[99], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q29_5E_STATUS, q29_5eStatusLiteral);
-        Literal q29_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[88], XSDDatatype.XSDboolean);
+        Literal q29_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[100], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q29_6E_STATUS, q29_6eStatusLiteral);
-        Literal q29_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[89], XSDDatatype.XSDboolean);
+        Literal q29_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[101], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q29_7E_STATUS, q29_7eStatusLiteral);
-        Literal q29_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[90], XSDDatatype.XSDboolean);
+        Literal q29_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[102], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q29_8E_STATUS, q29_8eStatusLiteral);
-        Literal q30_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[91], XSDDatatype.XSDboolean);
+        Literal q30_1eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[103], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q30_1E_STATUS, q30_1eStatusLiteral);
-        Literal q30_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[92], XSDDatatype.XSDboolean);
+        Literal q30_2eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[104], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q30_2E_STATUS, q30_2eStatusLiteral);
-        Literal q30_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[93], XSDDatatype.XSDboolean);
+        Literal q30_3eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[105], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q30_3E_STATUS, q30_3eStatusLiteral);
-        Literal q30_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[94], XSDDatatype.XSDboolean);
+        Literal q30_4eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[106], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q30_4E_STATUS, q30_4eStatusLiteral);
-        Literal q30_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[95], XSDDatatype.XSDboolean);
+        Literal q30_5eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[107], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q30_5E_STATUS, q30_5eStatusLiteral);
-        Literal q30_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[96], XSDDatatype.XSDboolean);
+        Literal q30_6eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[108], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q30_6E_STATUS, q30_6eStatusLiteral);
-        Literal q30_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[97], XSDDatatype.XSDboolean);
+        Literal q30_7eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[109], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q30_7E_STATUS, q30_7eStatusLiteral);
-        Literal q30_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[98], XSDDatatype.XSDboolean);
+        Literal q30_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[110], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q30_8E_STATUS, q30_8eStatusLiteral);
         
         int totalCorrect = 0;
