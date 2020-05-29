@@ -44,6 +44,12 @@ bench:GSBBenchmark  a   hobbit:Benchmark;
     hobbit:measuresKPI bench:Q07Status ;
     hobbit:measuresKPI bench:Q08_1Status ;
     hobbit:measuresKPI bench:Q08_2Status ;
+    hobbit:measuresKPI bench:Q09_1Status ;
+    hobbit:measuresKPI bench:Q09_2Status ;
+    hobbit:measuresKPI bench:Q09_3Status ;
+    hobbit:measuresKPI bench:Q09_4Status ;
+    hobbit:measuresKPI bench:Q09_5Status ;
+    hobbit:measuresKPI bench:Q09_6Status ;
     hobbit:measuresKPI bench:Q10Status ;
     hobbit:measuresKPI bench:Q11Status ;
     hobbit:measuresKPI bench:Q12Status ;
@@ -89,6 +95,12 @@ bench:GSBBenchmark  a   hobbit:Benchmark;
     hobbit:measuresKPI bench:Q24_6Status ;
     hobbit:measuresKPI bench:Q24_7Status ;
     hobbit:measuresKPI bench:Q24_8Status ;
+    hobbit:measuresKPI bench:Q25_1Status ;
+    hobbit:measuresKPI bench:Q25_2Status ;
+    hobbit:measuresKPI bench:Q25_3Status ;
+    hobbit:measuresKPI bench:Q26_1Status ;
+    hobbit:measuresKPI bench:Q26_2Status ;
+    hobbit:measuresKPI bench:Q27_Status ;
     hobbit:measuresKPI bench:Q28_1Status ;
     hobbit:measuresKPI bench:Q28_2Status ;
     hobbit:measuresKPI bench:Q28_3Status ;
@@ -275,6 +287,36 @@ bench:Q08_1Status a   hobbit:KPI;
 bench:Q08_2Status a   hobbit:KPI;
     rdfs:label  "Q08-2 Status"@en;
     rdfs:comment    "Correct answer for GeoSPARQL Q08-2"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_1Status a   hobbit:KPI;
+    rdfs:label  "Q09-1 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-1"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_2Status a   hobbit:KPI;
+    rdfs:label  "Q09-2 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-2"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_3Status a   hobbit:KPI;
+    rdfs:label  "Q09-3 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-3"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_4Status a   hobbit:KPI;
+    rdfs:label  "Q09-4 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-4"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_5Status a   hobbit:KPI;
+    rdfs:label  "Q09-5 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-5"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_6Status a   hobbit:KPI;
+    rdfs:label  "Q09-6 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-6"@en;
     rdfs:range  xsd:boolean .
 
 bench:Q10Status a   hobbit:KPI;
@@ -500,6 +542,36 @@ bench:Q24_7Status a   hobbit:KPI;
 bench:Q24_8Status a   hobbit:KPI;
     rdfs:label  "Q24-8 Status"@en;
     rdfs:comment    "Correct answer for GeoSPARQL Q24-8"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q25_1Status a   hobbit:KPI;
+    rdfs:label  "Q25-1 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q25-1"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q25_2Status a   hobbit:KPI;
+    rdfs:label  "Q25-2 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q25-2"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q25_3Status a   hobbit:KPI;
+    rdfs:label  "Q25-3 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q25-3"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q26_1Status a   hobbit:KPI;
+    rdfs:label  "Q26-1 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q26-1"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q26_2Status a   hobbit:KPI;
+    rdfs:label  "Q26-2 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q26-2"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q27Status a   hobbit:KPI;
+    rdfs:label  "Q27 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q27"@en;
     rdfs:range  xsd:boolean .
 
 bench:Q28_1Status a   hobbit:KPI;
