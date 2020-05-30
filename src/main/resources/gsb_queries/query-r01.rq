@@ -1,4 +1,6 @@
-ASK
+SELECT ?s ?p ?o
 WHERE {
   ?s ?p ?o
 }
+ORDER BY ?s ?p ?o
+LIMIT 1

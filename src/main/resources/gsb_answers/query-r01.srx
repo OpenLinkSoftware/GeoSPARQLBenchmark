@@ -1,4 +1,14 @@
 <sparql xmlns="http://www.w3.org/2005/sparql-results#">
- <head></head>
- <boolean>true</boolean>
-</sparql>
+ <head>
+   <variable name="s"/>
+   <variable name="p"/>
+   <variable name="o"/>
+  </head>
+  <results distinct="false" ordered="true">
+   <result>
+    <binding name="s"><uri>http://example.org/ApplicationSchema#A</uri></binding>
+    <binding name="p"><uri>http://example.org/ApplicationSchema#hasExactGeometry</uri></binding>
+    <binding name="o"><uri>http://example.org/ApplicationSchema#AExactGeom</uri></binding>
+   </result>
+  </results>
+ </sparql>
