@@ -1,7 +1,7 @@
-SELECT ?s ?p ?o
-FROM <http://openlinksw.com/geosparql/dataset.rdf>
+PREFIX my: <http://example.org/ApplicationSchema#>
+SELECT ?p ?o
 WHERE {
-  ?s ?p ?o
+  my:A ?p ?o
 }
-ORDER BY ?s ?p ?o
+ORDER BY ?p ?o
 LIMIT 1
