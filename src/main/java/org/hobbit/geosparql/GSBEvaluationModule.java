@@ -651,6 +651,12 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
             LOGGER.info("Actual: " + rStr);
         }
 
+        if (correctAnswers[queryIndex]) {
+            LOGGER.info("Correct answer on query " + queryIndexString);
+            LOGGER.info("Expected: " + eStr);
+            LOGGER.info("Actual: " + rStr);
+        }
+
         if (taskSentTimestamp < workload_start_time)
             workload_start_time = taskSentTimestamp;
         if (responseReceivedTimestamp > workload_end_time)
