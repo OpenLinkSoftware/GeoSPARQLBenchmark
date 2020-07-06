@@ -100,7 +100,7 @@ bench:GSBBenchmark  a   hobbit:Benchmark;
     hobbit:measuresKPI bench:Q25_3Status ;
     hobbit:measuresKPI bench:Q26_1Status ;
     hobbit:measuresKPI bench:Q26_2Status ;
-    hobbit:measuresKPI bench:Q27_Status ;
+    hobbit:measuresKPI bench:Q27Status ;
     hobbit:measuresKPI bench:Q28_1Status ;
     hobbit:measuresKPI bench:Q28_2Status ;
     hobbit:measuresKPI bench:Q28_3Status ;

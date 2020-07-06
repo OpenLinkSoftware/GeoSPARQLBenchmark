@@ -793,7 +793,7 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         Literal q19_8eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[53], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q19_8E_STATUS, q19_8eStatusLiteral);
         Literal q19_9eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[54], XSDDatatype.XSDboolean);
-        finalModel.add(experiment, EVALUATION_Q19_8E_STATUS, q19_9eStatusLiteral);
+        finalModel.add(experiment, EVALUATION_Q19_9E_STATUS, q19_9eStatusLiteral);
         Literal q20eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[55], XSDDatatype.XSDboolean);
         finalModel.add(experiment, EVALUATION_Q20E_STATUS, q20eStatusLiteral);
         Literal q21eStatusLiteral = finalModel.createTypedLiteral(correctAnswers[56], XSDDatatype.XSDboolean);
