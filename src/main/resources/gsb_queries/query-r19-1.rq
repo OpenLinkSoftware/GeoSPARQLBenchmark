@@ -9,6 +9,8 @@ WHERE {
   ?f my:hasExactGeometry ?fGeom .
   ?fGeom geo:asWKT ?fWKT .
   FILTER (?fGeom != ?cGeom)
+  FILTER (?f != my:H )
+  FILTER (?f != my:I )
   BIND (geof:distance(?cWKT, ?fWKT, uom:metre) as ?distance)
 }
 ORDER BY ASC(?distance)

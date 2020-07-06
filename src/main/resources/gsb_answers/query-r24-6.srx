@@ -4,7 +4,7 @@
  </head>
  <results distinct="false" ordered="true">
   <result>
-   <binding name="tangentialProperPart"><literal datatype="http://www.w3.org/2001/XMLSchema#boolean">true</literal></binding>
+   <binding name="tangentialProperPart"><literal datatype="http://www.w3.org/2001/XMLSchema#boolean">1</literal></binding>
   </result>
  </results>
 </sparql>

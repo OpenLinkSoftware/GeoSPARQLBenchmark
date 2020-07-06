@@ -205,7 +205,7 @@ public class VirtuosoSysAda extends AbstractSystemAdapter {
             try {
                 allDataReceivedMutex.acquire();
             } catch (InterruptedException e) {
-                LOGGER.error("Exception while waitting for all data for bulk load " + loadingNumber + " to be recieved.", e);
+                LOGGER.error("Exception while waiting for all data for bulk load " + loadingNumber + " to be received.", e);
             }
             LOGGER.info("All data for bulk load " + loadingNumber + " received. Proceed to the loading...");
 

@@ -80,9 +80,7 @@
         ]]>
     </geo:asWKT>
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
-        <![CDATA[
-            <gml:Polygon srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-83.6,34.1 -83.2,34.1 -83.2,34.5 -83.6,34.5 -83.6,34.1</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>
-        ]]>
+        <![CDATA[<gml:Polygon srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-83.6,34.1 -83.2,34.1 -83.2,34.5 -83.6,34.5 -83.6,34.1</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>]]>
     </geo:asGML>
 </sf:Polygon>
 

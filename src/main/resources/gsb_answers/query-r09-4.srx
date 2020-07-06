@@ -4,7 +4,7 @@
  </head>
  <results distinct="false" ordered="true">
   <result>
-   <binding name="isEmpty"><literal datatype="http://www.w3.org/2001/XMLSchema#boolean">false</literal></binding>
+   <binding name="isEmpty"><literal datatype="http://www.w3.org/2001/XMLSchema#boolean">0</literal></binding>
   </result>
  </results>
 </sparql>
