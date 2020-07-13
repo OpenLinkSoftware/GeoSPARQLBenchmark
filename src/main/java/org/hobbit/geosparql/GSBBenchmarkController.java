@@ -174,7 +174,7 @@ public class GSBBenchmarkController extends AbstractBenchmarkController {
 
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_NUMBER_OF_CORRECT_ANSWERS + "=" + "http://w3id.org/bench#totalCorrectAnswers");
 
-        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS + "=" + "http://w3id.org/bench#totalSatisfiedRequirements");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS + "=" + "http://w3id.org/bench#percentageCorrectAnswers");
 
         // Wait for all components to finish their initialization
         waitForComponentsToInitialize();

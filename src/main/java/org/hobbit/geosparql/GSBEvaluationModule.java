@@ -146,7 +146,7 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
     private Property EVALUATION_NUMBER_OF_CORRECT_ANSWERS = null;
 
     /* Property for number of correct requirements" */
-    private Property EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS = null;
+    private Property EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS = null;
 	
     private Boolean[] correctAnswers = new Boolean[GSBConstants.GSB_NUMBER_OF_QUERIES];
     private Boolean[] satisfiedRequirements = new Boolean[GSBConstants.GSB_NUMBER_OF_REQUIREMENTS];
@@ -627,10 +627,10 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         EVALUATION_NUMBER_OF_CORRECT_ANSWERS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_NUMBER_OF_CORRECT_ANSWERS));
 
         /* number of correct requirements */
-        if (!env.containsKey(GSBConstants.EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS)) {
-            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS + "\" from the environment. Aborting.");
+        if (!env.containsKey(GSBConstants.EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS)) {
+            throw new IllegalArgumentException("Couldn't get \"" + GSBConstants.EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS + "\" from the environment. Aborting.");
         }
-        EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS));
+        EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS));
     }
 
     @Override
@@ -908,13 +908,21 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         finalModel.add(experiment, EVALUATION_Q30_8E_STATUS, q30_8eStatusLiteral);
         
         int totalCorrect = 0;
+        double percentageCorrect = 0.0;
         for (int i=0; i < correctAnswers.length; i++) {
             if (correctAnswers[i])
                 totalCorrect += 1;
+                percentageCorrect += GSBConstants.GSB_ANSWERS_WEIGHTS[i];
         }
+
+        percentageCorrect += 1.0 / 30.0; // Adding one 'correct' answer, for Req. 17 which is not tested
+        percentageCorrect = percentageCorrect / 30.0 * 100.0; // Transforming the result into a 0-100% range
         
-        Literal nbrCrrtAnswrsLiteral = finalModel.createTypedLiteral(totalCorrect, XSDDatatype.XSDinteger);
-        finalModel.add(experiment, EVALUATION_NUMBER_OF_CORRECT_ANSWERS, nbrCrrtAnswrsLiteral);
+        Literal numberOfCorrectAnswersLiteral = finalModel.createTypedLiteral(totalCorrect, XSDDatatype.XSDinteger);
+        finalModel.add(experiment, EVALUATION_NUMBER_OF_CORRECT_ANSWERS, numberOfCorrectAnswersLiteral);
+
+        Literal percentageOfCorrectAnswersLiteral = finalModel.createTypedLiteral(percentageCorrect, XSDDatatype.XSDfloat);
+        finalModel.add(experiment, EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS, percentageOfCorrectAnswersLiteral);
 
         LOGGER.info(finalModel.toString());
         return finalModel;

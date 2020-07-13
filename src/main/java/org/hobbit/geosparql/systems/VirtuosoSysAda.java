@@ -130,6 +130,7 @@ public class VirtuosoSysAda extends AbstractSystemAdapter {
             if (queryString.contains("INFERENCE")) {
                 // Activate inference in Virtuoso
                 queryString = "DEFINE input:inference <myset>\n" + queryString;
+                LOGGER.info("Added an INFERENCE line to a query. This is the new query text:\n" + queryString);
             }
             QueryExecution qe = queryExecFactory.createQueryExecution(queryString);
             ResultSet results = null;

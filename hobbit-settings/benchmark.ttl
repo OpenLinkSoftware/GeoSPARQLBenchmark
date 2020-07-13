@@ -7,8 +7,8 @@
 @prefix qb: <http://purl.org/linked-data/cube#> .
 #-------------------------------------------------------------------------------------------------------------------------------
 bench:GSBBenchmark  a   hobbit:Benchmark;
-    rdfs:label  "GeoSPARQL Benchmark v3.0"@en;
-    rdfs:comment    "GeoSPARQL Benchmark for the HOBBIT Platform"@en;
+    rdfs:label  "GeoSPARQL Compliance Benchmark"@en;
+    rdfs:comment    "GeoSPARQL Compliance Benchmark for the HOBBIT Platform. The benchmark tests the system's compliance to the GeoSPARQL Specification and its 30 Requirements. It provides a 0 - 100% compliance result, along with details about the failing tests and sub-tests for each requirement."@en;
     hobbit:hasAPI   <https://project-hobbit.eu/challenges/MOCHA2017-API>;
     hobbit:imageName    "git.project-hobbit.eu:4567/mjovanovik/gsb-benchmarkcontroller";
     hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-datagenerator";
@@ -126,6 +126,7 @@ bench:GSBBenchmark  a   hobbit:Benchmark;
     hobbit:measuresKPI bench:Q30_7Status ;
     hobbit:measuresKPI bench:Q30_8Status ;
     hobbit:measuresKPI  bench:totalCorrectAnswers ;
+    hobbit:measuresKPI  bench:percentageCorrectAnswers ;
     hobbit:hasParameter bench:name .
 
 <https://project-hobbit.eu/challenges/MOCHA2017-API>    a   hobbit:API .
@@ -698,3 +699,8 @@ bench:totalCorrectAnswers   a   hobbit:KPI;
     rdfs:label  "Correct Answers"@en;
     rdfs:comment    "Total number of correct answers to all GeoSPARQL queries"@en;
     rdfs:range  xsd:integer .
+
+bench:percentageCorrectAnswers   a   hobbit:KPI;
+    rdfs:label  "GeoSPARQL Compliance Percentage"@en;
+    rdfs:comment    "The percentage of compliance to the requirements of the GeoSPARQL standard"@en;
+    rdfs:range  xsd:double .

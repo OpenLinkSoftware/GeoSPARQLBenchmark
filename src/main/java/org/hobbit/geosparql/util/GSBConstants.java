@@ -378,8 +378,144 @@ public final class GSBConstants {
     public static final String EVALUATION_Q30_7E_STATUS = "evaluation_query30_7_execution_status";
     public static final String EVALUATION_Q30_8E_STATUS = "evaluation_query30_8_execution_status";
 
+    public static final double GSB_ANSWER_WEIGHT_1 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_2 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_3 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_4_1 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_4_2 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_4_3 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_4_4 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_4_5 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_4_6 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_4_7 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_4_8 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_5_1 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_5_2 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_5_3 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_5_4 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_5_5 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_5_6 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_5_7 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_5_8 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_6_1 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_6_2 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_6_3 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_6_4 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_6_5 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_6_6 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_6_7 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_6_8 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_7 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_8_1 = 1.0/30.0 * 1.0/2.0;
+    public static final double GSB_ANSWER_WEIGHT_8_2 = 1.0/30.0 * 1.0/2.0;
+    public static final double GSB_ANSWER_WEIGHT_9_1 = 1.0/30.0 * 1.0/6.0;
+    public static final double GSB_ANSWER_WEIGHT_9_2 = 1.0/30.0 * 1.0/6.0;
+    public static final double GSB_ANSWER_WEIGHT_9_3 = 1.0/30.0 * 1.0/6.0;
+    public static final double GSB_ANSWER_WEIGHT_9_4 = 1.0/30.0 * 1.0/6.0;
+    public static final double GSB_ANSWER_WEIGHT_9_5 = 1.0/30.0 * 1.0/6.0;
+    public static final double GSB_ANSWER_WEIGHT_9_6 = 1.0/30.0 * 1.0/6.0;
+    public static final double GSB_ANSWER_WEIGHT_10 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_11 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_12 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_13_1 = 1.0/30.0 * 1.0/2.0;
+    public static final double GSB_ANSWER_WEIGHT_13_2 = 1.0/30.0 * 1.0/2.0;
+    public static final double GSB_ANSWER_WEIGHT_14 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_15 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_16_1 = 1.0/30.0 * 1.0/2.0;
+    public static final double GSB_ANSWER_WEIGHT_16_2 = 1.0/30.0 * 1.0/2.0;
+    public static final double GSB_ANSWER_WEIGHT_18 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_19_1 = 1.0/30.0 * 1.0/9.0;
+    public static final double GSB_ANSWER_WEIGHT_19_2 = 1.0/30.0 * 1.0/9.0;
+    public static final double GSB_ANSWER_WEIGHT_19_3 = 1.0/30.0 * 1.0/9.0;
+    public static final double GSB_ANSWER_WEIGHT_19_4 = 1.0/30.0 * 1.0/9.0;
+    public static final double GSB_ANSWER_WEIGHT_19_5 = 1.0/30.0 * 1.0/9.0;
+    public static final double GSB_ANSWER_WEIGHT_19_6 = 1.0/30.0 * 1.0/9.0;
+    public static final double GSB_ANSWER_WEIGHT_19_7 = 1.0/30.0 * 1.0/9.0;
+    public static final double GSB_ANSWER_WEIGHT_19_8 = 1.0/30.0 * 1.0/9.0;
+    public static final double GSB_ANSWER_WEIGHT_19_9 = 1.0/30.0 * 1.0/9.0;
+    public static final double GSB_ANSWER_WEIGHT_20 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_21 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_22_1 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_22_2 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_22_3 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_22_4 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_22_5 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_22_6 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_22_7 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_22_8 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_23_1 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_23_2 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_23_3 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_23_4 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_23_5 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_23_6 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_23_7 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_23_8 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_24_1 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_24_2 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_24_3 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_24_4 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_24_5 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_24_6 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_24_7 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_24_8 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_25_1 = 1.0/30.0 * 1.0/3.0;
+    public static final double GSB_ANSWER_WEIGHT_25_2 = 1.0/30.0 * 1.0/3.0;
+    public static final double GSB_ANSWER_WEIGHT_25_3 = 1.0/30.0 * 1.0/3.0;
+    public static final double GSB_ANSWER_WEIGHT_26_1 = 1.0/30.0 * 1.0/2.0;
+    public static final double GSB_ANSWER_WEIGHT_26_2 = 1.0/30.0 * 1.0/2.0;
+    public static final double GSB_ANSWER_WEIGHT_27 = 1.0/30.0;
+    public static final double GSB_ANSWER_WEIGHT_28_1 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_28_2 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_28_3 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_28_4 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_28_5 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_28_6 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_28_7 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_28_8 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_29_1 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_29_2 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_29_3 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_29_4 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_29_5 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_29_6 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_29_7 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_29_8 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_30_1 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_30_2 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_30_3 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_30_4 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_30_5 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_30_6 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_30_7 = 1.0/30.0 * 1.0/8.0;
+    public static final double GSB_ANSWER_WEIGHT_30_8 = 1.0/30.0 * 1.0/8.0;
+
+    public static final double [] GSB_ANSWERS_WEIGHTS = {GSB_ANSWER_WEIGHT_1,GSB_ANSWER_WEIGHT_2,GSB_ANSWER_WEIGHT_3,
+            GSB_ANSWER_WEIGHT_4_1,GSB_ANSWER_WEIGHT_4_2,GSB_ANSWER_WEIGHT_4_3,GSB_ANSWER_WEIGHT_4_4,GSB_ANSWER_WEIGHT_4_5,
+            GSB_ANSWER_WEIGHT_4_6,GSB_ANSWER_WEIGHT_4_7,GSB_ANSWER_WEIGHT_4_8,GSB_ANSWER_WEIGHT_5_1,GSB_ANSWER_WEIGHT_5_2,
+            GSB_ANSWER_WEIGHT_5_3,GSB_ANSWER_WEIGHT_5_4,GSB_ANSWER_WEIGHT_5_5,GSB_ANSWER_WEIGHT_5_6,GSB_ANSWER_WEIGHT_5_7,
+            GSB_ANSWER_WEIGHT_5_8,GSB_ANSWER_WEIGHT_6_1,GSB_ANSWER_WEIGHT_6_2,GSB_ANSWER_WEIGHT_6_3,GSB_ANSWER_WEIGHT_6_4,
+            GSB_ANSWER_WEIGHT_6_5,GSB_ANSWER_WEIGHT_6_6,GSB_ANSWER_WEIGHT_6_7,GSB_ANSWER_WEIGHT_6_8,GSB_ANSWER_WEIGHT_7,
+            GSB_ANSWER_WEIGHT_8_1,GSB_ANSWER_WEIGHT_8_2,GSB_ANSWER_WEIGHT_9_1,GSB_ANSWER_WEIGHT_9_2,GSB_ANSWER_WEIGHT_9_3,
+            GSB_ANSWER_WEIGHT_9_4,GSB_ANSWER_WEIGHT_9_5,GSB_ANSWER_WEIGHT_9_6,GSB_ANSWER_WEIGHT_10,GSB_ANSWER_WEIGHT_11,
+            GSB_ANSWER_WEIGHT_12,GSB_ANSWER_WEIGHT_13_1,GSB_ANSWER_WEIGHT_13_2,GSB_ANSWER_WEIGHT_14,GSB_ANSWER_WEIGHT_15,
+            GSB_ANSWER_WEIGHT_16_1,GSB_ANSWER_WEIGHT_16_2,GSB_ANSWER_WEIGHT_18,GSB_ANSWER_WEIGHT_19_1,GSB_ANSWER_WEIGHT_19_2,
+            GSB_ANSWER_WEIGHT_19_3,GSB_ANSWER_WEIGHT_19_4,GSB_ANSWER_WEIGHT_19_5,GSB_ANSWER_WEIGHT_19_6,GSB_ANSWER_WEIGHT_19_7,
+            GSB_ANSWER_WEIGHT_19_8,GSB_ANSWER_WEIGHT_19_9,GSB_ANSWER_WEIGHT_20,GSB_ANSWER_WEIGHT_21,GSB_ANSWER_WEIGHT_22_1,
+            GSB_ANSWER_WEIGHT_22_2,GSB_ANSWER_WEIGHT_22_3,GSB_ANSWER_WEIGHT_22_4,GSB_ANSWER_WEIGHT_22_5,GSB_ANSWER_WEIGHT_22_6,
+            GSB_ANSWER_WEIGHT_22_7,GSB_ANSWER_WEIGHT_22_8,GSB_ANSWER_WEIGHT_23_1,GSB_ANSWER_WEIGHT_23_2,GSB_ANSWER_WEIGHT_23_3,
+            GSB_ANSWER_WEIGHT_23_4,GSB_ANSWER_WEIGHT_23_5,GSB_ANSWER_WEIGHT_23_6,GSB_ANSWER_WEIGHT_23_7,GSB_ANSWER_WEIGHT_23_8,
+            GSB_ANSWER_WEIGHT_24_1,GSB_ANSWER_WEIGHT_24_2,GSB_ANSWER_WEIGHT_24_3,GSB_ANSWER_WEIGHT_24_4,GSB_ANSWER_WEIGHT_24_5,
+            GSB_ANSWER_WEIGHT_24_6,GSB_ANSWER_WEIGHT_24_7,GSB_ANSWER_WEIGHT_24_8,GSB_ANSWER_WEIGHT_25_1,GSB_ANSWER_WEIGHT_25_2,
+            GSB_ANSWER_WEIGHT_25_3,GSB_ANSWER_WEIGHT_26_1,GSB_ANSWER_WEIGHT_26_2,GSB_ANSWER_WEIGHT_27,GSB_ANSWER_WEIGHT_28_1,
+            GSB_ANSWER_WEIGHT_28_2,GSB_ANSWER_WEIGHT_28_3,GSB_ANSWER_WEIGHT_28_4,GSB_ANSWER_WEIGHT_28_5,GSB_ANSWER_WEIGHT_28_6,
+            GSB_ANSWER_WEIGHT_28_7,GSB_ANSWER_WEIGHT_28_8,GSB_ANSWER_WEIGHT_29_1,GSB_ANSWER_WEIGHT_29_2,GSB_ANSWER_WEIGHT_29_3,
+            GSB_ANSWER_WEIGHT_29_4,GSB_ANSWER_WEIGHT_29_5,GSB_ANSWER_WEIGHT_29_6,GSB_ANSWER_WEIGHT_29_7,GSB_ANSWER_WEIGHT_29_8,
+            GSB_ANSWER_WEIGHT_30_1,GSB_ANSWER_WEIGHT_30_2,GSB_ANSWER_WEIGHT_30_3,GSB_ANSWER_WEIGHT_30_4,GSB_ANSWER_WEIGHT_30_5,
+            GSB_ANSWER_WEIGHT_30_6,GSB_ANSWER_WEIGHT_30_7,GSB_ANSWER_WEIGHT_30_8};
+
     public static final String EVALUATION_NUMBER_OF_CORRECT_ANSWERS = "evaluation_number_of_correct_answers";
 
-    public static final String EVALUATION_NUMBER_OF_SATISFIED_REQUIREMENTS = "evaluation_number_of_satisfied_requirements";
+    public static final String EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS = "evaluation_percentage_of_satisfied_requirements";
     
 }
