@@ -913,12 +913,11 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
             if (correctAnswers[i]) {
                 totalCorrect += 1;
                 percentageCorrect += GSBConstants.GSB_ANSWERS_WEIGHTS[i];
-                LOGGER.info("Correct test: " + i+1 + ". totalCorrect=" + totalCorrect + ". percentageCorrect=" + percentageCorrect + ".");
             }
         }
 
         percentageCorrect += 1.0 / 30.0; // Adding one 'correct' answer, for Req. 17 which is not tested
-        percentageCorrect = percentageCorrect / 30.0 * 100.0; // Transforming the result into a 0-100% range
+        percentageCorrect = percentageCorrect * 100.0; // Transforming the result into a 0-100% range
         
         Literal numberOfCorrectAnswersLiteral = finalModel.createTypedLiteral(totalCorrect, XSDDatatype.XSDinteger);
         finalModel.add(experiment, EVALUATION_NUMBER_OF_CORRECT_ANSWERS, numberOfCorrectAnswersLiteral);
