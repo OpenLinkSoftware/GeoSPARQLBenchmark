@@ -910,9 +910,10 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         int totalCorrect = 0;
         double percentageCorrect = 0.0;
         for (int i=0; i < correctAnswers.length; i++) {
-            if (correctAnswers[i])
+            if (correctAnswers[i]) {
                 totalCorrect += 1;
                 percentageCorrect += GSBConstants.GSB_ANSWERS_WEIGHTS[i];
+            }
         }
 
         percentageCorrect += 1.0 / 30.0; // Adding one 'correct' answer, for Req. 17 which is not tested
