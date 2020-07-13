@@ -913,6 +913,7 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
             if (correctAnswers[i]) {
                 totalCorrect += 1;
                 percentageCorrect += GSBConstants.GSB_ANSWERS_WEIGHTS[i];
+                LOGGER.info("Correct test: " + i+1 + ". totalCorrect=" + totalCorrect + ". percentageCorrect=" + percentageCorrect + ".");
             }
         }
 
