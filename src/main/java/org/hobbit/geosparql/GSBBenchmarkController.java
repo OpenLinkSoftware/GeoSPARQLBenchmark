@@ -90,6 +90,12 @@ public class GSBBenchmarkController extends AbstractBenchmarkController {
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q07E_STATUS + "=" + "http://w3id.org/bench#Q07Status");
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q08_1E_STATUS + "=" + "http://w3id.org/bench#Q08_1Status");
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q08_2E_STATUS + "=" + "http://w3id.org/bench#Q08_2Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q09_1E_STATUS + "=" + "http://w3id.org/bench#Q09_1Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q09_2E_STATUS + "=" + "http://w3id.org/bench#Q09_2Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q09_3E_STATUS + "=" + "http://w3id.org/bench#Q09_3Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q09_4E_STATUS + "=" + "http://w3id.org/bench#Q09_4Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q09_5E_STATUS + "=" + "http://w3id.org/bench#Q09_5Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q09_6E_STATUS + "=" + "http://w3id.org/bench#Q09_6Status");
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q10E_STATUS + "=" + "http://w3id.org/bench#Q10Status");
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q11E_STATUS + "=" + "http://w3id.org/bench#Q11Status");
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q12E_STATUS + "=" + "http://w3id.org/bench#Q12Status");
@@ -135,6 +141,12 @@ public class GSBBenchmarkController extends AbstractBenchmarkController {
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q24_6E_STATUS + "=" + "http://w3id.org/bench#Q24_6Status");
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q24_7E_STATUS + "=" + "http://w3id.org/bench#Q24_7Status");
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q24_8E_STATUS + "=" + "http://w3id.org/bench#Q24_8Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q25_1E_STATUS + "=" + "http://w3id.org/bench#Q25_1Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q25_2E_STATUS + "=" + "http://w3id.org/bench#Q25_2Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q25_3E_STATUS + "=" + "http://w3id.org/bench#Q25_3Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q26_1E_STATUS + "=" + "http://w3id.org/bench#Q26_1Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q26_2E_STATUS + "=" + "http://w3id.org/bench#Q26_2Status");
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q27E_STATUS + "=" + "http://w3id.org/bench#Q27Status");
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q28_1E_STATUS + "=" + "http://w3id.org/bench#Q28_1Status");
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q28_2E_STATUS + "=" + "http://w3id.org/bench#Q28_2Status");
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q28_3E_STATUS + "=" + "http://w3id.org/bench#Q28_3Status");
@@ -161,6 +173,8 @@ public class GSBBenchmarkController extends AbstractBenchmarkController {
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_Q30_8E_STATUS + "=" + "http://w3id.org/bench#Q30_8Status");
 
         envVariablesEvaluationModule.add(GSBConstants.EVALUATION_NUMBER_OF_CORRECT_ANSWERS + "=" + "http://w3id.org/bench#totalCorrectAnswers");
+
+        envVariablesEvaluationModule.add(GSBConstants.EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS + "=" + "http://w3id.org/bench#percentageCorrectAnswers");
 
         // Wait for all components to finish their initialization
         waitForComponentsToInitialize();

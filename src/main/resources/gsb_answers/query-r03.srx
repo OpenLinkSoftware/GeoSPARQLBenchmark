@@ -39,8 +39,5 @@
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#L</uri></binding>
   </result>
-  <result>
-   <binding name="f"><uri>http://example.org/ApplicationSchema#M</uri></binding>
-  </result>
  </results>
 </sparql>

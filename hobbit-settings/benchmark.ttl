@@ -7,8 +7,8 @@
 @prefix qb: <http://purl.org/linked-data/cube#> .
 #-------------------------------------------------------------------------------------------------------------------------------
 bench:GSBBenchmark  a   hobbit:Benchmark;
-    rdfs:label  "GeoSPARQL Benchmark v3.0"@en;
-    rdfs:comment    "GeoSPARQL Benchmark for the HOBBIT Platform"@en;
+    rdfs:label  "GeoSPARQL Compliance Benchmark"@en;
+    rdfs:comment    "GeoSPARQL Compliance Benchmark for the HOBBIT Platform. The benchmark tests the system's compliance to the GeoSPARQL Specification and its 30 Requirements. It provides a 0 - 100% compliance result, along with details about the failing tests and sub-tests for each requirement."@en;
     hobbit:hasAPI   <https://project-hobbit.eu/challenges/MOCHA2017-API>;
     hobbit:imageName    "git.project-hobbit.eu:4567/mjovanovik/gsb-benchmarkcontroller";
     hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-datagenerator";
@@ -44,6 +44,12 @@ bench:GSBBenchmark  a   hobbit:Benchmark;
     hobbit:measuresKPI bench:Q07Status ;
     hobbit:measuresKPI bench:Q08_1Status ;
     hobbit:measuresKPI bench:Q08_2Status ;
+    hobbit:measuresKPI bench:Q09_1Status ;
+    hobbit:measuresKPI bench:Q09_2Status ;
+    hobbit:measuresKPI bench:Q09_3Status ;
+    hobbit:measuresKPI bench:Q09_4Status ;
+    hobbit:measuresKPI bench:Q09_5Status ;
+    hobbit:measuresKPI bench:Q09_6Status ;
     hobbit:measuresKPI bench:Q10Status ;
     hobbit:measuresKPI bench:Q11Status ;
     hobbit:measuresKPI bench:Q12Status ;
@@ -89,6 +95,12 @@ bench:GSBBenchmark  a   hobbit:Benchmark;
     hobbit:measuresKPI bench:Q24_6Status ;
     hobbit:measuresKPI bench:Q24_7Status ;
     hobbit:measuresKPI bench:Q24_8Status ;
+    hobbit:measuresKPI bench:Q25_1Status ;
+    hobbit:measuresKPI bench:Q25_2Status ;
+    hobbit:measuresKPI bench:Q25_3Status ;
+    hobbit:measuresKPI bench:Q26_1Status ;
+    hobbit:measuresKPI bench:Q26_2Status ;
+    hobbit:measuresKPI bench:Q27Status ;
     hobbit:measuresKPI bench:Q28_1Status ;
     hobbit:measuresKPI bench:Q28_2Status ;
     hobbit:measuresKPI bench:Q28_3Status ;
@@ -114,17 +126,11 @@ bench:GSBBenchmark  a   hobbit:Benchmark;
     hobbit:measuresKPI bench:Q30_7Status ;
     hobbit:measuresKPI bench:Q30_8Status ;
     hobbit:measuresKPI  bench:totalCorrectAnswers ;
-    hobbit:hasParameter bench:name .
+    hobbit:measuresKPI  bench:percentageCorrectAnswers .
 
 <https://project-hobbit.eu/challenges/MOCHA2017-API>    a   hobbit:API .
 
 # --- Parameters ---
-bench:name  a   hobbit:Parameter, hobbit:FeatureParameter, hobbit:ConfigurableParameter;
-                rdfs:label  "What's your name?"@en;
-                rdfs:comment    "What's your name?"@en;
-                rdfs:domain hobbit:Experiment, hobbit:Challenge;
-                rdfs:range  xsd:string;
-                hobbit:defaultValue "..."^^xsd:string .
 
 # --- KPIs ---
 bench:Q01Status a   hobbit:KPI;
@@ -275,6 +281,36 @@ bench:Q08_1Status a   hobbit:KPI;
 bench:Q08_2Status a   hobbit:KPI;
     rdfs:label  "Q08-2 Status"@en;
     rdfs:comment    "Correct answer for GeoSPARQL Q08-2"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_1Status a   hobbit:KPI;
+    rdfs:label  "Q09-1 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-1"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_2Status a   hobbit:KPI;
+    rdfs:label  "Q09-2 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-2"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_3Status a   hobbit:KPI;
+    rdfs:label  "Q09-3 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-3"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_4Status a   hobbit:KPI;
+    rdfs:label  "Q09-4 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-4"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_5Status a   hobbit:KPI;
+    rdfs:label  "Q09-5 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-5"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_6Status a   hobbit:KPI;
+    rdfs:label  "Q09-6 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q09-6"@en;
     rdfs:range  xsd:boolean .
 
 bench:Q10Status a   hobbit:KPI;
@@ -502,6 +538,36 @@ bench:Q24_8Status a   hobbit:KPI;
     rdfs:comment    "Correct answer for GeoSPARQL Q24-8"@en;
     rdfs:range  xsd:boolean .
 
+bench:Q25_1Status a   hobbit:KPI;
+    rdfs:label  "Q25-1 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q25-1"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q25_2Status a   hobbit:KPI;
+    rdfs:label  "Q25-2 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q25-2"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q25_3Status a   hobbit:KPI;
+    rdfs:label  "Q25-3 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q25-3"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q26_1Status a   hobbit:KPI;
+    rdfs:label  "Q26-1 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q26-1"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q26_2Status a   hobbit:KPI;
+    rdfs:label  "Q26-2 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q26-2"@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q27Status a   hobbit:KPI;
+    rdfs:label  "Q27 Status"@en;
+    rdfs:comment    "Correct answer for GeoSPARQL Q27"@en;
+    rdfs:range  xsd:boolean .
+
 bench:Q28_1Status a   hobbit:KPI;
     rdfs:label  "Q28-1 Status"@en;
     rdfs:comment    "Correct answer for GeoSPARQL Q28-1"@en;
@@ -626,3 +692,8 @@ bench:totalCorrectAnswers   a   hobbit:KPI;
     rdfs:label  "Correct Answers"@en;
     rdfs:comment    "Total number of correct answers to all GeoSPARQL queries"@en;
     rdfs:range  xsd:integer .
+
+bench:percentageCorrectAnswers   a   hobbit:KPI;
+    rdfs:label  "GeoSPARQL Compliance Percentage"@en;
+    rdfs:comment    "The percentage of compliance to the requirements of the GeoSPARQL standard"@en;
+    rdfs:range  xsd:double .

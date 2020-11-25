@@ -57,8 +57,8 @@ public class GSBDataGenerator extends AbstractDataGenerator {
     }
     
     private void getFileAndSendData() {
-        String datasetFile = "gsb_dataset/example.rdf";
-        String datasetURI = "http://bordercloud.github.io/TFT-tests/geosparql/illustration/example.rdf";
+        String datasetFile = "gsb_dataset/dataset.rdf";
+        String datasetURI = "http://openlinksw.com/geosparql/dataset.rdf";
         
         try {
             LOGGER.info("Getting file " + datasetFile);           

@@ -9,12 +9,12 @@
    <binding name="distance"><literal datatype="http://www.w3.org/2001/XMLSchema#double">0.0</literal></binding>
   </result>
   <result>
-   <binding name="f"><uri>http://example.org/ApplicationSchema#E</uri></binding>
-   <binding name="distance"><literal datatype="http://www.w3.org/2001/XMLSchema#double">10194.1</literal></binding>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#G</uri></binding>
+   <binding name="distance"><literal datatype="http://www.w3.org/2001/XMLSchema#double">9387.01</literal></binding>
   </result>
   <result>
-   <binding name="f"><uri>http://example.org/ApplicationSchema#D</uri></binding>
-   <binding name="distance"><literal datatype="http://www.w3.org/2001/XMLSchema#double">10935.8</literal></binding>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#E</uri></binding>
+   <binding name="distance"><literal datatype="http://www.w3.org/2001/XMLSchema#double">10194.1</literal></binding>
   </result>
  </results>
 </sparql>
