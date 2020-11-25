@@ -18,6 +18,8 @@ import org.hobbit.core.components.AbstractEvaluationModule;
 import org.hobbit.core.rabbit.RabbitMQUtils;
 import org.hobbit.geosparql.util.GSBConstants;
 import org.hobbit.vocab.HOBBIT;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -632,6 +634,21 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         }
         EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS));
     }
+    
+    
+    private String removeWKTWhiteSpaces(String jsonstr) {
+        JSONObject jsonobj=new JSONObject(jsonstr);
+        if(jsonobj.has("results") && jsonobj.getJSONObject("results").has("bindings")) {
+        	JSONArray bindings=jsonobj.getJSONObject("results").getJSONArray("bindings");
+        	for(int i=0;i<bindings.length();i++) {
+        		JSONObject curbinding=bindings.getJSONObject(i);
+        		if(curbinding.has("datatype") && curbinding.getString("datatype").equals("http://www.opengis.net/ont/geosparql#wktLiteral")) {
+        			curbinding.put("value", curbinding.getString("value").replace(" ", ""));
+        		}
+        	}
+        }
+        return jsonobj.toString();
+    }
 
     @Override
     protected void evaluateResponse(byte[] expectedData, byte[] receivedData, long taskSentTimestamp, long responseReceivedTimestamp) throws Exception {
@@ -643,6 +660,8 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         
         eStr = lines[1];
         
+        eStr=removeWKTWhiteSpaces(eStr);
+        rStr=removeWKTWhiteSpaces(rStr);
         correctAnswers[queryIndex] = (eStr.compareToIgnoreCase(rStr) == 0);
         
         if (!correctAnswers[queryIndex]) {
