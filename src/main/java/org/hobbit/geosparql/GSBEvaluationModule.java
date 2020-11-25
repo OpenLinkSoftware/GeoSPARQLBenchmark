@@ -641,9 +641,12 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         if(jsonobj.has("results") && jsonobj.getJSONObject("results").has("bindings")) {
         	JSONArray bindings=jsonobj.getJSONObject("results").getJSONArray("bindings");
         	for(int i=0;i<bindings.length();i++) {
-        		JSONObject curbinding=bindings.getJSONObject(i);
-        		if(curbinding.has("datatype") && curbinding.getString("datatype").equals("http://www.opengis.net/ont/geosparql#wktLiteral")) {
-        			curbinding.put("value", curbinding.getString("value").replace(" ", ""));
+        		JSONObject curbinds=bindings.getJSONObject(i);
+        		for(String key:curbinds.keySet()) {
+        			JSONObject curbinding=curbinds.getJSONObject(key);
+            		if(curbinding.has("datatype") && curbinding.getString("datatype").equals("http://www.opengis.net/ont/geosparql#wktLiteral")) {
+            			curbinding.put("value", curbinding.getString("value").replace(" ", ""));
+            		}
         		}
         	}
         }
