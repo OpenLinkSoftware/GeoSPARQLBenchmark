@@ -645,7 +645,7 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         		for(String key:curbinds.keySet()) {
         			JSONObject curbinding=curbinds.getJSONObject(key);
             		if(curbinding.has("datatype") && curbinding.getString("datatype").equals("http://www.opengis.net/ont/geosparql#wktLiteral")) {
-            			curbinding.put("value", curbinding.getString("value").replace(" ", ""));
+            			curbinding.put("value", curbinding.getString("value").replace(" ", "").replace("\n", "").trim().toLowerCase());
             		}
         		}
         	}
