@@ -82,6 +82,9 @@
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Polygon srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-83.6,34.1 -83.2,34.1 -83.2,34.5 -83.6,34.5 -83.6,34.1</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"geometry":{"type":"Polygon","coordinates":[[[-83.6,34.1],[-83.2,34.1],[-83.2,34.5],[-83.6,34.5],[-83.6,34.1]]]}]]>
+    </geo:asGeoJSON>
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#APointGeom">
@@ -334,6 +337,9 @@
             <gml:Polygon srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-83.5,34.2 -83.3,34.2 -83.3,34.4 -83.5,34.4 -83.5,34.2</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>
         ]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"geometry":{"type":"Polygon","coordinates":[[[-83.5,34.2],[-83.3,34.2],[-83.3,34.4],[-83.5,34.4],[-83.5,34.2]]]}]]>
+    </geo:asGeoJSON>
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#GPointGeom">
@@ -378,6 +384,10 @@
         <![CDATA[
         ]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[
+        ]]>
+    </geo:asGeoJSON>
 </sf:LineString>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#HPointGeom">
@@ -396,6 +406,10 @@
         <![CDATA[
         ]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[
+        ]]>
+    </geo:asGeoJSON>
 </sf:Point>
 
 <!-- I -->
@@ -427,6 +441,9 @@
             <LineString xmlns="https://www.opengis.net/gml"><posList></posList></LineString>
         ]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"geometry":null}]]>
+    </geo:asGeoJSON>
 </sf:LineString>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#IPointGeom">
@@ -447,6 +464,9 @@
             <Point xmlns="https://www.opengis.net/gml"><posList></posList></Point>
         ]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"geometry":null}]]>
+    </geo:asGeoJSON>
 </sf:Point>
 
 <!-- J -->
