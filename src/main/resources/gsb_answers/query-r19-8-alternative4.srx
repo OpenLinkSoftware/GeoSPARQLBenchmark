@@ -1,0 +1,10 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+ <head>
+  <variable name="envelope"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="envelope"><literal datatype="http://www.opengis.net/ont/geosparql#wktLiteral"><![CDATA[<http://www.opengis.net/def/crs/OGC/1.3/CRS84>ENVELOPE(-83.600009965897 34.099995934963,-83.199990081787 34.50000411272)]]</literal></binding>
+  </result>
+ </results>
+</sparql>
