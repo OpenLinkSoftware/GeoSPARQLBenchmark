@@ -1,0 +1,7 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT ?wkt (CONVEXHULL(?geom AS ?convexhull))
+WHERE {
+  ?geom geo:asWKT ?wkt .
+}
+GROUP BY ?wkt
