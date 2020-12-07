@@ -665,7 +665,12 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         
         eStr=removeWKTWhiteSpaces(eStr);
         rStr=removeWKTWhiteSpaces(rStr);
-        correctAnswers[queryIndex] = (eStr.compareToIgnoreCase(rStr) == 0);
+
+        String [] expectedAnswerAlternatives = eStr.split("\n======\n");
+        for (int i=0; i < expectedAnswerAlternatives.length; i++) {
+            correctAnswers[queryIndex] = (expectedAnswerAlternatives[i].compareToIgnoreCase(rStr) == 0);
+            if(correctAnswers[queryIndex]) break;
+        }
         
         if (!correctAnswers[queryIndex]) {
             LOGGER.info("Wrong answer on query " + queryIndexString);            

@@ -1,6 +1,7 @@
 package org.hobbit.geosparql;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -50,6 +51,17 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
                 ResultSetFormatter.outputAsJSON(outputStream, rsf.fromXML(inputStream));
                 answers[i] = outputStream.toString();
                 inputStream.close();
+                for (int k=1; ; k++) {
+                    File alternativeAnswerFile = new File("gsb_answers/" + GSBConstants.GSB_ANSWERS[i] + "-alternative-" + k);
+                    if (!alternativeAnswerFile.exists()) break;
+                    else {
+                        InputStream alternativeAnswerInputStream = new FileInputStream(alternativeAnswerFile);
+                        ByteArrayOutputStream alternativeAnswerOutputStream = new ByteArrayOutputStream();
+                        ResultSetFormatter.outputAsJSON(alternativeAnswerOutputStream, rsf.fromXML(alternativeAnswerInputStream));
+                        answers[i] = answers[i] + "\n======\n" + alternativeAnswerOutputStream.toString(); // add the detected alternative expected answer with a corresponding delimiter
+                        alternativeAnswerInputStream.close();
+                    }
+                }
             }
         } catch (IOException e) {
             // TODO Auto-generated catch block
