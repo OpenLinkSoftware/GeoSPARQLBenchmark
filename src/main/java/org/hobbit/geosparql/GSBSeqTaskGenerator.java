@@ -52,9 +52,12 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
                 answers[i] = outputStream.toString();
                 inputStream.close();
                 for (int k=1; ; k++) {
-                    File alternativeAnswerFile = new File("gsb_answers/" + GSBConstants.GSB_ANSWERS[i].substring(0, GSBConstants.GSB_ANSWERS[i].length()-5) + "-alternative-" + k + ".srx");
+                    String alternativeAnswerFileName = GSBConstants.GSB_ANSWERS[i].replace(".srx","") + "-alternative-" + k + ".srx";
+                    LOGGER.info("Looking for an alternative file called: " + alternativeAnswerFileName);
+                    File alternativeAnswerFile = new File("gsb_answers/" + alternativeAnswerFileName);
                     if (!alternativeAnswerFile.exists()) break;
                     else {
+                        LOGGER.info("Alternative file found: " + alternativeAnswerFileName);
                         InputStream alternativeAnswerInputStream = new FileInputStream(alternativeAnswerFile);
                         ByteArrayOutputStream alternativeAnswerOutputStream = new ByteArrayOutputStream();
                         ResultSetFormatter.outputAsJSON(alternativeAnswerOutputStream, rsf.fromXML(alternativeAnswerInputStream));
