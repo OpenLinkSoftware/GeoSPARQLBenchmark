@@ -566,4 +566,26 @@
     </geo:asWKT>
 </sf:LineString>
 
+<!-- N -->
+
+<my:PlaceOfInterest rdf:about="http://example.org/ApplicationSchema#N">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+    <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#NExactGeom"/>
+</my:PlaceOfInterest>
+
+<sf:LineString rdf:about="http://example.org/ApplicationSchema#NExactGeom">
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
+    <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
+    <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
+    <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
+    <geo:spatialDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:spatialDimension>
+    <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
+    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
+        <![CDATA[
+            <http://www.opengis.net/def/crs/EPSG/0/4326> LineString Z((-83.4 34.0 1, -83.3 34.3 2))
+        ]]>
+    </geo:asWKT>
+</sf:LineString>
+
 </rdf:RDF>

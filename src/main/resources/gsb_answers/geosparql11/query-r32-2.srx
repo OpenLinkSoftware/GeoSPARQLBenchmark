@@ -4,7 +4,7 @@
  </head>
  <results distinct="false" ordered="true">
   <result>
-   <binding name="maxX"><literal datatype="http://www.w3.org/2001/XMLSchema#integer">-83.2</literal></binding>
+   <binding name="maxX"><literal datatype="http://www.w3.org/2001/XMLSchema#double">-83.2</literal></binding>
   </result>
  </results>
 </sparql>
