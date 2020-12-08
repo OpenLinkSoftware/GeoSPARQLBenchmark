@@ -459,7 +459,7 @@
     <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#JExactGeom"/>
 </my:PlaceOfInterest>
 
-<sf:LineString rdf:about="http://example.org/ApplicationSchema#JExactGeom">
+<sf:Polygon rdf:about="http://example.org/ApplicationSchema#JExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
@@ -484,7 +484,7 @@
     <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#KExactGeom"/>
 </my:PlaceOfInterest>
 
-<sf:LineString rdf:about="http://example.org/ApplicationSchema#KExactGeom">
+<sf:Polygon rdf:about="http://example.org/ApplicationSchema#KExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
@@ -509,7 +509,7 @@
     <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#LExactGeom"/>
 </my:PlaceOfInterest>
 
-<sf:LineString rdf:about="http://example.org/ApplicationSchema#LExactGeom">
+<sf:Point rdf:about="http://example.org/ApplicationSchema#LExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
@@ -531,7 +531,7 @@
     <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#MExactGeom"/>
 </my:PlaceOfInterest>
 
-<sf:LineString rdf:about="http://example.org/ApplicationSchema#MExactGeom">
+<sf:Point rdf:about="http://example.org/ApplicationSchema#MExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
     <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
