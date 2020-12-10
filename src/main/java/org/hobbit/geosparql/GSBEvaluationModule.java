@@ -663,8 +663,11 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         String [] lines = eStr.split("\n\n");
         String queryIndexString = lines[0].trim().substring(3);
         int queryIndex = Integer.parseInt(queryIndexString) - 1;
-        
-        eStr = lines[1];
+
+        eStr = "";
+        for (int i=1; i < lines.length; i++) {
+            eStr += lines[i];
+        }
 
         LOGGER.info("Value of eStr after first split: " + eStr);
 
