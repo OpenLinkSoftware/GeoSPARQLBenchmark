@@ -667,14 +667,14 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         eStr = lines[1];
 
         LOGGER.info("Value of eStr after first split: " + eStr);
-        
-        eStr=removeWKTWhiteSpaces(eStr);
-        rStr=removeWKTWhiteSpaces(rStr);
+
+        rStr = removeWKTWhiteSpaces(rStr);
 
         LOGGER.info("Expected answer (and alternatives) for query " + queryIndexString + ": " + eStr);
 
         String [] expectedAnswerAlternatives = eStr.split("\n======\n");
         for (int i=0; i < expectedAnswerAlternatives.length; i++) {
+            expectedAnswerAlternatives[i] = removeWKTWhiteSpaces(expectedAnswerAlternatives[i]);
             correctAnswers[queryIndex] = (expectedAnswerAlternatives[i].compareToIgnoreCase(rStr) == 0);
             if(correctAnswers[queryIndex]) break;
         }
