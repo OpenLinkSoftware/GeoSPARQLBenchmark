@@ -63,6 +63,7 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
                         ResultSetFormatter.outputAsJSON(alternativeAnswerOutputStream, rsf.fromXML(alternativeAnswerInputStream));
                         answers[i] = answers[i] + "\n======\n" + alternativeAnswerOutputStream.toString(); // add the detected alternative expected answer with a corresponding delimiter
                         alternativeAnswerInputStream.close();
+                        LOGGER.info("answers[" + i + "]: " + answers[i]);
                     }
                 }
             }

@@ -657,11 +657,16 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
     protected void evaluateResponse(byte[] expectedData, byte[] receivedData, long taskSentTimestamp, long responseReceivedTimestamp) throws Exception {
         String eStr = RabbitMQUtils.readString(expectedData);
         String rStr = RabbitMQUtils.readString(receivedData);
+
+        LOGGER.info("Full value of eStr: " + eStr);
+
         String [] lines = eStr.split("\n\n");
         String queryIndexString = lines[0].trim().substring(3);
         int queryIndex = Integer.parseInt(queryIndexString) - 1;
         
         eStr = lines[1];
+
+        LOGGER.info("Value of eStr after first split: " + eStr);
         
         eStr=removeWKTWhiteSpaces(eStr);
         rStr=removeWKTWhiteSpaces(rStr);
