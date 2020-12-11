@@ -682,8 +682,13 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         for (int i=0; i < expectedAnswerAlternatives.length; i++) {
             expectedAnswerAlternatives[i] = removeWKTWhiteSpaces(expectedAnswerAlternatives[i]);
             correctAnswers[queryIndex] = mapper.readTree(rStr).equals(mapper.readTree(expectedAnswerAlternatives[i]));//(expectedAnswerAlternatives[i].compareToIgnoreCase(rStr) == 0);
-            if(correctAnswers[queryIndex]) break;
-            else LOGGER.info("Wrong partial answer on query " + queryIndexString + " (" + i + "): " + expectedAnswerAlternatives[i] + " vs. " + rStr);
+            if(correctAnswers[queryIndex]) {
+                LOGGER.info("Correct partial answer on query " + queryIndexString + " (" + i + "/" + (expectedAnswerAlternatives.length - 1) + "): " + expectedAnswerAlternatives[i] + " vs. " + rStr);
+                break;
+            }
+            else {
+                LOGGER.info("Wrong partial answer on query " + queryIndexString + " (" + i + "/" + (expectedAnswerAlternatives.length - 1) + "): " + expectedAnswerAlternatives[i] + " vs. " + rStr);
+            }
         }
         
         if (!correctAnswers[queryIndex]) {
