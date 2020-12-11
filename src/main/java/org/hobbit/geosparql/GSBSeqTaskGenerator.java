@@ -1,6 +1,7 @@
 package org.hobbit.geosparql;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -50,6 +51,21 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
                 ResultSetFormatter.outputAsJSON(outputStream, rsf.fromXML(inputStream));
                 answers[i] = outputStream.toString();
                 inputStream.close();
+                for (int k=1; ; k++) {
+                    String alternativeAnswerFileName = GSBConstants.GSB_ANSWERS[i].replace(".srx","") + "-alternative-" + k + ".srx";
+                    LOGGER.info("Looking for an alternative file called: " + alternativeAnswerFileName);
+                    File alternativeAnswerFile = new File("gsb_answers/" + alternativeAnswerFileName);
+                    if (!alternativeAnswerFile.exists()) break;
+                    else {
+                        LOGGER.info("Alternative file found: " + alternativeAnswerFileName);
+                        InputStream alternativeAnswerInputStream = new FileInputStream(alternativeAnswerFile);
+                        ByteArrayOutputStream alternativeAnswerOutputStream = new ByteArrayOutputStream();
+                        ResultSetFormatter.outputAsJSON(alternativeAnswerOutputStream, rsf.fromXML(alternativeAnswerInputStream));
+                        answers[i] = answers[i] + "\n======\n" + alternativeAnswerOutputStream.toString(); // add the detected alternative expected answer with a corresponding delimiter
+                        alternativeAnswerInputStream.close();
+                        LOGGER.info("answers[" + i + "]: " + answers[i]);
+                    }
+                }
             }
         } catch (IOException e) {
             // TODO Auto-generated catch block
