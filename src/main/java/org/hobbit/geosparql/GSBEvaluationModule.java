@@ -23,6 +23,8 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class GSBEvaluationModule extends AbstractEvaluationModule {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GSBEvaluationModule.class);
@@ -674,11 +676,12 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         rStr = removeWKTWhiteSpaces(rStr);
 
         LOGGER.info("Expected answer (and alternatives) for query " + queryIndexString + ": " + eStr);
+        ObjectMapper mapper = new ObjectMapper();
 
         String [] expectedAnswerAlternatives = eStr.split("\n======\n");
         for (int i=0; i < expectedAnswerAlternatives.length; i++) {
             expectedAnswerAlternatives[i] = removeWKTWhiteSpaces(expectedAnswerAlternatives[i]);
-            correctAnswers[queryIndex] = (expectedAnswerAlternatives[i].compareToIgnoreCase(rStr) == 0);
+            correctAnswers[queryIndex] = mapper.readTree(rStr).equals(mapper.readTree(expectedAnswerAlternatives[i]));//(expectedAnswerAlternatives[i].compareToIgnoreCase(rStr) == 0);
             if(correctAnswers[queryIndex]) break;
         }
         
