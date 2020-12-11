@@ -18,6 +18,8 @@ import org.hobbit.core.components.AbstractEvaluationModule;
 import org.hobbit.core.rabbit.RabbitMQUtils;
 import org.hobbit.geosparql.util.GSBConstants;
 import org.hobbit.vocab.HOBBIT;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -632,18 +634,53 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         }
         EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS = finalModel.createProperty(env.get(GSBConstants.EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS));
     }
+    
+    
+    private String removeWKTWhiteSpaces(String jsonstr) {
+        JSONObject jsonobj=new JSONObject(jsonstr);
+        if(jsonobj.has("results") && jsonobj.getJSONObject("results").has("bindings")) {
+        	JSONArray bindings=jsonobj.getJSONObject("results").getJSONArray("bindings");
+        	for(int i=0;i<bindings.length();i++) {
+        		JSONObject curbinds=bindings.getJSONObject(i);
+        		for(String key:curbinds.keySet()) {
+        			JSONObject curbinding=curbinds.getJSONObject(key);
+            		if(curbinding.has("datatype") && curbinding.getString("datatype").equals("http://www.opengis.net/ont/geosparql#wktLiteral")) {
+            			curbinding.put("value", curbinding.getString("value").replace(" ", "").replace("\n", "").trim().toLowerCase());
+            		}
+        		}
+        	}
+        }
+        return jsonobj.toString();
+    }
 
     @Override
     protected void evaluateResponse(byte[] expectedData, byte[] receivedData, long taskSentTimestamp, long responseReceivedTimestamp) throws Exception {
         String eStr = RabbitMQUtils.readString(expectedData);
         String rStr = RabbitMQUtils.readString(receivedData);
+
+        LOGGER.info("Full value of eStr: " + eStr);
+
         String [] lines = eStr.split("\n\n");
         String queryIndexString = lines[0].trim().substring(3);
         int queryIndex = Integer.parseInt(queryIndexString) - 1;
-        
-        eStr = lines[1];
-        
-        correctAnswers[queryIndex] = (eStr.compareToIgnoreCase(rStr) == 0);
+
+        eStr = "";
+        for (int i=1; i < lines.length; i++) {
+            eStr += lines[i];
+        }
+
+        LOGGER.info("Value of eStr after first split: " + eStr);
+
+        rStr = removeWKTWhiteSpaces(rStr);
+
+        LOGGER.info("Expected answer (and alternatives) for query " + queryIndexString + ": " + eStr);
+
+        String [] expectedAnswerAlternatives = eStr.split("\n======\n");
+        for (int i=0; i < expectedAnswerAlternatives.length; i++) {
+            expectedAnswerAlternatives[i] = removeWKTWhiteSpaces(expectedAnswerAlternatives[i]);
+            correctAnswers[queryIndex] = (expectedAnswerAlternatives[i].compareToIgnoreCase(rStr) == 0);
+            if(correctAnswers[queryIndex]) break;
+        }
         
         if (!correctAnswers[queryIndex]) {
             LOGGER.info("Wrong answer on query " + queryIndexString);            
