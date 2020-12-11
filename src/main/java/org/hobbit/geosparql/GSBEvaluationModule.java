@@ -678,7 +678,7 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         LOGGER.info("Expected answer (and alternatives) for query " + queryIndexString + ": " + eStr);
         ObjectMapper mapper = new ObjectMapper();
 
-        String [] expectedAnswerAlternatives = eStr.split("\n======\n");
+        String [] expectedAnswerAlternatives = eStr.split("======");
         for (int i=0; i < expectedAnswerAlternatives.length; i++) {
             expectedAnswerAlternatives[i] = removeWKTWhiteSpaces(expectedAnswerAlternatives[i]);
             correctAnswers[queryIndex] = mapper.readTree(rStr).equals(mapper.readTree(expectedAnswerAlternatives[i]));//(expectedAnswerAlternatives[i].compareToIgnoreCase(rStr) == 0);
