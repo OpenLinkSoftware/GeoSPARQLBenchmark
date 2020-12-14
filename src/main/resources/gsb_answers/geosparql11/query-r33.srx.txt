@@ -1,0 +1,10 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+ <head>
+  <variable name="dggs"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="dggs"><literal datatype="http://www.opengis.net/ont/geosparql#wktDGGSLiteral"><![CDATA[<https://w3id.org/dggs/tb16pix> Point(P67303512645)]]></literal></binding>
+  </result>
+ </results>
+</sparql>

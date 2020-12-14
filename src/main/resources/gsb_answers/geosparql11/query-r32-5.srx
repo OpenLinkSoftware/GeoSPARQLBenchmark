@@ -4,7 +4,7 @@
  </head>
  <results distinct="false" ordered="true">
   <result>
-   <binding name="minZ"><literal datatype="http://www.w3.org/2001/XMLSchema#integer">1</literal></binding>
+   <binding name="minZ"><literal datatype="http://www.w3.org/2001/XMLSchema#double">1</literal></binding>
   </result>
  </results>
 </sparql>
