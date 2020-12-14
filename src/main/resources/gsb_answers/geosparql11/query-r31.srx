@@ -1,10 +1,10 @@
 <sparql xmlns="http://www.w3.org/2005/sparql-results#">
  <head>
-  <variable name="wkt"/>
+  <variable name="geojson"/>
  </head>
  <results distinct="false" ordered="true">
   <result>
-   <binding name="wkt"><literal datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral"><![CDATA[{"geometry":{"type":"Polygon","coordinates":[[[-83.6,34.1],[-83.2,34.1],[-83.2,34.5],[-83.6,34.5],[-83.6,34.1]]]}]]></literal></binding>
+   <binding name="geojson"><literal datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral"><![CDATA[{"geometry":{"type":"Polygon","coordinates":[[[-83.6,34.1],[-83.2,34.1],[-83.2,34.5],[-83.6,34.5],[-83.6,34.1]]]}]]></literal></binding>
   </result>
  </results>
 </sparql>
