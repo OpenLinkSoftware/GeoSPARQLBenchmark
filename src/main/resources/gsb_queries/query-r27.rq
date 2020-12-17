@@ -1,5 +1,6 @@
 # INFERENCE
 PREFIX gml: <http://www.opengis.net/ont/gml#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 SELECT DISTINCT ?f
 WHERE {
   ?f rdf:type gml:Surface
