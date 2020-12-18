@@ -1,0 +1,10 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+ <head>
+  <variable name="srid"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="srid"><literal q:qname="xsd:anyURI" datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.opengis.net/def/crs/OGC/1.3/CRS84</literal></binding>
+  </result>
+ </results>
+</sparql>
