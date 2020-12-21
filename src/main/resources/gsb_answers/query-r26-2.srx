@@ -12,17 +12,5 @@
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#IExactGeom</uri></binding>
   </result>
-  <result>
-   <binding name="f"><uri>http://example.org/ApplicationSchema#JExactGeom</uri></binding>
-  </result>
-  <result>
-   <binding name="f"><uri>http://example.org/ApplicationSchema#KExactGeom</uri></binding>
-  </result>
-  <result>
-   <binding name="f"><uri>http://example.org/ApplicationSchema#LExactGeom</uri></binding>
-  </result>
-  <result>
-   <binding name="f"><uri>http://example.org/ApplicationSchema#MExactGeom</uri></binding>
-  </result>
  </results>
 </sparql>
