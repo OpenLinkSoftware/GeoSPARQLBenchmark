@@ -80,7 +80,7 @@
         ]]>
     </geo:asWKT>
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
-        <![CDATA[<gml:Polygon srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-83.6,34.1 -83.2,34.1 -83.2,34.5 -83.6,34.5 -83.6,34.1</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>]]>
+        <![CDATA[<gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-83.6,34.1 -83.2,34.1 -83.2,34.5 -83.6,34.5 -83.6,34.1</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>]]>
     </geo:asGML>
 </sf:Polygon>
 
@@ -331,7 +331,7 @@
     </geo:asWKT>
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[
-            <gml:Polygon srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-83.5,34.2 -83.3,34.2 -83.3,34.4 -83.5,34.4 -83.5,34.2</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>
+            <gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-83.5,34.2 -83.3,34.2 -83.3,34.4 -83.5,34.4 -83.5,34.2</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>
         ]]>
     </geo:asGML>
 </sf:Polygon>
