@@ -370,14 +370,8 @@
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
     <geo:spatialDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:spatialDimension>
     <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
-    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
-        <![CDATA[
-        ]]>
-    </geo:asWKT>
-    <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
-        <![CDATA[
-        ]]>
-    </geo:asGML>
+    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral"></geo:asWKT>
+    <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral"></geo:asGML>
 </sf:LineString>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#HPointGeom">
@@ -388,14 +382,8 @@
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
     <geo:spatialDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:spatialDimension>
     <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
-    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
-        <![CDATA[
-        ]]>
-    </geo:asWKT>
-    <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
-        <![CDATA[
-        ]]>
-    </geo:asGML>
+    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral"></geo:asWKT>
+    <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral"></geo:asGML>
 </sf:Point>
 
 <!-- I -->
