@@ -405,11 +405,7 @@
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
     <geo:spatialDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:spatialDimension>
     <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
-    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
-        <![CDATA[
-            LineString EMPTY
-        ]]>
-    </geo:asWKT>
+    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">LINESTRING EMPTY</geo:asWKT>
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[
             <LineString xmlns="https://www.opengis.net/gml"><posList></posList></LineString>
@@ -425,11 +421,7 @@
     <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
     <geo:spatialDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:spatialDimension>
     <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
-    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
-        <![CDATA[
-            POINT EMPTY
-        ]]>
-    </geo:asWKT>
+    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT EMPTY</geo:asWKT>
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[
             <Point xmlns="https://www.opengis.net/gml"><posList></posList></Point>
