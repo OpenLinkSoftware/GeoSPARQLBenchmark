@@ -6,8 +6,14 @@
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#F</uri></binding>
   </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#FExactGeom</uri></binding>
+  </result>
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#G</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#GExactGeom</uri></binding>
   </result>
  </results>
 </sparql>
