@@ -15,5 +15,14 @@
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#F</uri></binding>
   </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#J</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#K</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#L</uri></binding>
+  </result>
  </results>
 </sparql>
