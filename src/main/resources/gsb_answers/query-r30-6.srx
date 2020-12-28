@@ -3,6 +3,12 @@
   <variable name="f"/>
  </head>
  <results distinct="false" ordered="true">
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#A</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#AExactGeom</uri></binding>
+  </result>
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#B</uri></binding>
   </result>
