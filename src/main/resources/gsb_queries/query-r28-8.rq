@@ -4,3 +4,4 @@ SELECT ?f
 WHERE {
   my:D geo:sfOverlaps ?f
 }
+ORDER BY ?f

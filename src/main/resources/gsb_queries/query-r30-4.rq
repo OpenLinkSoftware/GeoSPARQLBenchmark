@@ -4,3 +4,4 @@ SELECT ?f
 WHERE {
   my:D geo:rcc8po ?f
 }
+ORDER BY ?f

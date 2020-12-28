@@ -3,6 +3,5 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 SELECT ?f
 WHERE {
   ?f geo:rcc8tpp my:A
-  FILTER (?f != my:A)
 }
 ORDER BY ?f
