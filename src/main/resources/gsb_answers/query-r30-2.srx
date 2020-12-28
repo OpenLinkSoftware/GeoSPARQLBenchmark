@@ -7,13 +7,25 @@
    <binding name="f"><uri>http://example.org/ApplicationSchema#C</uri></binding>
   </result>
   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#CExactGeom</uri></binding>
+  </result>
+  <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#D</uri></binding>
   </result>
-  <result>
-   <binding name="f"><uri>http://example.org/ApplicationSchema#E</uri></binding>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#DExactGeom</uri></binding>
   </result>
   <result>
-   <binding name="f"><uri>http://example.org/ApplicationSchema#F</uri></binding>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#J</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#JExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#K</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#KExactGeom</uri></binding>
   </result>
  </results>
 </sparql>
