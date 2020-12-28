@@ -6,14 +6,71 @@
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#C</uri></binding>
   </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#CExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#CPointGeom</uri></binding>
+  </result>
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#D</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#DExactGeom</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#DPointGeom</uri></binding>
   </result>
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#E</uri></binding>
   </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#EExactGeom</uri></binding>
+  </result>
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#F</uri></binding>
   </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#FExactGeom</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#H</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#HExactGeom</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#HPointGeom</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#I</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#IExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#IPointGeom</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#J</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#JExactGeom</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#K</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#KExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#L</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#LExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#MExactGeom</uri></binding>
+  </result>  
  </results>
 </sparql>

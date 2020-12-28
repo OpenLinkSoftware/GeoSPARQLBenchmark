@@ -2,7 +2,7 @@
  <head>
   <variable name="f"/>
  </head>
- <results distinct="false" ordered="true">
+ <results distinct="false" ordered="false">
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#C</uri></binding>
   </result>
