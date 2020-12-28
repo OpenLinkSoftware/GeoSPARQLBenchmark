@@ -1,7 +1,0 @@
-PREFIX my: <http://example.org/ApplicationSchema#>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-SELECT ?wkt (CENTROID(?geom AS ?centroid))
-WHERE {
-  ?geom geo:asWKT ?wkt .
-}
-GROUP BY ?wkt

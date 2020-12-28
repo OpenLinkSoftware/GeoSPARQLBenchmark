@@ -1,7 +1,0 @@
-PREFIX my: <http://example.org/ApplicationSchema#>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-SELECT ?minZ
-WHERE {
-  my:NExactGeom geo:asWKT ?wkt .
-  BIND(geof:minZ(?wkt) AS ?minZ)
-}

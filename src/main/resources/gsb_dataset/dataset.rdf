@@ -82,9 +82,6 @@
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-83.6,34.1 -83.2,34.1 -83.2,34.5 -83.6,34.5 -83.6,34.1</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>]]>
     </geo:asGML>
-    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
-        <![CDATA[{"geometry":{"type":"Polygon","coordinates":[[[-83.6,34.1],[-83.2,34.1],[-83.2,34.5],[-83.6,34.5],[-83.6,34.1]]]}]]>
-    </geo:asGeoJSON>
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#APointGeom">
@@ -337,9 +334,6 @@
             <gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-83.5,34.2 -83.3,34.2 -83.3,34.4 -83.5,34.4 -83.5,34.2</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>
         ]]>
     </geo:asGML>
-    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
-        <![CDATA[{"geometry":{"type":"Polygon","coordinates":[[[-83.5,34.2],[-83.3,34.2],[-83.3,34.4],[-83.5,34.4],[-83.5,34.2]]]}]]>
-    </geo:asGeoJSON>
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#GPointGeom">
@@ -378,7 +372,6 @@
     <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral"></geo:asWKT>
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral"></geo:asGML>
-    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral"></geo:asGeoJSON>
 </sf:LineString>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#HPointGeom">
@@ -391,7 +384,6 @@
     <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral"></geo:asWKT>
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral"></geo:asGML>
-    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral"></geo:asGeoJSON>
 </sf:Point>
 
 <!-- I -->
@@ -419,9 +411,6 @@
             <LineString xmlns="https://www.opengis.net/gml"><posList></posList></LineString>
         ]]>
     </geo:asGML>
-    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
-        <![CDATA[{"geometry":null}]]>
-    </geo:asGeoJSON>
 </sf:LineString>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#IPointGeom">
@@ -438,9 +427,6 @@
             <Point xmlns="https://www.opengis.net/gml"><posList></posList></Point>
         ]]>
     </geo:asGML>
-    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
-        <![CDATA[{"geometry":null}]]>
-    </geo:asGeoJSON>
 </sf:Point>
 
 <!-- J -->
@@ -536,50 +522,6 @@
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
         <![CDATA[
             <http://www.opengis.net/def/crs/EPSG/0/4326> Point(31.95 -88.38)
-        ]]>
-    </geo:asWKT>
-</sf:Point>
-
-<!-- N -->
-
-<my:PlaceOfInterest rdf:about="http://example.org/ApplicationSchema#N">
-    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
-    <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#NExactGeom"/>
-</my:PlaceOfInterest>
-
-<sf:LineString rdf:about="http://example.org/ApplicationSchema#NExactGeom">
-    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
-    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#LineString"/>
-    <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
-    <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
-    <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
-    <geo:spatialDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:spatialDimension>
-    <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
-    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
-        <![CDATA[
-            <http://www.opengis.net/def/crs/EPSG/0/4326> LineString Z((-83.4 34.0 1, -83.3 34.3 2))
-        ]]>
-    </geo:asWKT>
-</sf:LineString>
-
-<!-- O -->
-
-<my:PlaceOfInterest rdf:about="http://example.org/ApplicationSchema#O">
-    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
-    <my:hasPointGeometry rdf:resource="http://example.org/ApplicationSchema#OPointGeom"/>
-</my:PlaceOfInterest>
-
-<sf:Point rdf:about="http://example.org/ApplicationSchema#OPointGeom">
-    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
-    <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Point"/>
-    <geo:isEmpty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</geo:isEmpty>
-    <geo:isSimple rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</geo:isSimple>
-    <geo:dimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:dimension>
-    <geo:spatialDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:spatialDimension>
-    <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
-    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktDGGSLiteral">
-        <![CDATA[
-            "<https://w3id.org/dggs/tb16pix> Point(P67303512645)"^^<http://www.opengis.net/ont/geosparql#wktDGGSLiteral>
         ]]>
     </geo:asWKT>
 </sf:Point>
