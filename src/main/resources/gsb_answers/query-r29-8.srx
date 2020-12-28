@@ -2,7 +2,16 @@
  <head>
   <variable name="f"/>
  </head>
- <results distinct="false" ordered="true">
+  <results distinct="false" ordered="true">
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#APointGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#B</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#BPointGeom</uri></binding>
+  </result>
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#F</uri></binding>
   </result>
@@ -14,6 +23,9 @@
   </result>
     <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#GExactGeom</uri></binding>
+  </result>
+      <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#GPointGeom</uri></binding>
   </result>
  </results>
 </sparql>
