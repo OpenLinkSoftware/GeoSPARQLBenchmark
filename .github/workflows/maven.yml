@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      with:
+       ref: develop/2
     - name: Create Ontology Documentation 🔧
       run: |
          sudo apt-get install python3 python3-setuptools -y
