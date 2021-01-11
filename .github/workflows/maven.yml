@@ -20,7 +20,7 @@ jobs:
          sudo pip3 install wheel pylode
          mkdir docs
          cd docs
-         pylode -i src/main/resources/gsb_dataset/dataset.rdf -o index
+         pylode -i ../src/main/resources/gsb_dataset/dataset.rdf -o index
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
