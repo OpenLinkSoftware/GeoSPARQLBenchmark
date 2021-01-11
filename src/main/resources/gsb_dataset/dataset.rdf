@@ -7,7 +7,9 @@
     xmlns:my="http://example.org/ApplicationSchema#">
 
 <!-- Integration with GeoSPARQL classes and properties -->
-
+<owl:Ontology rdf:about="http://example.org/ApplicationSchema#GeoSPARQLBenchmarkOntology">
+</owl:Ontology>
+    
 <rdfs:Class rdf:about="http://www.opengis.net/ont/sf#Polygon">
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Surface"/>
 </rdfs:Class>
