@@ -5,7 +5,8 @@
     xmlns:sf="http://www.opengis.net/ont/sf#"
     xmlns:geo="http://www.opengis.net/ont/geosparql#"
     xmlns:my="http://example.org/ApplicationSchema#">
-    
+
+<!-- Integration with GeoSPARQL classes and properties -->
 <rdfs:Class rdf:about="http://www.opengis.net/ont/sf#Polygon">
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Surface"/>
 </rdfs:Class>
