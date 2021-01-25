@@ -1,0 +1,12 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (xsd:boolean(?ehMeet) as ?meet)
+WHERE {
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom geo:asGML ?aGML .
+  my:C geo:hasDefaultGeometry ?cGeom .
+  ?cGeom geo:asGML ?cGML .
+  BIND (geof:ehMeet(?aGML, ?cGML) as ?ehMeet)
+}
