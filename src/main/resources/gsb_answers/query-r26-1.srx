@@ -18,5 +18,11 @@
   <result>
    <binding name="f"><uri>http://example.org/ApplicationSchema#GExactGeom</uri></binding>
   </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#JExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#KExactGeom</uri></binding>
+  </result>
  </results>
 </sparql>

@@ -4,3 +4,4 @@ SELECT ?f
 WHERE {
   my:G geo:ehEquals ?f
 }
+ORDER BY ?f

@@ -4,3 +4,4 @@ SELECT ?f
 WHERE {
   my:D geo:ehOverlap ?f
 }
+ORDER BY ?f
