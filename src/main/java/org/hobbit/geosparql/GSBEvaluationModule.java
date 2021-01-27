@@ -32,6 +32,7 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -1140,16 +1141,21 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         			JSONObject curbinding=curbinds.getJSONObject(key);
             		if(curbinding.has("datatype") && TEXTBASEDLiterals.contains(curbinding.getString("datatype"))) {
             			curbinding.put("value", curbinding.getString("value").replace(" ", "").replace("\n", "").trim().toLowerCase());
-            		}else if(curbinding.has("datatype") && XMLBASEDLiterals.contains(curbinding.getString("datatype"))){
-            	        ObjectMapper mapper = new ObjectMapper();
-            			mapper.configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, true);
-            			curbinding.put("value", curbinding.getString("value").replace(" ", "").replace("\n", "").trim().toLowerCase());
-            		}else if(curbinding.has("datatype") && JSONBASEDLiterals.contains(curbinding.getString("datatype"))) {
+            		}else if(curbinding.has("datatype") && JSONBASEDLiterals.contains(curbinding.getString("datatype"))){
+            			try {
+                	        ObjectMapper mapper = new ObjectMapper();
+                			mapper.configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, true);
+							curbinding.put("value", mapper.readTree(curbinding.getString("value")).asText());
+						} catch (JSONException | JsonProcessingException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+            		}else if(curbinding.has("datatype") && XMLBASEDLiterals.contains(curbinding.getString("datatype"))) {
             			Canonicalizer canon;
 						try {
 							canon = Canonicalizer.getInstance(Canonicalizer.ALGO_ID_C14N_OMIT_COMMENTS);
 	            			ByteArrayOutputStream out=new ByteArrayOutputStream();
-	            			canon.canonicalize(curbinding.getString("datatype").getBytes(),out,true);
+	            			canon.canonicalize(curbinding.getString("value").getBytes(),out,true);
 	            			String canonXmlString = new String(out.toByteArray());
 	            			curbinding.put("value", canonXmlString);
 						} catch (InvalidCanonicalizerException | XMLParserException | CanonicalizationException | JSONException | IOException e) {
