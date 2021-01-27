@@ -1,9 +1,13 @@
 package org.hobbit.geosparql;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.jena.datatypes.xsd.XSDDatatype;
@@ -13,16 +17,22 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.vocabulary.RDF;
+import org.apache.xml.security.c14n.CanonicalizationException;
+import org.apache.xml.security.c14n.Canonicalizer;
+import org.apache.xml.security.c14n.InvalidCanonicalizerException;
+import org.apache.xml.security.parser.XMLParserException;
 import org.hobbit.core.Constants;
 import org.hobbit.core.components.AbstractEvaluationModule;
 import org.hobbit.core.rabbit.RabbitMQUtils;
 import org.hobbit.geosparql.util.GSBConstants;
 import org.hobbit.vocab.HOBBIT;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class GSBEvaluationModule extends AbstractEvaluationModule {
@@ -1113,7 +1123,14 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
     }
     
     
+    final Set<String> XMLBASEDLiterals=new HashSet<String>(Arrays.asList(new String[] {"http://www.opengis.net/ont/geosparql#gmlLiteral","http://www.opengis.net/ont/geosparql#kmlLiteral"}));
+    
+    final Set<String> TEXTBASEDLiterals=new HashSet<String>(Arrays.asList(new String[] {"http://www.opengis.net/ont/geosparql#wktLiteral"}));
+    
+    final Set<String> JSONBASEDLiterals=new HashSet<String>(Arrays.asList(new String[] {"http://www.opengis.net/ont/geosparql#geoJSONLiteral"}));
+    
     private String removeWKTWhiteSpaces(String jsonstr) {
+    	org.apache.xml.security.Init.init(); 
         JSONObject jsonobj=new JSONObject(jsonstr);
         if(jsonobj.has("results") && jsonobj.getJSONObject("results").has("bindings")) {
         	JSONArray bindings=jsonobj.getJSONObject("results").getJSONArray("bindings");
@@ -1121,8 +1138,24 @@ public class GSBEvaluationModule extends AbstractEvaluationModule {
         		JSONObject curbinds=bindings.getJSONObject(i);
         		for(String key:curbinds.keySet()) {
         			JSONObject curbinding=curbinds.getJSONObject(key);
-            		if(curbinding.has("datatype") && curbinding.getString("datatype").equals("http://www.opengis.net/ont/geosparql#wktLiteral")) {
+            		if(curbinding.has("datatype") && TEXTBASEDLiterals.contains(curbinding.getString("datatype"))) {
             			curbinding.put("value", curbinding.getString("value").replace(" ", "").replace("\n", "").trim().toLowerCase());
+            		}else if(curbinding.has("datatype") && XMLBASEDLiterals.contains(curbinding.getString("datatype"))){
+            	        ObjectMapper mapper = new ObjectMapper();
+            			mapper.configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, true);
+            			curbinding.put("value", curbinding.getString("value").replace(" ", "").replace("\n", "").trim().toLowerCase());
+            		}else if(curbinding.has("datatype") && JSONBASEDLiterals.contains(curbinding.getString("datatype"))) {
+            			Canonicalizer canon;
+						try {
+							canon = Canonicalizer.getInstance(Canonicalizer.ALGO_ID_C14N_OMIT_COMMENTS);
+	            			ByteArrayOutputStream out=new ByteArrayOutputStream();
+	            			canon.canonicalize(curbinding.getString("datatype").getBytes(),out,true);
+	            			String canonXmlString = new String(out.toByteArray());
+	            			curbinding.put("value", canonXmlString);
+						} catch (InvalidCanonicalizerException | XMLParserException | CanonicalizationException | JSONException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
             		}
         		}
         	}
