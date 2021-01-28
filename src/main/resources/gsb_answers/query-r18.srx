@@ -5,8 +5,7 @@
  <results distinct="false" ordered="true">
   <result>
    <binding name="gml"><literal datatype="http://www.opengis.net/ont/geosparql#gmlLiteral"><![CDATA[
-        <gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-83.6,34.1 -83.2,34.1 -83.2,34.5 -83.6,34.5 -83.6,34.1</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>
-    ]]></literal></binding>
+        <gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:exterior><gml:LinearRing><gml:posList>-83.6 34.1 -83.2 34.1 -83.2 34.5 -83.6 34.5 -83.6 34.1</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>    ]]></literal></binding>
   </result>
  </results>
 </sparql>
