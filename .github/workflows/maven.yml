@@ -17,7 +17,8 @@ jobs:
          sudo apt-get install python3-dev python3-pip python3-venv python3-wheel -y
          sudo pip3 install wheel pylode rdflib sparqlwrapper
          mkdir docs
-         python3 system/validatexml.py
+         cd system
+         python3 validatexml.py
          cd docs
          #pylode -i ../src/main/resources/gsb_dataset/dataset.rdf -o index -p vocpub
     - name: Deploy 🚀
