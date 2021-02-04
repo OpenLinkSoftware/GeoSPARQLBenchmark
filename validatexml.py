@@ -4,6 +4,7 @@ import glob
 import os, os.path, sys
 import pdb
 import fileinput
+import rdflib
 from rdflib.plugins.sparql import prepareQuery
 
 path = os.getcwd()
