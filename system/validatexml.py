@@ -9,7 +9,7 @@ from rdflib.plugins.sparql import prepareQuery
 path = os.getcwd()
 
 f = open("validationresult.txt", "w")
-for filenames in glob.glob(os.path.join("src/main/resources/gsb_queries/", '*.rq')):
+for filenames in glob.glob(os.path.join("../src/main/resources/gsb_queries/", '*.rq')):
     try:
         with open(filenames, 'r') as file:
             query = file.read().replace('\n', '')
@@ -19,7 +19,7 @@ for filenames in glob.glob(os.path.join("src/main/resources/gsb_queries/", '*.rq
         print ("%s is NOT well-formed!\nError: %s" % (filenames,e))
         f.write(str(filenames)+" is not well-formed:\nError: "+str(e)+"\n")
 
-for filenames in glob.glob(os.path.join("src/main/resources/gsb_answers/", '*.srx')):
+for filenames in glob.glob(os.path.join("../src/main/resources/gsb_answers/", '*.srx')):
     try:
         parser = make_parser()
         parser.setContentHandler(ContentHandler())
