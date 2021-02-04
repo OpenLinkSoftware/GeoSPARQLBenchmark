@@ -31,4 +31,4 @@ for filenames in glob.glob(os.path.join("../src/main/resources/gsb_answers/", '*
         print ("%s is NOT well-formed!\nError: %s" % (filenames,e))
         f.write(str(filenames)+" is not well-formed:\nError: "+str(e)+"\n")		
 f.close()
-print("Finshed")
+print("Finished")
