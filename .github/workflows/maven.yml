@@ -1,4 +1,4 @@
-name: Ontology Documentation CI
+name: Validate Query and Answers
 
 on: [push]
 
