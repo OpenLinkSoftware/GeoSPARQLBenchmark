@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v1
       with:
        ref: develop/2
-    - name: Create Ontology Documentation 🔧
+    - name: Validate SPARQL Queries and Answers
       run: |
          sudo apt-get install python3 python3-setuptools -y
          sudo apt-get install gcc libpq-dev -y
