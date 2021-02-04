@@ -18,9 +18,3 @@ jobs:
          sudo pip3 install wheel pylode rdflib sparqlwrapper
          cd system
          python3 validatexml.py
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         BRANCH: gh-pages
-         FOLDER: docs/
