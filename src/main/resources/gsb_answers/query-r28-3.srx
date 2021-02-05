@@ -1,0 +1,43 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+ <head>
+  <variable name="f"/>
+ </head>
+ <results distinct="false" ordered="true">
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#B</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#BExactGeom</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#C</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#CExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#D</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#DExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#E</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#EExactGeom</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#F</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#FExactGeom</uri></binding>
+  </result>
+    <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#G</uri></binding>
+  </result>
+   <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#GExactGeom</uri></binding>
+  </result>
+ </results>
+</sparql>

@@ -1,0 +1,7 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+SELECT ?p ?o
+WHERE {
+  my:A ?p ?o
+}
+ORDER BY ?p ?o
+LIMIT 1

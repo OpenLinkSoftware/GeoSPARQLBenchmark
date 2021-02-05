@@ -1,0 +1,10 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+ <head>
+  <variable name="hasSerialization"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="hasSerialization"><literal datatype="http://www.opengis.net/ont/geosparql#wktLiteral"><![CDATA[<http://www.opengis.net/def/crs/OGC/1.3/CRS84>POLYGON((-83.6 34.1,-83.2 34.1,-83.2 34.5,-83.6 34.5,-83.6 34.1))]]></literal></binding>
+  </result>
+ </results>
+</sparql>

@@ -15,6 +15,8 @@ do
 done
 wait
 
+echo "rdfs_rule_set('myset', '"$GRAPHURI"');" | isql $ADDRESS:$PORT
+
 echo "checkpoint;" | isql $ADDRESS:$PORT
 
 #echo "select count(*) from RDF_QUAD;" | isql $ADDRESS:$PORT
