@@ -14,3 +14,5 @@ You can find a set of results from the [latest experiments on the hosted instanc
 
 If you want your RDF triplestore tested, you can [add it as a system to the HOBBIT Platform](https://hobbit-project.github.io/system_integration.html),
 and then [run an experiment](https://hobbit-project.github.io/benchmarking.html) using the [hosted instance of the HOBBIT Platform](https://hobbit-project.github.io/master.html).
+
+The benchmark has been developed for [OpenLink Software](https://www.openlinksw.com), as part of the [HOBBIT](https://project-hobbit.eu) and [SAGE](https://sage.cs.uni-paderborn.de/sage/) research projects.
