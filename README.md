@@ -9,10 +9,18 @@ As a result, the benchmark provides two metrics:
  * **Correct answers**: The number of correct answers out of all GeoSPARQL queries, i.e. tests.
  * **GeoSPARQL compliance percentage**: The percentage of compliance with the requirements of the GeoSPARQL standard.
 
+## Results
+
 You can find a set of results from the [latest experiments on the hosted instance of the HOBBIT Platform](https://master.project-hobbit.eu/experiments/1612476122572,1612477003063,1612476116049,1612477500164,1612661614510,1612637531673,1612828110551,1612477849872)
 (log in as Guest). [last update: 09.02.2021]
 
 If you want your RDF triplestore tested, you can [add it as a system to the HOBBIT Platform](https://hobbit-project.github.io/system_integration.html),
 and then [run an experiment](https://hobbit-project.github.io/benchmarking.html) using the [hosted instance of the HOBBIT Platform](https://hobbit-project.github.io/master.html).
+
+## Publications
+
+(preprint) Milos Jovanovik, Timo Homburg, Mirko Spasić. [**A GeoSPARQL Compliance Benchmark**](https://arxiv.org/abs/2102.06139). arXiv:2102.06139.
+
+## Acknowledgement
 
 The benchmark has been developed as part of the [HOBBIT](https://project-hobbit.eu) and [SAGE](https://sage.cs.uni-paderborn.de/sage/) research projects.
