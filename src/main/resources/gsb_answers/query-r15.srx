@@ -1,0 +1,61 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+ <head>
+  <variable name="geom"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#AExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#APointGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#BExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#BPointGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#CExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#CPointGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#DExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#DPointGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#EExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#FExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#GExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#GPointGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#IExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#IPointGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#JExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#KExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#LExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="geom"><uri>http://example.org/ApplicationSchema#MExactGeom</uri></binding>
+  </result>
+ </results>
+</sparql>

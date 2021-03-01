@@ -57,8 +57,8 @@ public class GSBDataGenerator extends AbstractDataGenerator {
     }
     
     private void getFileAndSendData() {
-        String datasetFile = "gsb_dataset/example.rdf";
-        String datasetURI = "http://bordercloud.github.io/TFT-tests/geosparql/illustration/example.rdf";
+        String datasetFile = "gsb_dataset/dataset.rdf";
+        String datasetURI = "http://openlinksw.com/geosparql/dataset.rdf";
         
         try {
             LOGGER.info("Getting file " + datasetFile);           
@@ -91,7 +91,7 @@ public class GSBDataGenerator extends AbstractDataGenerator {
                 for (int i=0; i < GSBConstants.GSB_QUERIES.length; i++) {
                     InputStream inputStream = new FileInputStream("gsb_queries/" + GSBConstants.GSB_QUERIES[i]);
                     String fileContent = IOUtils.toString(inputStream);
-                    fileContent = "#Q0" + (i+1) + "\n" + fileContent; // add a comment line at the beginning of the query, to denote the query number (Q01, Q02, ...)
+                    fileContent = "#Q-" + (i+1) + "\n" + fileContent; // add a comment line at the beginning of the query, to denote the query number (#Q-1, #Q-2, ...)
                     byte[] bytesArray = null;
                     bytesArray = RabbitMQUtils.writeString(fileContent);
                     sendDataToTaskGenerator(bytesArray);

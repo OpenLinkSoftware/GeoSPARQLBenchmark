@@ -6,65 +6,1264 @@
 @prefix bench:  <http://w3id.org/bench#> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 #-------------------------------------------------------------------------------------------------------------------------------
-bench:GSBBenchmark  a   hobbit:Benchmark;
-    rdfs:label  "GeoSPARQL Benchmark v1.0"@en;
-    rdfs:comment    "GeoSPARQL Benchmark for the HOBBIT Platform"@en;
+bench:GSComplianceBenchmark  a   hobbit:Benchmark;
+    rdfs:label  "GeoSPARQL Compliance Benchmark"@en;
+    rdfs:comment    "GeoSPARQL Compliance Benchmark for the HOBBIT Platform. The benchmark tests the system's compliance to the GeoSPARQL Specification and its 30 Requirements. It provides a 0 - 100% compliance result, along with details about the failing tests and sub-tests for each requirement."@en;
     hobbit:hasAPI   <https://project-hobbit.eu/challenges/MOCHA2017-API>;
     hobbit:imageName    "git.project-hobbit.eu:4567/mjovanovik/gsb-benchmarkcontroller";
     hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-datagenerator";
     hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-seqtaskgenerator";
     hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-evaluationmodule";
-    hobbit:measuresKPI  bench:Q01Status ;
-    hobbit:measuresKPI  bench:Q02Status ;
-    hobbit:measuresKPI  bench:Q03Status ;
-    hobbit:measuresKPI  bench:Q04Status ;
-    hobbit:measuresKPI  bench:Q05Status ;
-    hobbit:measuresKPI  bench:Q06Status ;
+    hobbit:measuresKPI bench:Q01Status ;
+    hobbit:measuresKPI bench:Q02Status ;
+    hobbit:measuresKPI bench:Q03Status ;
+    hobbit:measuresKPI bench:Q04_1Status ;
+    hobbit:measuresKPI bench:Q04_2Status ;
+    hobbit:measuresKPI bench:Q04_3Status ;
+    hobbit:measuresKPI bench:Q04_4Status ;
+    hobbit:measuresKPI bench:Q04_5Status ;
+    hobbit:measuresKPI bench:Q04_6Status ;
+    hobbit:measuresKPI bench:Q04_7Status ;
+    hobbit:measuresKPI bench:Q04_8Status ;
+    hobbit:measuresKPI bench:Q05_1Status ;
+    hobbit:measuresKPI bench:Q05_2Status ;
+    hobbit:measuresKPI bench:Q05_3Status ;
+    hobbit:measuresKPI bench:Q05_4Status ;
+    hobbit:measuresKPI bench:Q05_5Status ;
+    hobbit:measuresKPI bench:Q05_6Status ;
+    hobbit:measuresKPI bench:Q05_7Status ;
+    hobbit:measuresKPI bench:Q05_8Status ;
+    hobbit:measuresKPI bench:Q06_1Status ;
+    hobbit:measuresKPI bench:Q06_2Status ;
+    hobbit:measuresKPI bench:Q06_3Status ;
+    hobbit:measuresKPI bench:Q06_4Status ;
+    hobbit:measuresKPI bench:Q06_5Status ;
+    hobbit:measuresKPI bench:Q06_6Status ;
+    hobbit:measuresKPI bench:Q06_7Status ;
+    hobbit:measuresKPI bench:Q06_8Status ;
+    hobbit:measuresKPI bench:Q07Status ;
+    hobbit:measuresKPI bench:Q08_1Status ;
+    hobbit:measuresKPI bench:Q08_2Status ;
+    hobbit:measuresKPI bench:Q09_1Status ;
+    hobbit:measuresKPI bench:Q09_2Status ;
+    hobbit:measuresKPI bench:Q09_3Status ;
+    hobbit:measuresKPI bench:Q09_4Status ;
+    hobbit:measuresKPI bench:Q09_5Status ;
+    hobbit:measuresKPI bench:Q09_6Status ;
+    hobbit:measuresKPI bench:Q10Status ;
+    hobbit:measuresKPI bench:Q11Status ;
+    hobbit:measuresKPI bench:Q12Status ;
+    hobbit:measuresKPI bench:Q13_1Status ;
+    hobbit:measuresKPI bench:Q13_2Status ;
+    hobbit:measuresKPI bench:Q14Status ;
+    hobbit:measuresKPI bench:Q15Status ;
+    hobbit:measuresKPI bench:Q16_1Status ;
+    hobbit:measuresKPI bench:Q16_2Status ;
+    hobbit:measuresKPI bench:Q18Status ;
+    hobbit:measuresKPI bench:Q19_1_1Status ;
+    hobbit:measuresKPI bench:Q19_1_2Status ;
+    hobbit:measuresKPI bench:Q19_1_3Status ;
+    hobbit:measuresKPI bench:Q19_1_4Status ;
+    hobbit:measuresKPI bench:Q19_2_1Status ;
+    hobbit:measuresKPI bench:Q19_2_2Status ;
+    hobbit:measuresKPI bench:Q19_3_1Status ;
+    hobbit:measuresKPI bench:Q19_3_2Status ;
+    hobbit:measuresKPI bench:Q19_4_1Status ;
+    hobbit:measuresKPI bench:Q19_4_2Status ;
+    hobbit:measuresKPI bench:Q19_4_3Status ;
+    hobbit:measuresKPI bench:Q19_4_4Status ;
+    hobbit:measuresKPI bench:Q19_5_1Status ;
+    hobbit:measuresKPI bench:Q19_5_2Status ;
+    hobbit:measuresKPI bench:Q19_5_3Status ;
+    hobbit:measuresKPI bench:Q19_5_4Status ;
+    hobbit:measuresKPI bench:Q19_6_1Status ;
+    hobbit:measuresKPI bench:Q19_6_2Status ;
+    hobbit:measuresKPI bench:Q19_6_3Status ;
+    hobbit:measuresKPI bench:Q19_6_4Status ;
+    hobbit:measuresKPI bench:Q19_7_1Status ;
+    hobbit:measuresKPI bench:Q19_7_2Status ;
+    hobbit:measuresKPI bench:Q19_7_3Status ;
+    hobbit:measuresKPI bench:Q19_7_4Status ;
+    hobbit:measuresKPI bench:Q19_8_1Status ;
+    hobbit:measuresKPI bench:Q19_8_2Status ;
+    hobbit:measuresKPI bench:Q19_9_1Status ;
+    hobbit:measuresKPI bench:Q19_9_2Status ;
+    hobbit:measuresKPI bench:Q20_1Status ;
+    hobbit:measuresKPI bench:Q20_2Status ;
+    hobbit:measuresKPI bench:Q21_1Status ;
+    hobbit:measuresKPI bench:Q21_2Status ;
+    hobbit:measuresKPI bench:Q21_3Status ;
+    hobbit:measuresKPI bench:Q21_4Status ;
+    hobbit:measuresKPI bench:Q22_1_1Status ;
+    hobbit:measuresKPI bench:Q22_1_2Status ;
+    hobbit:measuresKPI bench:Q22_1_3Status ;
+    hobbit:measuresKPI bench:Q22_1_4Status ;
+    hobbit:measuresKPI bench:Q22_2_1Status ;
+    hobbit:measuresKPI bench:Q22_2_2Status ;
+    hobbit:measuresKPI bench:Q22_2_3Status ;
+    hobbit:measuresKPI bench:Q22_2_4Status ;
+    hobbit:measuresKPI bench:Q22_3_1Status ;
+    hobbit:measuresKPI bench:Q22_3_2Status ;
+    hobbit:measuresKPI bench:Q22_3_3Status ;
+    hobbit:measuresKPI bench:Q22_3_4Status ;
+    hobbit:measuresKPI bench:Q22_4_1Status ;
+    hobbit:measuresKPI bench:Q22_4_2Status ;
+    hobbit:measuresKPI bench:Q22_4_3Status ;
+    hobbit:measuresKPI bench:Q22_4_4Status ;
+    hobbit:measuresKPI bench:Q22_5_1Status ;
+    hobbit:measuresKPI bench:Q22_5_2Status ;
+    hobbit:measuresKPI bench:Q22_5_3Status ;
+    hobbit:measuresKPI bench:Q22_5_4Status ;
+    hobbit:measuresKPI bench:Q22_6_1Status ;
+    hobbit:measuresKPI bench:Q22_6_2Status ;
+    hobbit:measuresKPI bench:Q22_6_3Status ;
+    hobbit:measuresKPI bench:Q22_6_4Status ;
+    hobbit:measuresKPI bench:Q22_7_1Status ;
+    hobbit:measuresKPI bench:Q22_7_2Status ;
+    hobbit:measuresKPI bench:Q22_7_3Status ;
+    hobbit:measuresKPI bench:Q22_7_4Status ;
+    hobbit:measuresKPI bench:Q22_8_1Status ;
+    hobbit:measuresKPI bench:Q22_8_2Status ;
+    hobbit:measuresKPI bench:Q22_8_3Status ;
+    hobbit:measuresKPI bench:Q22_8_4Status ;
+    hobbit:measuresKPI bench:Q23_1_1Status ;
+    hobbit:measuresKPI bench:Q23_1_2Status ;
+    hobbit:measuresKPI bench:Q23_1_3Status ;
+    hobbit:measuresKPI bench:Q23_1_4Status ;
+    hobbit:measuresKPI bench:Q23_2_1Status ;
+    hobbit:measuresKPI bench:Q23_2_2Status ;
+    hobbit:measuresKPI bench:Q23_2_3Status ;
+    hobbit:measuresKPI bench:Q23_2_4Status ;
+    hobbit:measuresKPI bench:Q23_3_1Status ;
+    hobbit:measuresKPI bench:Q23_3_2Status ;
+    hobbit:measuresKPI bench:Q23_3_3Status ;
+    hobbit:measuresKPI bench:Q23_3_4Status ;
+    hobbit:measuresKPI bench:Q23_4_1Status ;
+    hobbit:measuresKPI bench:Q23_4_2Status ;
+    hobbit:measuresKPI bench:Q23_4_3Status ;
+    hobbit:measuresKPI bench:Q23_4_4Status ;
+    hobbit:measuresKPI bench:Q23_5_1Status ;
+    hobbit:measuresKPI bench:Q23_5_2Status ;
+    hobbit:measuresKPI bench:Q23_5_3Status ;
+    hobbit:measuresKPI bench:Q23_5_4Status ;
+    hobbit:measuresKPI bench:Q23_6_1Status ;
+    hobbit:measuresKPI bench:Q23_6_2Status ;
+    hobbit:measuresKPI bench:Q23_6_3Status ;
+    hobbit:measuresKPI bench:Q23_6_4Status ;
+    hobbit:measuresKPI bench:Q23_7_1Status ;
+    hobbit:measuresKPI bench:Q23_7_2Status ;
+    hobbit:measuresKPI bench:Q23_7_3Status ;
+    hobbit:measuresKPI bench:Q23_7_4Status ;
+    hobbit:measuresKPI bench:Q23_8_1Status ;
+    hobbit:measuresKPI bench:Q23_8_2Status ;
+    hobbit:measuresKPI bench:Q23_8_3Status ;
+    hobbit:measuresKPI bench:Q23_8_4Status ;
+    hobbit:measuresKPI bench:Q24_1_1Status ;
+    hobbit:measuresKPI bench:Q24_1_2Status ;
+    hobbit:measuresKPI bench:Q24_1_3Status ;
+    hobbit:measuresKPI bench:Q24_1_4Status ;
+    hobbit:measuresKPI bench:Q24_2_1Status ;
+    hobbit:measuresKPI bench:Q24_2_2Status ;
+    hobbit:measuresKPI bench:Q24_2_3Status ;
+    hobbit:measuresKPI bench:Q24_2_4Status ;
+    hobbit:measuresKPI bench:Q24_3_1Status ;
+    hobbit:measuresKPI bench:Q24_3_2Status ;
+    hobbit:measuresKPI bench:Q24_3_3Status ;
+    hobbit:measuresKPI bench:Q24_3_4Status ;
+    hobbit:measuresKPI bench:Q24_4_1Status ;
+    hobbit:measuresKPI bench:Q24_4_2Status ;
+    hobbit:measuresKPI bench:Q24_4_3Status ;
+    hobbit:measuresKPI bench:Q24_4_4Status ;
+    hobbit:measuresKPI bench:Q24_5_1Status ;
+    hobbit:measuresKPI bench:Q24_5_2Status ;
+    hobbit:measuresKPI bench:Q24_5_3Status ;
+    hobbit:measuresKPI bench:Q24_5_4Status ;
+    hobbit:measuresKPI bench:Q24_6_1Status ;
+    hobbit:measuresKPI bench:Q24_6_2Status ;
+    hobbit:measuresKPI bench:Q24_6_3Status ;
+    hobbit:measuresKPI bench:Q24_6_4Status ;
+    hobbit:measuresKPI bench:Q24_7_1Status ;
+    hobbit:measuresKPI bench:Q24_7_2Status ;
+    hobbit:measuresKPI bench:Q24_7_3Status ;
+    hobbit:measuresKPI bench:Q24_7_4Status ;
+    hobbit:measuresKPI bench:Q24_8_1Status ;
+    hobbit:measuresKPI bench:Q24_8_2Status ;
+    hobbit:measuresKPI bench:Q24_8_3Status ;
+    hobbit:measuresKPI bench:Q24_8_4Status ;
+    hobbit:measuresKPI bench:Q25_1Status ;
+    hobbit:measuresKPI bench:Q25_2Status ;
+    hobbit:measuresKPI bench:Q25_3Status ;
+    hobbit:measuresKPI bench:Q26_1Status ;
+    hobbit:measuresKPI bench:Q26_2Status ;
+    hobbit:measuresKPI bench:Q27Status ;
+    hobbit:measuresKPI bench:Q28_1Status ;
+    hobbit:measuresKPI bench:Q28_2Status ;
+    hobbit:measuresKPI bench:Q28_3Status ;
+    hobbit:measuresKPI bench:Q28_4Status ;
+    hobbit:measuresKPI bench:Q28_5Status ;
+    hobbit:measuresKPI bench:Q28_6Status ;
+    hobbit:measuresKPI bench:Q28_7Status ;
+    hobbit:measuresKPI bench:Q28_8Status ;
+    hobbit:measuresKPI bench:Q29_1Status ;
+    hobbit:measuresKPI bench:Q29_2Status ;
+    hobbit:measuresKPI bench:Q29_3Status ;
+    hobbit:measuresKPI bench:Q29_4Status ;
+    hobbit:measuresKPI bench:Q29_5Status ;
+    hobbit:measuresKPI bench:Q29_6Status ;
+    hobbit:measuresKPI bench:Q29_7Status ;
+    hobbit:measuresKPI bench:Q29_8Status ;
+    hobbit:measuresKPI bench:Q30_1Status ;
+    hobbit:measuresKPI bench:Q30_2Status ;
+    hobbit:measuresKPI bench:Q30_3Status ;
+    hobbit:measuresKPI bench:Q30_4Status ;
+    hobbit:measuresKPI bench:Q30_5Status ;
+    hobbit:measuresKPI bench:Q30_6Status ;
+    hobbit:measuresKPI bench:Q30_7Status ;
+    hobbit:measuresKPI bench:Q30_8Status ;
     hobbit:measuresKPI  bench:totalCorrectAnswers ;
-    hobbit:hasParameter bench:name .
+    hobbit:measuresKPI  bench:percentageCorrectAnswers .
 
 <https://project-hobbit.eu/challenges/MOCHA2017-API>    a   hobbit:API .
 
 # --- Parameters ---
-bench:name  a   hobbit:Parameter, hobbit:FeatureParameter, hobbit:ConfigurableParameter;
-                rdfs:label  "What's your name?"@en;
-                rdfs:comment    "What's your name?"@en;
-                rdfs:domain hobbit:Experiment, hobbit:Challenge;
-                rdfs:range  xsd:string;
-                hobbit:defaultValue "..."^^xsd:string .
 
 # --- KPIs ---
 bench:Q01Status a   hobbit:KPI;
     rdfs:label  "Q01 Status"@en;
-    rdfs:comment    "Correct answer for GeoSPARQL Q01"@en;
+    rdfs:comment    "Requirement 1: Implementations shall support the SPARQL Query Language for RDF [W3C SPARQL], the SPARQL Protocol for RDF [W3C SPARQL Protocol] and the SPARQL Query Results XML Format [W3C SPARQL Result Format]."@en;
     rdfs:range  xsd:boolean .
 
 bench:Q02Status a   hobbit:KPI;
     rdfs:label  "Q02 Status"@en;
-    rdfs:comment    "Correct answer for GeoSPARQL Q02"@en;
+    rdfs:comment    "Requirement 2: Implementations shall allow the RDFS class geo:SpatialObject to be used in SPARQL graph patterns."@en;
     rdfs:range  xsd:boolean .
 
 bench:Q03Status a   hobbit:KPI;
     rdfs:label  "Q03 Status"@en;
-    rdfs:comment    "Correct answer for GeoSPARQL Q03"@en;
+    rdfs:comment    "Requirement 3: Implementations shall allow the RDFS class geo:Feature to be used in SPARQL graph patterns."@en;
     rdfs:range  xsd:boolean .
 
-bench:Q04Status a   hobbit:KPI;
-    rdfs:label  "Q04 Status"@en;
-    rdfs:comment    "Correct answer for GeoSPARQL Q04"@en;
+bench:Q04_1Status a   hobbit:KPI;
+    rdfs:label  "Q04-1 Status"@en;
+    rdfs:comment    "Requirement 4 (Part 1): Implementations shall allow the property geo:sfEquals to be used in SPARQL graph patterns."@en;
     rdfs:range  xsd:boolean .
 
-bench:Q05Status a   hobbit:KPI;
-    rdfs:label  "Q05 Status"@en;
-    rdfs:comment    "Correct answer for GeoSPARQL Q05"@en;
+bench:Q04_2Status a   hobbit:KPI;
+    rdfs:label  "Q04-2 Status"@en;
+    rdfs:comment    "Requirement 4 (Part 2): Implementations shall allow the property geo:sfDisjoint to be used in SPARQL graph patterns."@en;
     rdfs:range  xsd:boolean .
 
-bench:Q06Status a   hobbit:KPI;
-    rdfs:label  "Q06 Status"@en;
-    rdfs:comment    "Correct answer for GeoSPARQL Q06"@en;
-    rdfs:range  xsd:boolean .    			    			    			    			
+bench:Q04_3Status a   hobbit:KPI;
+    rdfs:label  "Q04-3 Status"@en;
+    rdfs:comment    "Requirement 4 (Part 3): Implementations shall allow the property geo:sfIntersects to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q04_4Status a   hobbit:KPI;
+    rdfs:label  "Q04-4 Status"@en;
+    rdfs:comment    "Requirement 4 (Part 4): Implementations shall allow the property geo:sfTouches to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q04_5Status a   hobbit:KPI;
+    rdfs:label  "Q04-5 Status"@en;
+    rdfs:comment    "Requirement 4 (Part 5): Implementations shall allow the property geo:sfCrosses to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q04_6Status a   hobbit:KPI;
+    rdfs:label  "Q04-6 Status"@en;
+    rdfs:comment    "Requirement 4 (Part 6): Implementations shall allow the property geo:sfWithin to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q04_7Status a   hobbit:KPI;
+    rdfs:label  "Q04-7 Status"@en;
+    rdfs:comment    "Requirement 4 (Part 7): Implementations shall allow the property geo:sfContains to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q04_8Status a   hobbit:KPI;
+    rdfs:label  "Q04-8 Status"@en;
+    rdfs:comment    "Requirement 4 (Part 8): Implementations shall allow the property geo:sfOverlaps to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q05_1Status a   hobbit:KPI;
+    rdfs:label  "Q05-1 Status"@en;
+    rdfs:comment    "Requirement 5 (Part 1): Implementations shall allow the property geo:ehEquals to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q05_2Status a   hobbit:KPI;
+    rdfs:label  "Q05-2 Status"@en;
+    rdfs:comment    "Requirement 5 (Part 2): Implementations shall allow the property geo:ehDisjoint to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q05_3Status a   hobbit:KPI;
+    rdfs:label  "Q05-3 Status"@en;
+    rdfs:comment    "Requirement 5 (Part 3): Implementations shall allow the property geo:ehMeet to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q05_4Status a   hobbit:KPI;
+    rdfs:label  "Q05-4 Status"@en;
+    rdfs:comment    "Requirement 5 (Part 4): Implementations shall allow the property geo:ehOverlap to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q05_5Status a   hobbit:KPI;
+    rdfs:label  "Q05-5 Status"@en;
+    rdfs:comment    "Requirement 5 (Part 5): Implementations shall allow the property geo:ehCovers to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q05_6Status a   hobbit:KPI;
+    rdfs:label  "Q05-6 Status"@en;
+    rdfs:comment    "Requirement 5 (Part 6): Implementations shall allow the property geo:ehCoveredBy to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q05_7Status a   hobbit:KPI;
+    rdfs:label  "Q05-7 Status"@en;
+    rdfs:comment    "Requirement 5 (Part 7): Implementations shall allow the property geo:ehInside to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q05_8Status a   hobbit:KPI;
+    rdfs:label  "Q05-8 Status"@en;
+    rdfs:comment    "Requirement 5 (Part 8): Implementations shall allow the property geo:ehContains to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q06_1Status a   hobbit:KPI;
+    rdfs:label  "Q06-1 Status"@en;
+    rdfs:comment    "Requirement 6 (Part 1): Implementations shall allow the property geo:rcc8eq to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q06_2Status a   hobbit:KPI;
+    rdfs:label  "Q06-2 Status"@en;
+    rdfs:comment    "Requirement 6 (Part 2): Implementations shall allow the property geo:rcc8dc to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q06_3Status a   hobbit:KPI;
+    rdfs:label  "Q06-3 Status"@en;
+    rdfs:comment    "Requirement 6 (Part 3): Implementations shall allow the property geo:rcc8ec to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q06_4Status a   hobbit:KPI;
+    rdfs:label  "Q06-4 Status"@en;
+    rdfs:comment    "Requirement 6 (Part 4): Implementations shall allow the property geo:rcc8po to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q06_5Status a   hobbit:KPI;
+    rdfs:label  "Q06-5 Status"@en;
+    rdfs:comment    "Requirement 6 (Part 5): Implementations shall allow the property geo:rcc8tppi to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q06_6Status a   hobbit:KPI;
+    rdfs:label  "Q06-6 Status"@en;
+    rdfs:comment    "Requirement 6 (Part 6): Implementations shall allow the property geo:rcc8tpp to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q06_7Status a   hobbit:KPI;
+    rdfs:label  "Q06-7 Status"@en;
+    rdfs:comment    "Requirement 6 (Part 7): Implementations shall allow the property geo:rcc8ntpp to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q06_8Status a   hobbit:KPI;
+    rdfs:label  "Q06-8 Status"@en;
+    rdfs:comment    "Requirement 6 (Part 8): Implementations shall allow the property geo:rcc8ntppi to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q07Status a   hobbit:KPI;
+    rdfs:label  "Q07 Status"@en;
+    rdfs:comment    "Requirement 7: Implementations shall allow the RDFS class geo:Geometry to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q08_1Status a   hobbit:KPI;
+    rdfs:label  "Q08-1 Status"@en;
+    rdfs:comment    "Requirement 8 (Part 1): Implementations shall allow the property geo:hasGeometry to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q08_2Status a   hobbit:KPI;
+    rdfs:label  "Q08-2 Status"@en;
+    rdfs:comment    "Requirement 8 (Part 2): Implementations shall allow the property geo:hasDefaultGeometry to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_1Status a   hobbit:KPI;
+    rdfs:label  "Q09-1 Status"@en;
+    rdfs:comment    "Requirement 9 (Part 1): Implementations shall allow the property geo:dimension to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_2Status a   hobbit:KPI;
+    rdfs:label  "Q09-2 Status"@en;
+    rdfs:comment    "Requirement 9 (Part 2): Implementations shall allow the property geo:coordinateDimension to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_3Status a   hobbit:KPI;
+    rdfs:label  "Q09-3 Status"@en;
+    rdfs:comment    "Requirement 9 (Part 3): Implementations shall allow the property geo:spatialDimension to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_4Status a   hobbit:KPI;
+    rdfs:label  "Q09-4 Status"@en;
+    rdfs:comment    "Requirement 9 (Part 4): Implementations shall allow the property geo:isEmpty to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_5Status a   hobbit:KPI;
+    rdfs:label  "Q09-5 Status"@en;
+    rdfs:comment    "Requirement 9 (Part 5): Implementations shall allow the property geo:isSimple to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q09_6Status a   hobbit:KPI;
+    rdfs:label  "Q09-6 Status"@en;
+    rdfs:comment    "Requirement 9 (Part 6): Implementations shall allow the property geo:hasSerialization to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q10Status a   hobbit:KPI;
+    rdfs:label  "Q10 Status"@en;
+    rdfs:comment    "Requirement 10: All RDFS Literals of type geo:wktLiteral shall consist of an optional URI identifying the coordinate reference system followed by Simple Features Well Known Text (WKT) describing a geometric value. Valid geo:wktLiterals are formed by concatenating a valid, absolute URI as defined in [RFC 2396], one or more spaces (Unicode U+0020 character) as a separator, and a WKT string as defined in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q11Status a   hobbit:KPI;
+    rdfs:label  "Q11 Status"@en;
+    rdfs:comment    "Requirement 11: The URI <http://www.opengis.net/def/crs/OGC/1.3/CRS84> shall be assumed as the spatial reference system for geo:wktLiterals that do not specify an explicit spatial reference system URI."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q12Status a   hobbit:KPI;
+    rdfs:label  "Q12 Status"@en;
+    rdfs:comment    "Requirement 12: Coordinate tuples within geo:wktLiterals shall be interpreted using the axis order defined in the spatial reference system used."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q13_1Status a   hobbit:KPI;
+    rdfs:label  "Q13-1 Status"@en;
+    rdfs:comment    "Requirement 13 (Part 1): An empty RDFS Literal of type geo:wktLiteral shall be interpreted as an empty geometry. Part 1 tests LineString geometries."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q13_2Status a   hobbit:KPI;
+    rdfs:label  "Q13-2 Status"@en;
+    rdfs:comment    "Requirement 13 (Part 2): An empty RDFS Literal of type geo:wktLiteral shall be interpreted as an empty geometry. Part 2 tests Point geometries."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q14Status a   hobbit:KPI;
+    rdfs:label  "Q14 Status"@en;
+    rdfs:comment    "Requirement 14: Implementations shall allow the RDF property geo:asWKT to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q15Status a   hobbit:KPI;
+    rdfs:label  "Q15 Status"@en;
+    rdfs:comment    "Requirement 15: All geo:gmlLiterals shall consist of a valid element from the GML schema that implements a subtype of GM_Object as defined in [OGC 07-036]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q16_1Status a   hobbit:KPI;
+    rdfs:label  "Q16-1 Status"@en;
+    rdfs:comment    "Requirement 16 (Part 1): An empty geo:gmlLiteral shall be interpreted as an empty geometry. Part 1 tests LineString geometries."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q16_2Status a   hobbit:KPI;
+    rdfs:label  "Q16-2 Status"@en;
+    rdfs:comment    "Requirement 16 (Part 2): An empty geo:gmlLiteral shall be interpreted as an empty geometry. Part 2 tests Point geometries."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q18Status a   hobbit:KPI;
+    rdfs:label  "Q18 Status"@en;
+    rdfs:comment    "Requirement 18: Implementations shall allow the RDF property geo:asGML to be used in SPARQL graph patterns."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_1_1Status a   hobbit:KPI;
+    rdfs:label  "Q19-1-1 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 1) (WKT-WKT): Implementations shall support geof:distance as a SPARQL extension function, consistent with the definition of the corresponding function distance in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_1_2Status a   hobbit:KPI;
+    rdfs:label  "Q19-1-2 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 1) (GML-GML): Implementations shall support geof:distance as a SPARQL extension function, consistent with the definition of the corresponding function distance in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_1_3Status a   hobbit:KPI;
+    rdfs:label  "Q19-1-3 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 1) (WKT-GML): Implementations shall support geof:distance as a SPARQL extension function, consistent with the definition of the corresponding function distance in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_1_4Status a   hobbit:KPI;
+    rdfs:label  "Q19-1-4 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 1) (GML-WKT): Implementations shall support geof:distance as a SPARQL extension function, consistent with the definition of the corresponding function distance in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_2_1Status a   hobbit:KPI;
+    rdfs:label  "Q19-2-1 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 2) (WKT): Implementations shall support geof:buffer as a SPARQL extension function, consistent with the definition of the corresponding function buffer in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_2_2Status a   hobbit:KPI;
+    rdfs:label  "Q19-2-2 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 2) (GML): Implementations shall support geof:buffer as a SPARQL extension function, consistent with the definition of the corresponding function buffer in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_3_1Status a   hobbit:KPI;
+    rdfs:label  "Q19-3-1 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 3) (WKT): Implementations shall support geof:convexHull as a SPARQL extension function, consistent with the definition of the corresponding function convexHull in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_3_2Status a   hobbit:KPI;
+    rdfs:label  "Q19-3-2 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 3) (GML): Implementations shall support geof:convexHull as a SPARQL extension function, consistent with the definition of the corresponding function convexHull in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_4_1Status a   hobbit:KPI;
+    rdfs:label  "Q19-4-1 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 4) (WKT-WKT): Implementations shall support geof:intersection as a SPARQL extension function, consistent with the definition of the corresponding function intersection in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_4_2Status a   hobbit:KPI;
+    rdfs:label  "Q19-4-2 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 4) (GML-GML): Implementations shall support geof:intersection as a SPARQL extension function, consistent with the definition of the corresponding function intersection in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_4_3Status a   hobbit:KPI;
+    rdfs:label  "Q19-4-3 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 4) (WKT-GML): Implementations shall support geof:intersection as a SPARQL extension function, consistent with the definition of the corresponding function intersection in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_4_4Status a   hobbit:KPI;
+    rdfs:label  "Q19-4-4 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 4) (GML-WKT): Implementations shall support geof:intersection as a SPARQL extension function, consistent with the definition of the corresponding function intersection in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_5_1Status a   hobbit:KPI;
+    rdfs:label  "Q19-5-1 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 5) (WKT-WKT): Implementations shall support geof:union as a SPARQL extension function, consistent with the definition of the corresponding function union in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_5_2Status a   hobbit:KPI;
+    rdfs:label  "Q19-5-2 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 5) (GML-GML): Implementations shall support geof:union as a SPARQL extension function, consistent with the definition of the corresponding function union in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_5_3Status a   hobbit:KPI;
+    rdfs:label  "Q19-5-3 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 5) (WKT-GML): Implementations shall support geof:union as a SPARQL extension function, consistent with the definition of the corresponding function union in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_5_4Status a   hobbit:KPI;
+    rdfs:label  "Q19-5-4 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 5) (GML-WKT): Implementations shall support geof:union as a SPARQL extension function, consistent with the definition of the corresponding function union in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_6_1Status a   hobbit:KPI;
+    rdfs:label  "Q19-6-1 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 6) (WKT-WKT): Implementations shall support geof:difference as a SPARQL extension function, consistent with the definition of the corresponding function difference in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_6_2Status a   hobbit:KPI;
+    rdfs:label  "Q19-6-2 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 6) (GML-GML): Implementations shall support geof:difference as a SPARQL extension function, consistent with the definition of the corresponding function difference in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_6_3Status a   hobbit:KPI;
+    rdfs:label  "Q19-6-3 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 6) (WKT-GML): Implementations shall support geof:difference as a SPARQL extension function, consistent with the definition of the corresponding function difference in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_6_4Status a   hobbit:KPI;
+    rdfs:label  "Q19-6-4 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 6) (GML-WKT): Implementations shall support geof:difference as a SPARQL extension function, consistent with the definition of the corresponding function difference in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_7_1Status a   hobbit:KPI;
+    rdfs:label  "Q19-7-1 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 7) (WKT-WKT): Implementations shall support geof:symDifference as a SPARQL extension function, consistent with the definition of the corresponding function symDifference in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_7_2Status a   hobbit:KPI;
+    rdfs:label  "Q19-7-2 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 7) (GML-GML): Implementations shall support geof:symDifference as a SPARQL extension function, consistent with the definition of the corresponding function symDifference in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_7_3Status a   hobbit:KPI;
+    rdfs:label  "Q19-7-3 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 7) (WKT-GML): Implementations shall support geof:symDifference as a SPARQL extension function, consistent with the definition of the corresponding function symDifference in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_7_4Status a   hobbit:KPI;
+    rdfs:label  "Q19-7-4 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 7) (GML-WKT): Implementations shall support geof:symDifference as a SPARQL extension function, consistent with the definition of the corresponding function symDifference in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_8_1Status a   hobbit:KPI;
+    rdfs:label  "Q19-8-1 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 8) (WKT): Implementations shall support geof:envelope as a SPARQL extension function, consistent with the definition of the corresponding function envelope in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_8_2Status a   hobbit:KPI;
+    rdfs:label  "Q19-8-2 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 8) (GML): Implementations shall support geof:envelope as a SPARQL extension function, consistent with the definition of the corresponding function envelope in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_9_1Status a   hobbit:KPI;
+    rdfs:label  "Q19-9-1 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 9) (WKT): Implementations shall support geof:boundary as a SPARQL extension function, consistent with the definition of the corresponding function boundary in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q19_9_2Status a   hobbit:KPI;
+    rdfs:label  "Q19-9-2 Status"@en;
+    rdfs:comment    "Requirement 19 (Part 9) (GML): Implementations shall support geof:boundary as a SPARQL extension function, consistent with the definition of the corresponding function boundary in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q20_1Status a   hobbit:KPI;
+    rdfs:label  "Q20-1 Status"@en;
+    rdfs:comment    "Requirement 20 (Part 1) (WKT): Implementations shall support geof:getSRID as a SPARQL extension function."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q20_2Status a   hobbit:KPI;
+    rdfs:label  "Q20-2 Status"@en;
+    rdfs:comment    "Requirement 20 (Part 2) (GML): Implementations shall support geof:getSRID as a SPARQL extension function."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q21_1Status a   hobbit:KPI;
+    rdfs:label  "Q21-1 Status"@en;
+    rdfs:comment    "Requirement 21 (Part 1) (WKT-WKT): Implementations shall support geof:relate as a SPARQL extension function, consistent with the relate operator defined in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q21_2Status a   hobbit:KPI;
+    rdfs:label  "Q21-2 Status"@en;
+    rdfs:comment    "Requirement 21 (Part 2) (GML-GML): Implementations shall support geof:relate as a SPARQL extension function, consistent with the relate operator defined in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q21_3Status a   hobbit:KPI;
+    rdfs:label  "Q21-3 Status"@en;
+    rdfs:comment    "Requirement 21 (Part 3) (WKT-GML): Implementations shall support geof:relate as a SPARQL extension function, consistent with the relate operator defined in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q21_4Status a   hobbit:KPI;
+    rdfs:label  "Q21-4 Status"@en;
+    rdfs:comment    "Requirement 21 (Part 4) (GML-WKT): Implementations shall support geof:relate as a SPARQL extension function, consistent with the relate operator defined in Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_1_1Status a   hobbit:KPI;
+    rdfs:label  "Q22-1-1 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 1) (WKT-WKT): Implementations shall support geof:sfEquals as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_1_2Status a   hobbit:KPI;
+    rdfs:label  "Q22-1-2 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 1) (GML-GML): Implementations shall support geof:sfEquals as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_1_3Status a   hobbit:KPI;
+    rdfs:label  "Q22-1-3 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 1) (WKT-GML): Implementations shall support geof:sfEquals as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_1_4Status a   hobbit:KPI;
+    rdfs:label  "Q22-1-4 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 1) (GML-WKT): Implementations shall support geof:sfEquals as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_2_1Status a   hobbit:KPI;
+    rdfs:label  "Q22-2-1 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 2) (WKT-WKT): Implementations shall support geof:sfDisjoint as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_2_2Status a   hobbit:KPI;
+    rdfs:label  "Q22-2-2 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 2) (GML-GML): Implementations shall support geof:sfDisjoint as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_2_3Status a   hobbit:KPI;
+    rdfs:label  "Q22-2-3 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 2) (WKT-GML): Implementations shall support geof:sfDisjoint as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_2_4Status a   hobbit:KPI;
+    rdfs:label  "Q22-2-4 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 2) (GML-WKT): Implementations shall support geof:sfDisjoint as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_3_1Status a   hobbit:KPI;
+    rdfs:label  "Q22-3-1 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 3) (WKT-WKT): Implementations shall support geof:sfIntersects as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_3_2Status a   hobbit:KPI;
+    rdfs:label  "Q22-3-2 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 3) (GML-GML): Implementations shall support geof:sfIntersects as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_3_3Status a   hobbit:KPI;
+    rdfs:label  "Q22-3-3 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 3) (WKT-GML): Implementations shall support geof:sfIntersects as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_3_4Status a   hobbit:KPI;
+    rdfs:label  "Q22-3-4 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 3) (GML-WKT): Implementations shall support geof:sfIntersects as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_4_1Status a   hobbit:KPI;
+    rdfs:label  "Q22-4-1 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 4) (WKT-WKT): Implementations shall support geof:sfTouches as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_4_2Status a   hobbit:KPI;
+    rdfs:label  "Q22-4-2 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 4) (GML-GML): Implementations shall support geof:sfTouches as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_4_3Status a   hobbit:KPI;
+    rdfs:label  "Q22-4-3 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 4) (WKT-GML): Implementations shall support geof:sfTouches as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_4_4Status a   hobbit:KPI;
+    rdfs:label  "Q22-4-4 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 4) (GML-WKT): Implementations shall support geof:sfTouches as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_5_1Status a   hobbit:KPI;
+    rdfs:label  "Q22-5-1 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 5) (WKT-WKT): Implementations shall support geof:sfCrosses as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_5_2Status a   hobbit:KPI;
+    rdfs:label  "Q22-5-2 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 5) (GML-GML): Implementations shall support geof:sfCrosses as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_5_3Status a   hobbit:KPI;
+    rdfs:label  "Q22-5-3 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 5) (WKT-GML): Implementations shall support geof:sfCrosses as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_5_4Status a   hobbit:KPI;
+    rdfs:label  "Q22-5-4 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 5) (GML-WKT): Implementations shall support geof:sfCrosses as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_6_1Status a   hobbit:KPI;
+    rdfs:label  "Q22-6-1 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 6) (WKT-WKT): Implementations shall support geof:sfWithin as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_6_2Status a   hobbit:KPI;
+    rdfs:label  "Q22-6-2 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 6) (GML-GML): Implementations shall support geof:sfWithin as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_6_3Status a   hobbit:KPI;
+    rdfs:label  "Q22-6-3 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 6) (WKT-GML): Implementations shall support geof:sfWithin as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_6_4Status a   hobbit:KPI;
+    rdfs:label  "Q22-6-4 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 6) (GML-WKT): Implementations shall support geof:sfWithin as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_7_1Status a   hobbit:KPI;
+    rdfs:label  "Q22-7-1 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 7) (WKT-WKT): Implementations shall support geof:sfContains as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_7_2Status a   hobbit:KPI;
+    rdfs:label  "Q22-7-2 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 7) (GML-GML): Implementations shall support geof:sfContains as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_7_3Status a   hobbit:KPI;
+    rdfs:label  "Q22-7-3 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 7) (WKT-GML): Implementations shall support geof:sfContains as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_7_4Status a   hobbit:KPI;
+    rdfs:label  "Q22-7-4 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 7) (GML-WKT): Implementations shall support geof:sfContains as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_8_1Status a   hobbit:KPI;
+    rdfs:label  "Q22-8-1 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 8) (WKT-WKT): Implementations shall support geof:sfOverlaps as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_8_2Status a   hobbit:KPI;
+    rdfs:label  "Q22-8-2 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 8) (GML-GML): Implementations shall support geof:sfOverlaps as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_8_3Status a   hobbit:KPI;
+    rdfs:label  "Q22-8-3 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 8) (WKT-GML): Implementations shall support geof:sfOverlaps as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q22_8_4Status a   hobbit:KPI;
+    rdfs:label  "Q22-8-4 Status"@en;
+    rdfs:comment    "Requirement 22 (Part 8) (GML-WKT): Implementations shall support geof:sfOverlaps as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_1_1Status a   hobbit:KPI;
+    rdfs:label  "Q23-1-1 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 1) (WKT-WKT): Implementations shall support geof:ehEquals as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_1_2Status a   hobbit:KPI;
+    rdfs:label  "Q23-1-2 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 1) (GML-GML): Implementations shall support geof:ehEquals as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_1_3Status a   hobbit:KPI;
+    rdfs:label  "Q23-1-3 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 1) (WKT-GML): Implementations shall support geof:ehEquals as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_1_4Status a   hobbit:KPI;
+    rdfs:label  "Q23-1-4 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 1) (GML-WKT): Implementations shall support geof:ehEquals as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_2_1Status a   hobbit:KPI;
+    rdfs:label  "Q23-2-1 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 2) (WKT-WKT): Implementations shall support geof:ehDisjoint as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_2_2Status a   hobbit:KPI;
+    rdfs:label  "Q23-2-2 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 2) (GML-GML): Implementations shall support geof:ehDisjoint as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_2_3Status a   hobbit:KPI;
+    rdfs:label  "Q23-2-3 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 2) (WKT-GML): Implementations shall support geof:ehDisjoint as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_2_4Status a   hobbit:KPI;
+    rdfs:label  "Q23-2-4 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 2) (GML-WKT): Implementations shall support geof:ehDisjoint as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_3_1Status a   hobbit:KPI;
+    rdfs:label  "Q23-3-1 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 3) (WKT-WKT): Implementations shall support geof:ehMeet as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_3_2Status a   hobbit:KPI;
+    rdfs:label  "Q23-3-2 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 3) (GML-GML): Implementations shall support geof:ehMeet as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_3_3Status a   hobbit:KPI;
+    rdfs:label  "Q23-3-3 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 3) (WKT-GML): Implementations shall support geof:ehMeet as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_3_4Status a   hobbit:KPI;
+    rdfs:label  "Q23-3-4 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 3) (GML-WKT): Implementations shall support geof:ehMeet as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_4_1Status a   hobbit:KPI;
+    rdfs:label  "Q23-4-1 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 4) (WKT-WKT): Implementations shall support geof:ehOverlap as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_4_2Status a   hobbit:KPI;
+    rdfs:label  "Q23-4-2 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 4) (GML-GML): Implementations shall support geof:ehOverlap as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_4_3Status a   hobbit:KPI;
+    rdfs:label  "Q23-4-3 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 4) (WKT-GML): Implementations shall support geof:ehOverlap as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_4_4Status a   hobbit:KPI;
+    rdfs:label  "Q23-4-4 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 4) (GML-WKT): Implementations shall support geof:ehOverlap as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_5_1Status a   hobbit:KPI;
+    rdfs:label  "Q23-5-1 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 5) (WKT-WKT): Implementations shall support geof:ehCovers as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_5_2Status a   hobbit:KPI;
+    rdfs:label  "Q23-5-2 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 5) (GML-GML): Implementations shall support geof:ehCovers as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_5_3Status a   hobbit:KPI;
+    rdfs:label  "Q23-5-3 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 5) (WKT-GML): Implementations shall support geof:ehCovers as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_5_4Status a   hobbit:KPI;
+    rdfs:label  "Q23-5-4 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 5) (GML-WKT): Implementations shall support geof:ehCovers as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_6_1Status a   hobbit:KPI;
+    rdfs:label  "Q23-6-1 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 6) (WKT-WKT): Implementations shall support geof:ehCoveredBy as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_6_2Status a   hobbit:KPI;
+    rdfs:label  "Q23-6-2 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 6) (GML-GML): Implementations shall support geof:ehCoveredBy as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_6_3Status a   hobbit:KPI;
+    rdfs:label  "Q23-6-3 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 6) (WKT-GML): Implementations shall support geof:ehCoveredBy as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_6_4Status a   hobbit:KPI;
+    rdfs:label  "Q23-6-4 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 6) (GML-WKT): Implementations shall support geof:ehCoveredBy as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_7_1Status a   hobbit:KPI;
+    rdfs:label  "Q23-7-1 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 7) (WKT-WKT): Implementations shall support geof:ehInside as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_7_2Status a   hobbit:KPI;
+    rdfs:label  "Q23-7-2 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 7) (GML-GML): Implementations shall support geof:ehInside as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_7_3Status a   hobbit:KPI;
+    rdfs:label  "Q23-7-3 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 7) (WKT-GML): Implementations shall support geof:ehInside as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_7_4Status a   hobbit:KPI;
+    rdfs:label  "Q23-7-4 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 7) (GML-WKT): Implementations shall support geof:ehInside as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_8_1Status a   hobbit:KPI;
+    rdfs:label  "Q23-8-1 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 8) (WKT-WKT): Implementations shall support geof:ehContains as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_8_2Status a   hobbit:KPI;
+    rdfs:label  "Q23-8-2 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 8) (GML-GML): Implementations shall support geof:ehContains as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_8_3Status a   hobbit:KPI;
+    rdfs:label  "Q23-8-3 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 8) (WKT-GML): Implementations shall support geof:ehContains as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q23_8_4Status a   hobbit:KPI;
+    rdfs:label  "Q23-8-4 Status"@en;
+    rdfs:comment    "Requirement 23 (Part 8) (GML-WKT): Implementations shall support geof:ehContains as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_1_1Status a   hobbit:KPI;
+    rdfs:label  "Q24-1-1 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 1) (WKT-WKT): Implementations shall support geof:rcc8eq as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_1_2Status a   hobbit:KPI;
+    rdfs:label  "Q24-1-2 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 1) (GML-GML): Implementations shall support geof:rcc8eq as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_1_3Status a   hobbit:KPI;
+    rdfs:label  "Q24-1-3 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 1) (WKT-GML): Implementations shall support geof:rcc8eq as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_1_4Status a   hobbit:KPI;
+    rdfs:label  "Q24-1-4 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 1) (GML-WKT): Implementations shall support geof:rcc8eq as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_2_1Status a   hobbit:KPI;
+    rdfs:label  "Q24-2-1 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 2) (WKT-WKT): Implementations shall support geof:rcc8dc as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_2_2Status a   hobbit:KPI;
+    rdfs:label  "Q24-2-2 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 2) (GML-GML): Implementations shall support geof:rcc8dc as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_2_3Status a   hobbit:KPI;
+    rdfs:label  "Q24-2-3 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 2) (WKT-GML): Implementations shall support geof:rcc8dc as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_2_4Status a   hobbit:KPI;
+    rdfs:label  "Q24-2-4 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 2) (GML-WKT): Implementations shall support geof:rcc8dc as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_3_1Status a   hobbit:KPI;
+    rdfs:label  "Q24-3-1 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 3) (WKT-WKT): Implementations shall support geof:rcc8ec as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_3_2Status a   hobbit:KPI;
+    rdfs:label  "Q24-3-2 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 3) (GML-GML): Implementations shall support geof:rcc8ec as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_3_3Status a   hobbit:KPI;
+    rdfs:label  "Q24-3-3 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 3) (WKT-GML): Implementations shall support geof:rcc8ec as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_3_4Status a   hobbit:KPI;
+    rdfs:label  "Q24-3-4 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 3) (GML-WKT): Implementations shall support geof:rcc8ec as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_4_1Status a   hobbit:KPI;
+    rdfs:label  "Q24-4-1 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 4) (WKT-WKT): Implementations shall support geof:rcc8po as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_4_2Status a   hobbit:KPI;
+    rdfs:label  "Q24-4-2 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 4) (GML-GML): Implementations shall support geof:rcc8po as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_4_3Status a   hobbit:KPI;
+    rdfs:label  "Q24-4-3 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 4) (WKT-GML): Implementations shall support geof:rcc8po as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_4_4Status a   hobbit:KPI;
+    rdfs:label  "Q24-4-4 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 4) (GML-WKT): Implementations shall support geof:rcc8po as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_5_1Status a   hobbit:KPI;
+    rdfs:label  "Q24-5-1 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 5) (WKT-WKT): Implementations shall support geof:rcc8tppi as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_5_2Status a   hobbit:KPI;
+    rdfs:label  "Q24-5-2 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 5) (GML-GML): Implementations shall support geof:rcc8tppi as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_5_3Status a   hobbit:KPI;
+    rdfs:label  "Q24-5-3 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 5) (WKT-GML): Implementations shall support geof:rcc8tppi as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_5_4Status a   hobbit:KPI;
+    rdfs:label  "Q24-5-4 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 5) (GML-WKT): Implementations shall support geof:rcc8tppi as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_6_1Status a   hobbit:KPI;
+    rdfs:label  "Q24-6-1 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 6) (WKT-WKT): Implementations shall support geof:rcc8tpp as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_6_2Status a   hobbit:KPI;
+    rdfs:label  "Q24-6-2 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 6) (GML-GML): Implementations shall support geof:rcc8tpp as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_6_3Status a   hobbit:KPI;
+    rdfs:label  "Q24-6-3 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 6) (WKT-GML): Implementations shall support geof:rcc8tpp as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_6_4Status a   hobbit:KPI;
+    rdfs:label  "Q24-6-4 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 6) (GML-WKT): Implementations shall support geof:rcc8tpp as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_7_1Status a   hobbit:KPI;
+    rdfs:label  "Q24-7-1 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 7) (WKT-WKT): Implementations shall support geof:rcc8ntpp as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_7_2Status a   hobbit:KPI;
+    rdfs:label  "Q24-7-2 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 7) (GML-GML): Implementations shall support geof:rcc8ntpp as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_7_3Status a   hobbit:KPI;
+    rdfs:label  "Q24-7-3 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 7) (WKT-GML): Implementations shall support geof:rcc8ntpp as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_7_4Status a   hobbit:KPI;
+    rdfs:label  "Q24-7-4 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 7) (GML-WKT): Implementations shall support geof:rcc8ntpp as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_8_1Status a   hobbit:KPI;
+    rdfs:label  "Q24-8-1 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 8) (WKT-WKT): Implementations shall support geof:rcc8ntppi as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_8_2Status a   hobbit:KPI;
+    rdfs:label  "Q24-8-2 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 8) (GML-GML): Implementations shall support geof:rcc8ntppi as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_8_3Status a   hobbit:KPI;
+    rdfs:label  "Q24-8-3 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 8) (WKT-GML): Implementations shall support geof:rcc8ntppi as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q24_8_4Status a   hobbit:KPI;
+    rdfs:label  "Q24-8-4 Status"@en;
+    rdfs:comment    "Requirement 24 (Part 8) (GML-WKT): Implementations shall support geof:rcc8ntppi as a SPARQL extension function, consistent with its corresponding DE-9IM intersection pattern, as defined by Simple Features [ISO 19125-1]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q25_1Status a   hobbit:KPI;
+    rdfs:label  "Q25-1 Status"@en;
+    rdfs:comment    "Requirement 25 (Part 1): Basic graph pattern matching shall use the semantics defined by the RDFS Entailment Regime [W3C SPARQL Entailment]. Part 1 tests subclass inference using geo:Feature."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q25_2Status a   hobbit:KPI;
+    rdfs:label  "Q25-2 Status"@en;
+    rdfs:comment    "Requirement 25 (Part 2): Basic graph pattern matching shall use the semantics defined by the RDFS Entailment Regime [W3C SPARQL Entailment]. Part 2 tests subproperty inference using geo:hasGeometry."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q25_3Status a   hobbit:KPI;
+    rdfs:label  "Q25-3 Status"@en;
+    rdfs:comment    "Requirement 25 (Part 3): Basic graph pattern matching shall use the semantics defined by the RDFS Entailment Regime [W3C SPARQL Entailment]. Part 3 tests subproperty inference using geo:hasDefaultGeometry."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q26_1Status a   hobbit:KPI;
+    rdfs:label  "Q26-1 Status"@en;
+    rdfs:comment    "Requirement 26 (Part 1): Implementations shall support graph patterns involving terms from an RDFS/OWL class hierarchy of geometry types consistent with the one in the specified version of Simple Features [ISO 19125-1]. Part 1 tests subclass inference using sf:Surface."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q26_2Status a   hobbit:KPI;
+    rdfs:label  "Q26-2 Status"@en;
+    rdfs:comment    "Requirement 26 (Part 2): Implementations shall support graph patterns involving terms from an RDFS/OWL class hierarchy of geometry types consistent with the one in the specified version of Simple Features [ISO 19125-1]. Part 2 tests subclass inference using sf:Curve."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q27Status a   hobbit:KPI;
+    rdfs:label  "Q27 Status"@en;
+    rdfs:comment    "Requirement 27: Implementations shall support graph patterns involving terms from an RDFS/OWL class hierarchy of geometry types consistent with the GML schema that implements GM_Object using the specified version of GML [OGC 07-036]."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q28_1Status a   hobbit:KPI;
+    rdfs:label  "Q28-1 Status"@en;
+    rdfs:comment    "Requirement 28 (Part 1): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:sfEquals."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q28_2Status a   hobbit:KPI;
+    rdfs:label  "Q28-2 Status"@en;
+    rdfs:comment    "Requirement 28 (Part 2): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:sfDisjoint."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q28_3Status a   hobbit:KPI;
+    rdfs:label  "Q28-3 Status"@en;
+    rdfs:comment    "Requirement 28 (Part 3): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:sfIntersects."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q28_4Status a   hobbit:KPI;
+    rdfs:label  "Q28-4 Status"@en;
+    rdfs:comment    "Requirement 28 (Part 4): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:sfTouches."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q28_5Status a   hobbit:KPI;
+    rdfs:label  "Q28-5 Status"@en;
+    rdfs:comment    "Requirement 28 (Part 5): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:sfCrosses."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q28_6Status a   hobbit:KPI;
+    rdfs:label  "Q28-6 Status"@en;
+    rdfs:comment    "Requirement 28 (Part 6): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:sfWithin."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q28_7Status a   hobbit:KPI;
+    rdfs:label  "Q28-7 Status"@en;
+    rdfs:comment    "Requirement 28 (Part 7): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:sfContains."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q28_8Status a   hobbit:KPI;
+    rdfs:label  "Q28-8 Status"@en;
+    rdfs:comment    "Requirement 28 (Part 8): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:sfOverlaps."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q29_1Status a   hobbit:KPI;
+    rdfs:label  "Q29-1 Status"@en;
+    rdfs:comment    "Requirement 29 (Part 1): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:ehEquals."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q29_2Status a   hobbit:KPI;
+    rdfs:label  "Q29-2 Status"@en;
+    rdfs:comment    "Requirement 29 (Part 2): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:ehDisjoint."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q29_3Status a   hobbit:KPI;
+    rdfs:label  "Q29-3 Status"@en;
+    rdfs:comment    "Requirement 29 (Part 3): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:ehMeet."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q29_4Status a   hobbit:KPI;
+    rdfs:label  "Q29-4 Status"@en;
+    rdfs:comment    "Requirement 29 (Part 4): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:ehOverlap."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q29_5Status a   hobbit:KPI;
+    rdfs:label  "Q29-5 Status"@en;
+    rdfs:comment    "Requirement 29 (Part 5): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:ehCovers."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q29_6Status a   hobbit:KPI;
+    rdfs:label  "Q29-6 Status"@en;
+    rdfs:comment    "Requirement 29 (Part 6): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:ehCoveredBy."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q29_7Status a   hobbit:KPI;
+    rdfs:label  "Q29-7 Status"@en;
+    rdfs:comment    "Requirement 29 (Part 7): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:ehInside."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q29_8Status a   hobbit:KPI;
+    rdfs:label  "Q29-8 Status"@en;
+    rdfs:comment    "Requirement 29 (Part 8): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:ehContains."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q30_1Status a   hobbit:KPI;
+    rdfs:label  "Q30-1 Status"@en;
+    rdfs:comment    "Requirement 30 (Part 1): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:rcc8eq."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q30_2Status a   hobbit:KPI;
+    rdfs:label  "Q30-2 Status"@en;
+    rdfs:comment    "Requirement 30 (Part 2): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:rcc8dc."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q30_3Status a   hobbit:KPI;
+    rdfs:label  "Q30-3 Status"@en;
+    rdfs:comment    "Requirement 30 (Part 3): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:rcc8ec."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q30_4Status a   hobbit:KPI;
+    rdfs:label  "Q30-4 Status"@en;
+    rdfs:comment    "Requirement 30 (Part 4): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:rcc8po."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q30_5Status a   hobbit:KPI;
+    rdfs:label  "Q30-5 Status"@en;
+    rdfs:comment    "Requirement 30 (Part 5): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:rcc8tppi."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q30_6Status a   hobbit:KPI;
+    rdfs:label  "Q30-6 Status"@en;
+    rdfs:comment    "Requirement 30 (Part 6): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:rcc8tpp."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q30_7Status a   hobbit:KPI;
+    rdfs:label  "Q30-7 Status"@en;
+    rdfs:comment    "Requirement 30 (Part 7): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:rcc8ntpp."@en;
+    rdfs:range  xsd:boolean .
+
+bench:Q30_8Status a   hobbit:KPI;
+    rdfs:label  "Q30-8 Status"@en;
+    rdfs:comment    "Requirement 30 (Part 8): Basic graph pattern matching shall use the semantics defined by the RIF Core Entailment Regime [W3C SPARQL Entailment] for the RIF rule [W3C RIF Core] geor:rcc8ntppi."@en;
+    rdfs:range  xsd:boolean .
 
 bench:totalCorrectAnswers   a   hobbit:KPI;
     rdfs:label  "Correct Answers"@en;
     rdfs:comment    "Total number of correct answers to all GeoSPARQL queries"@en;
     rdfs:range  xsd:integer .
+
+bench:percentageCorrectAnswers   a   hobbit:KPI;
+    rdfs:label  "GeoSPARQL Compliance Percentage"@en;
+    rdfs:comment    "The percentage of compliance to the requirements of the GeoSPARQL standard"@en;
+    rdfs:range  xsd:double .

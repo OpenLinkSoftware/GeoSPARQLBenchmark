@@ -1,0 +1,7 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT ?coordinateDimension
+WHERE {
+  my:A geo:hasGeometry ?aGeom .
+  ?aGeom geo:coordinateDimension ?coordinateDimension .
+}

@@ -127,6 +127,11 @@ public class VirtuosoSysAda extends AbstractSystemAdapter {
             }
         }
         else {
+            if (queryString.contains("INFERENCE")) {
+                // Activate inference in Virtuoso
+                queryString = "DEFINE input:inference <myset>\n" + queryString;
+                LOGGER.info("Added an INFERENCE line to a query. This is the new query text:\n" + queryString);
+            }
             QueryExecution qe = queryExecFactory.createQueryExecution(queryString);
             ResultSet results = null;
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -201,7 +206,7 @@ public class VirtuosoSysAda extends AbstractSystemAdapter {
             try {
                 allDataReceivedMutex.acquire();
             } catch (InterruptedException e) {
-                LOGGER.error("Exception while waitting for all data for bulk load " + loadingNumber + " to be recieved.", e);
+                LOGGER.error("Exception while waiting for all data for bulk load " + loadingNumber + " to be received.", e);
             }
             LOGGER.info("All data for bulk load " + loadingNumber + " received. Proceed to the loading...");
 

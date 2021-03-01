@@ -1,0 +1,13 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (xsd:boolean(?relate) as ?relates)
+WHERE {
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom geo:asGML ?aGML .
+  my:B geo:hasDefaultGeometry ?bGeom .
+  ?bGeom geo:asWKT ?bWKT .
+  # "T*****FF*" refers to a 'contains' relation in DE-9IM
+  BIND (geof:relate(?aGML, ?bWKT, "T*****FF*"^^xsd:string) as ?relate)
+}
