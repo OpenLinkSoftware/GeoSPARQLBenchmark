@@ -1,7 +1,5 @@
 import os
 from SPARQLWrapper import SPARQLWrapper, XML, JSON
-from xmldiff import main
-import difflib
 import json
 import re
 from xml.dom.minidom import parse, parseString
@@ -37,6 +35,11 @@ comparelog="comparelog.txt"
 
 comparefile = open(comparelog, "w")
 
+## Queries a SPARQL endpoint with a given query extracted from the GeoSPARQL Benchmark repository .
+#  @param endpoint the endpoint to query
+#  @param query the query to execute
+#  @param resultFolder the folder including the anticipated query results
+#  @param testid the id of the currently to be executed test
 def queryEndpoint(endpoint,query,resultFolder, testid):
 	sparql = SPARQLWrapper(endpoint)
 	sparql.setQuery(query)
@@ -48,7 +51,11 @@ def queryEndpoint(endpoint,query,resultFolder, testid):
 		compareResults(getResultFilesList(testid),results,testid)
 	except:
 		print("except")
-	
+
+## Compares a list of anticipated query results to the retrieved query result from the triple store .
+#  @param resultlist the list of anticipated query results
+#  @param queryresult the queryresult of the to be tested triple store
+#  @param testid the id of the currently to be executed test
 def compareResults(resultlist,queryresult,testid):
 	print(testid)
 	m = re.search("^(query-r[0-9]+).*", testid)
@@ -77,6 +84,8 @@ def compareResults(resultlist,queryresult,testid):
 	resultMap[testid]=False
 	return False
 
+## Calculates the compliance score given a map of evaluated query results .
+#  @param resultMap a map of query results
 def calculateComplianceScore(resultMap):
 	correctScore=0
 	amountOfQueries=len(resultMap)
@@ -115,6 +124,8 @@ def calculateComplianceScore(resultMap):
 		f.write("Extension "+str(ext)+": "+str((curextscore/extmaxscore)*100)+"%\n")
 	f.close()
 
+## Retrieves a list of anticipated query results from the repository for a given testid .
+#  @param testid the testid to retrieve anticipated results for
 def getResultFilesList(testid):
 	results={}
 	for file in os.listdir(resultFolder):
@@ -125,7 +136,8 @@ def getResultFilesList(testid):
 			results[file]=parseString(content).toprettyxml(indent="", newl="\n").replace(" distinct=\"false\"","").replace(" ordered=\"true\"","").replace("\n","").replace(" ","")
 			f.close()
 	return results
-i=0			
+
+
 for name in os.listdir(queryFolder):
 	print(name)
 	f = open(queryFolder+"/"+name, 'r')  
@@ -135,7 +147,6 @@ for name in os.listdir(queryFolder):
 	else:
 		queryEndpoint(curendpoint,content,resultFolder,name)
 	f.close()
-	i+=1
 print(json.dumps(resultMap, indent=2))
 print(json.dumps(resultMapReq, indent=2))
 f = open("benchmarkresult.json", "w")
