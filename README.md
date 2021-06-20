@@ -19,7 +19,8 @@ and then [run an experiment](https://hobbit-project.github.io/benchmarking.html)
 
 ## Publications
 
-(preprint) Milos Jovanovik, Timo Homburg, Mirko Spasić. "[A GeoSPARQL Compliance Benchmark](https://arxiv.org/abs/2102.06139)". arXiv:2102.06139.
+ * Milos Jovanovik, Timo Homburg, Mirko Spasić. "[Software for the GeoSPARQL Compliance Benchmark](https://doi.org/10.1016/j.simpa.2021.100071)". Software Impacts 8:100071, 2021.
+ * (preprint) Milos Jovanovik, Timo Homburg, Mirko Spasić. "[A GeoSPARQL Compliance Benchmark](https://arxiv.org/abs/2102.06139)". arXiv:2102.06139.
 
 ## Acknowledgement
 
