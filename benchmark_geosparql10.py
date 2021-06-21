@@ -63,7 +63,7 @@ def compareResults(resultlist,queryresult,testid,query):
 	if m==None:
 		return False
 	reqid=m.group(1)
-	negativeResults={"score":False,"res":[]}
+	negativeResults={"score":False,"query":query.replace("\n","").replace("\t",""),"res":[]}
 	if not reqid in resultMapReq:
 		resultMapReq[reqid]={}
 	for res in resultlist:
@@ -71,15 +71,14 @@ def compareResults(resultlist,queryresult,testid,query):
 			resultMap[testid]=True
 			resultMapReq[reqid][testid]=True
 			negativeResults["res"].append({"expfile":res,"expected":resultlist[res],"acresult":queryresult})
-			negativeResults["score"]=True
-			negativeResults["query"]=query.replace("\n","").replace("\t","")			
+			negativeResults["score"]=True		
 			comparefile.write("==="+testid+"===\n")
 			comparefile.write(json.dumps(negativeResults,indent=2))
 			comparefile.write("\n")
 			comparefile.write("======\n")
 			return True
 		else:
-			negativeResults["res"].append({"expfile":res,"query":query.replace("\n","").replace("\t",""),"expected":resultlist[res],"acresult":queryresult})
+			negativeResults["res"].append({"expfile":res,"expected":resultlist[res],"acresult":queryresult})
 	comparefile.write("==="+testid+"===\n")
 	comparefile.write(json.dumps(negativeResults,indent=2))
 	comparefile.write("\n")
