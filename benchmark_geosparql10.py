@@ -3,6 +3,7 @@ from SPARQLWrapper import SPARQLWrapper, XML, JSON
 import json
 import re
 from xml.dom.minidom import parse, parseString
+import lxml.etree as ET
 
 resultMap={}
 
@@ -46,9 +47,9 @@ def queryEndpoint(endpoint,query,resultFolder, testid):
 	sparql.setReturnFormat(XML)
 	try:
 		results = sparql.query().convert().toprettyxml(indent="", newl="\n")
-		#print(results)
+		results=replaceCDATA(results)
 		results=results.replace("\n","").replace(" ","").replace("\t","").replace("distinct=\"false\"ordered=\"true\"","").replace("xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"xsi:schemaLocation=\"http://www.w3.org/2001/sw/DataAccess/rf1/result2.xsd\"","")
-		compareResults(getResultFilesList(testid),results,testid)
+		compareResults(getResultFilesList(testid),results,testid,query)
 	except:
 		print("except")
 
@@ -56,9 +57,11 @@ def queryEndpoint(endpoint,query,resultFolder, testid):
 #  @param resultlist the list of anticipated query results
 #  @param queryresult the queryresult of the to be tested triple store
 #  @param testid the id of the currently to be executed test
-def compareResults(resultlist,queryresult,testid):
+def compareResults(resultlist,queryresult,testid,query):
 	print(testid)
 	m = re.search("^(query-r[0-9]+).*", testid)
+	if m==None:
+		return False
 	reqid=m.group(1)
 	negativeResults={"score":False,"res":[]}
 	if not reqid in resultMapReq:
@@ -69,13 +72,14 @@ def compareResults(resultlist,queryresult,testid):
 			resultMapReq[reqid][testid]=True
 			negativeResults["res"].append({"expfile":res,"expected":resultlist[res],"acresult":queryresult})
 			negativeResults["score"]=True
+			negativeResults["query"]=query.replace("\n","").replace("\t","")			
 			comparefile.write("==="+testid+"===\n")
 			comparefile.write(json.dumps(negativeResults,indent=2))
 			comparefile.write("\n")
 			comparefile.write("======\n")
 			return True
 		else:
-			negativeResults["res"].append({"expfile":res,"expected":resultlist[res],"acresult":queryresult})
+			negativeResults["res"].append({"expfile":res,"query":query.replace("\n","").replace("\t",""),"expected":resultlist[res],"acresult":queryresult})
 	comparefile.write("==="+testid+"===\n")
 	comparefile.write(json.dumps(negativeResults,indent=2))
 	comparefile.write("\n")
@@ -83,6 +87,20 @@ def compareResults(resultlist,queryresult,testid):
 	resultMapReq[reqid][testid]=False
 	resultMap[testid]=False
 	return False
+
+def replaceCDATA(xmlstring):
+	xmltree=ET.fromstring(xmlstring)
+	for elem in xmltree.iter():
+		if "literaldatatype" in elem.tag and "<[CDATA[" in elem.text:
+			elem.text=elem.text.replace("<[CDATA[","").replace("]]","")
+			elem.text=escape_cdata(elem.text)
+	return ET.tostring(xmltree, encoding='utf8', method='xml').decode("utf8")	
+
+def escape_cdata(s):
+    s = s.replace("&", "&amp;")
+    s = s.replace("<", "&lt;")
+    s = s.replace(">", "&gt;")
+    return s 
 
 ## Calculates the compliance score given a map of evaluated query results .
 #  @param resultMap a map of query results
@@ -133,7 +151,9 @@ def getResultFilesList(testid):
 			print("File: "+str(file))
 			f = open(resultFolder+file.replace(".rq",".srx"), 'r')  
 			content = f.read()
-			results[file]=parseString(content).toprettyxml(indent="", newl="\n").replace(" distinct=\"false\"","").replace(" ordered=\"true\"","").replace("\n","").replace(" ","")
+			results[file]=parseString(content).toprettyxml(indent="", newl="\n")
+			results[file]=replaceCDATA(results[file])
+			results[file]=results[file].replace(" distinct=\"false\"","").replace(" ordered=\"true\"","").replace("\n","").replace(" ","")
 			f.close()
 	return results
 
