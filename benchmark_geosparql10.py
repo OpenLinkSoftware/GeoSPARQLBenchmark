@@ -120,12 +120,12 @@ def calculateComplianceScore(resultMap):
 		for assessment in resultMapReq[res]:
 			if resultMapReq[res][assessment]:
 				compliancescore+=percperThisReq
-		print("ComplianceScore: "+str(compliancescore*100)+"%")
+		print("ComplianceScore: "+str(round(compliancescore*100,2))+"%")
 	print("Amount of correct tests: "+str(correctScore)+"/"+str(amountOfQueries)+"="+str((correctScore/amountOfQueries)))
-	print("ComplianceScore: "+str(compliancescore*100)+"%")
+	print("ComplianceScore: "+str(round(compliancescore*100,2))+"%")
 	f = open("result.txt", "w")
 	f.write("Amount of correct tests: "+str(correctScore)+"/"+str(amountOfQueries)+"\n")
-	f.write("ComplianceScore: "+str(compliancescore*100)+"%\n")
+	f.write("ComplianceScore: "+str(round(compliancescore*100,2))+"%\n")
 	for ext in extensionMap:
 		reqlist=extensionMap[ext]
 		extmaxscore=len(extensionMap[ext])*percentagePerReq
@@ -139,7 +139,7 @@ def calculateComplianceScore(resultMap):
 						curextscore+=percperThisReq
 			else:
 				curextscore+=percentagePerReq
-		f.write("Extension "+str(ext)+": "+str((curextscore/extmaxscore)*100)+"%\n")
+		f.write("Extension "+str(ext)+": "+str(round((curextscore/extmaxscore)*100,2))+"%\n")
 	f.close()
 
 ## Retrieves a list of anticipated query results from the repository for a given testid .
