@@ -23,6 +23,39 @@ extensionMap={"CORE":["query-r01","query-r02","query-r03"],
 			  "GTOP":["query-r21","query-r22","query-r23","query-r24"],
 			  "RDFSE":["query-r25","query-r26","query-r27"],
 			  "QRW":["query-r28","query-r29","query-r30"]}
+			  
+reqToURI={
+"query-r01":"http://www.opengis.net/spec/geosparql/1.0/req/core/sparql-protocol",
+"query-r02":"http://www.opengis.net/spec/geosparql/1.0/req/core/spatial-object-class",
+"query-r03":"http://www.opengis.net/spec/geosparql/1.0/req/core/feature-class",
+"query-r04":"http://www.opengis.net/spec/geosparql/1.0/req/topology-vocab-extension/sf-spatial-relations",
+"query-r05":"http://www.opengis.net/spec/geosparql/1.0/req/topology-vocab-extension/eh-spatial-relations",
+"query-r06":"http://www.opengis.net/spec/geosparql/1.0/req/topology-vocab-extension/rcc8-spatial-relations",
+"query-r07":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/geometry-class",
+"query-r08":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/feature-properties",
+"query-r09":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/geometry-properties",
+"query-r10":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/wkt-literal",
+"query-r11":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/wkt-literal-default-srs",
+"query-r12":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/wkt-axis-order",
+"query-r13":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/wkt-literal-empty",
+"query-r14":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/geometry-as-wkt-literal",
+"query-r15":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/gml-literal",
+"query-r16":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/gml-literal-empty",
+"query-r17":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/gml-profile",
+"query-r18":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/geometry-as-gml-literal",
+"query-r19":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/query-functions",
+"query-r20":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-extension/srid-function",
+"query-r21":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-topology-extension/relate-query-function",
+"query-r22":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-topology-extension/sf-query-functions",
+"query-r23":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-topology-extension/eh-query-functions",
+"query-r24":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-topology-extension/rcc8-query-functions",
+"query-r25":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-topology-extension/bgp-rdfs-ent",
+"query-r26":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-topology-extension/wkt-geometry-types",
+"query-r27":"http://www.opengis.net/spec/geosparql/1.0/req/geometry-topology-extension/gml-geometry-types",
+"query-r28":"http://www.opengis.net/spec/geosparql/1.0/req/query-rewrite-extension/sf-query-rewrite",
+"query-r29":"http://www.opengis.net/spec/geosparql/1.0/req/query-rewrite-extension/eh-query-rewrite",
+"query-r30":"http://www.opengis.net/spec/geosparql/1.0/req/query-rewrite-extension/rcc8-query-rewrite"
+}
 
 curendpointrdfs="https://api.triplydb.com/datasets/Timo/geosparqlbenchmarkrdfs/services/geosparqlbenchmarkrdfs/sparql"
 
@@ -141,6 +174,37 @@ def calculateComplianceScore(resultMap):
 		f.write("Extension "+str(ext)+": "+str(round((curextscore/extmaxscore)*100,2))+"%\n")
 	f.close()
 
+
+def benchmarkResultsToRDF(resultMap):
+	ttlstring="@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix geo: <http://www.opengis.net/ont/geosparql#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix owl: <http://www.w3.org/2002/07/owl#> .\n"
+	ttlstring+="geo:evaluation rdf:type owl:DatatypeProperty .\n"
+	ttlstring+="geo:hasEvaluationQuery rdf:type owl:ObjectProperty .\n"
+	for ext in extensionMap:
+		reqlist=extensionMap[ext]
+		extmaxscore=len(extensionMap[ext])*percentagePerReq
+		curextscore=0
+		for req in reqlist:
+			ttlstring+="<"+reqToURI[req]+"> rdf:type geo:Requirement .\n"
+			ttlstring+="<"+reqToURI[req]+"_eval> rdf:type geo:RequirementEvaluation .\n"
+			print(resultMapReq)
+			if req in resultMapReq:
+				percperThisReq=percentagePerReq/len(resultMapReq[req])
+				asscounter=1
+				for assessment in resultMapReq[req]:
+					ttlstring+="<"+reqToURI[req]+"_eval> geo:hasEvaluationQuery <"+reqToURI[req]+"/query_"+str(asscounter)+"> .\n"
+					ttlstring+="<"+reqToURI[req]+"/query_"+str(asscounter)+"> rdf:type geo:RequirementQuery .\n"
+					ttlstring+="<"+reqToURI[req]+"/query_"+str(asscounter)+"> rdfs:label \""+str(reqToURI[req])+" query "+str(asscounter)+"\"@en .\n"
+					ttlstring+="<"+reqToURI[req]+"/query_"+str(asscounter)+"_eval> rdf:type geo:RequirementQueryEvaluation .\n"
+					ttlstring+="<"+reqToURI[req]+"/query_"+str(asscounter)+"_eval> geo:evaluation \""+str(resultMapReq[req][assessment])+"\"^^xsd:boolean .\n"
+					asscounter+=1
+					if resultMapReq[req][assessment]:
+						curextscore+=percperThisReq
+			else:
+				curextscore+=percentagePerReq
+		ttlstring+="<"+reqToURI[req]+"_eval> geo:evaluation \""+str(curextscore)+"\"^^xsd:double .\n"
+	f = open("benchmarkresult.ttl", "w")
+	f.write(ttlstring)
+	f.close()
 ## Retrieves a list of anticipated query results from the repository for a given testid .
 #  @param testid the testid to retrieve anticipated results for
 def getResultFilesList(testid):
@@ -173,3 +237,4 @@ f.write(json.dumps(resultMap, indent=2))
 f.close()
 comparefile.close()
 calculateComplianceScore(resultMap)
+benchmarkResultsToRDF(resultMap)
