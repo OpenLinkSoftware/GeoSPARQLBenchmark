@@ -418,6 +418,7 @@ def benchmarkResultsToRDF(resultMap):
 	f = open("benchmarkresult.ttl", "w")
 	f.write(ttlstring)
 	f.close()
+
 ## Retrieves a list of anticipated query results from the repository for a given testid .
 #  @param testid the testid to retrieve anticipated results for
 def getResultFilesList(testid):
