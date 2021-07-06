@@ -24,7 +24,7 @@ and then [run an experiment](https://hobbit-project.github.io/benchmarking.html)
 
 ## Mapping Requirements to Queries
 
-Requirement | Queries &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description
+Requirement | Queries &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description
 :--- | :--- | :--- 
 R1 | [query-r01.rq](https://github.com/OpenLinkSoftware/GeoSPARQLBenchmark/blob/master/src/main/resources/gsb_queries/query-r01.rq) | Selection of the first triple where geometry A is the subject
 R2 | [query-r02.rq](https://github.com/OpenLinkSoftware/GeoSPARQLBenchmark/blob/master/src/main/resources/gsb_queries/query-r02.rq) | Selection of the first entity of type geo:SpatialObject
