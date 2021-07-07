@@ -11,8 +11,8 @@ As a result, the benchmark provides two metrics:
 
 ## Results
 
-You can find a set of results from the [latest experiments on the hosted instance of the HOBBIT Platform](https://master.project-hobbit.eu/experiments/1612476122572,1612477003063,1612476116049,1612477500164,1612661614510,1612637531673,1612828110551,1612477849872)
-(log in as Guest). [last update: 09.02.2021]
+You can find a set of results from the [latest experiments on the hosted instance of the HOBBIT Platform](https://master.project-hobbit.eu/experiments/1612476122572,1612477003063,1612476116049,1625421291667,1612477500164,1612661614510,1612637531673,1612828110551,1612477849872)
+(log in as Guest). [last update: 07.07.2021]
 
 If you want your RDF triplestore tested, you can [add it as a system to the HOBBIT Platform](https://hobbit-project.github.io/system_integration.html),
 and then [run an experiment](https://hobbit-project.github.io/benchmarking.html) using the [hosted instance of the HOBBIT Platform](https://hobbit-project.github.io/master.html).
