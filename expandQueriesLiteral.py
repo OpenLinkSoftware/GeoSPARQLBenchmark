@@ -25,15 +25,33 @@ geom_literals2 = [
 	("DGGS","geo:asDGGS")
 ]
 
-combinations=list(itertools.combinations(geom_literals,2))
+combinations=list(itertools.permutations(geom_literals,2))
 combinations+=list(map(lambda x, y:(x,y), geom_literals.keys(), geom_literals.keys()))
 
-files = os.listdir(path)
+for comb in combinations:
+    print(comb)
+
+files = os.listdir(querypath)
+answerp = os.listdir(answerpath)
 first=True
 for f in files:
+	if not os.path.isfile(querypath+f):
+		continue
 	file = open(querypath+f, "r")
 	filecontent=file.read()
+	fileprefix=f[0:f.rfind("-")]
+	answerfiles={}
+	for ans in answerp:
+		if fileprefix in ans:
+			print(ans+" - "+fileprefix)
+			ansfile = open(answerpath+ans, "r")
+			filec=ansfile.read()
+			answerfiles[ans]=filec
+	print(answerfiles)
 	variantcounter=1
+	if not "%%literal1%%" in filecontent and not "%%literal2%%" in filecontent:
+		file.close()
+		continue
 	if "%%literal2%%" in filecontent:
 		for lit in combinations:
 			#print(lit[0]+" "+lit[1]+" "+geom_literals[lit[0]]+" "+geom_literals[lit[1]])
@@ -51,6 +69,7 @@ for f in files:
 			variantcounter=variantcounter+1
 		file.close()
 
+"""
 for f in files:
 	file = open(answerpath+f, "r")
 	filecontent=file.read()
@@ -71,5 +90,5 @@ for f in files:
 				f2.write(newfile)
 			variantcounter=variantcounter+1
 		file.close()
-
+"""
 	
