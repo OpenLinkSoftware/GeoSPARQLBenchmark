@@ -58,6 +58,17 @@ for f in files:
 			newfile=replaceInString(filecontent,lit[0],lit[1],geom_literals[lit[0]],geom_literals[lit[1]])
 			with open(querypath+"result/"+f[0:f.rfind("-")]+"-"+str(variantcounter)+".rq", "w") as f2:
 				f2.write(newfile)
+			first=True    
+			answercounter=0
+			for ans in answerfiles:
+				if first:
+					with open(answerpath+"result/"+f[0:f.rfind("-")]+"-"+str(variantcounter)+".srx", "w") as f2:
+						f2.write(answerfiles[ans])
+					first=False                    
+				else:
+					with open(answerpath+"result/"+f[0:f.rfind("-")]+"-"+str(variantcounter)+"-alternative-"+str(answercounter)+".srx", "w") as f2:
+						f2.write(answerfiles[ans])					
+				answercounter+=1                    
 			variantcounter=variantcounter+1
 		file.close()
 	else:	
