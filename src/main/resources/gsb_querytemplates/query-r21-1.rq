@@ -5,9 +5,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT (xsd:boolean(?relate) as ?relates)
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
   my:B geo:hasDefaultGeometry ?bGeom .
-  ?bGeom geo:asWKT ?bWKT .
+  ?bGeom %%literalrel1%% ?b%%literal2%% .
   # "T*****FF*" refers to a 'contains' relation in DE-9IM
-  BIND (geof:relate(?aWKT, ?bWKT, "T*****FF*"^^xsd:string) as ?relate)
+  BIND (geof:relate(?a%%literal1%%, ?b%%literal2%%, "T*****FF*"^^xsd:string) as ?relate)
 }

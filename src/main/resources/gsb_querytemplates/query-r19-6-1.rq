@@ -4,8 +4,8 @@ PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
 SELECT ?difference
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
+  ?aGeom %%literalrel1%% ?a%%literal1%%  .
   my:B geo:hasDefaultGeometry ?bGeom .
-  ?bGeom geo:asWKT ?bWKT .
-  BIND (geof:difference(?aWKT, ?bWKT) as ?difference)
+  ?bGeom %%literalrel2%%  ?b%%literal2%%  .
+  BIND (geof:difference(?a%%literal1%% , ?b%%literal2%%) as ?difference)
 }

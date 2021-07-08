@@ -4,6 +4,6 @@ PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
 SELECT ?boundary
 WHERE {
   my:A geo:hasDefaultGeometry ?geom .
-  ?geom geo:asWKT ?wkt .
-  BIND (geof:boundary(?wkt) as ?boundary)
+  ?geom %%literalrel1%% ?%%literal1%% .
+  BIND (geof:boundary(?%%literal1%%) as ?boundary)
 }

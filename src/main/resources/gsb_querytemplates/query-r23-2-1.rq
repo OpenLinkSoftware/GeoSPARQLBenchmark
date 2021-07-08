@@ -5,8 +5,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT (xsd:boolean(?ehDisjoint) as ?disjoint)
 WHERE {
   my:B geo:hasDefaultGeometry ?bGeom .
-  ?bGeom geo:asWKT ?bWKT .
+  ?bGeom %%literalrel1%% ?b%%literal1%% .
   my:C geo:hasDefaultGeometry ?cGeom .
-  ?cGeom geo:asWKT ?cWKT .
-  BIND (geof:ehDisjoint(?bWKT, ?cWKT) as ?ehDisjoint)
+  ?cGeom %%literalrel2%% ?c%%literal2%% .
+  BIND (geof:ehDisjoint(?b%%literal1%%, ?c%%literal2%%) as ?ehDisjoint)
 }

@@ -5,8 +5,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT (xsd:boolean(?sfContains) as ?contains)
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
   my:F geo:hasDefaultGeometry ?fGeom .
-  ?fGeom geo:asWKT ?fWKT .
-  BIND (geof:sfContains(?aWKT, ?fWKT) as ?sfContains)
+  ?fGeom %%literalrel2%% ?f%%literal2%% .
+  BIND (geof:sfContains(?a%%literal1%%, ?f%%literal2%%) as ?sfContains)
 }

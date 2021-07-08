@@ -5,6 +5,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT (xsd:boolean(?rcc8eq) as ?equals)
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
-  BIND (geof:rcc8eq(?aWKT, ?aWKT) as ?rcc8eq)
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
+  BIND (geof:rcc8eq(?a%%literal1%%, ?a%%literal1%%) as ?rcc8eq)
 }

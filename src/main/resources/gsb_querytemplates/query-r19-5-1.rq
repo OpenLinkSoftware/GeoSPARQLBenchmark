@@ -4,8 +4,8 @@ PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
 SELECT ?union
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
   my:B geo:hasDefaultGeometry ?bGeom .
-  ?bGeom geo:asWKT ?bWKT .
-  BIND (geof:union(?aWKT, ?bWKT) as ?union)
+  ?bGeom %%literalrel2%% ?b%%literal2%% .
+  BIND (geof:union(?a%%literal1%% , ?b%%literal2%%) as ?union)
 }

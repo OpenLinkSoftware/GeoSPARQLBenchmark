@@ -5,8 +5,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT (xsd:boolean(?sfOverlaps) as ?overlaps)
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
   my:D geo:hasDefaultGeometry ?dGeom .
-  ?dGeom geo:asWKT ?dWKT .
-  BIND (geof:sfOverlaps(?aWKT, ?dWKT) as ?sfOverlaps)
+  ?dGeom %%literalrel2%% ?d%%literal2%% .
+  BIND (geof:sfOverlaps(?a%%literal1%%, ?d%%literal2%%) as ?sfOverlaps)
 }

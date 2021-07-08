@@ -5,8 +5,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT (xsd:boolean(?rcc8po) as ?partiallyOverlapping)
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
   my:D geo:hasDefaultGeometry ?dGeom .
-  ?dGeom geo:asWKT ?dWKT .
-  BIND (geof:rcc8po(?aWKT, ?dWKT) as ?rcc8po)
+  ?dGeom %%literalrel2%% ?d%%literal2%% .
+  BIND (geof:rcc8po(?a%%literal1%%, ?d%%literal2%%) as ?rcc8po)
 }

@@ -4,6 +4,6 @@ PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
 SELECT ?convexHull
 WHERE {
   my:A geo:hasDefaultGeometry ?geom .
-  ?geom geo:asWKT ?wkt .
-  BIND (geof:convexHull(?wkt) as ?convexHull)
+  ?geom %%literalrel1%% ?%%literal1%% .
+  BIND (geof:convexHull(?%%literal1%%) as ?convexHull)
 }

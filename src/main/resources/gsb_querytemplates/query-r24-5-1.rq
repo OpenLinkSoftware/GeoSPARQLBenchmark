@@ -5,8 +5,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT (xsd:boolean(?rcc8tppi) as ?tangentialProperPartInverse)
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
   my:B geo:hasDefaultGeometry ?bGeom .
-  ?bGeom geo:asWKT ?bWKT .
-  BIND (geof:rcc8tppi(?aWKT, ?bWKT) as ?rcc8tppi)
+  ?bGeom %%literalrel2%% ?b%%literal2%% .
+  BIND (geof:rcc8tppi(?a%%literal1%%, ?b%%literal2%%) as ?rcc8tppi)
 }

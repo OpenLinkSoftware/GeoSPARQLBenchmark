@@ -5,8 +5,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT (xsd:boolean(?ehCovers) as ?covers)
 WHERE {
   my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
   my:B geo:hasDefaultGeometry ?bGeom .
-  ?bGeom geo:asWKT ?bWKT .
-  BIND (geof:ehCovers(?aWKT, ?bWKT) as ?ehCovers)
+  ?bGeom %%literalrel2%% ?b%%literal2%% .
+  BIND (geof:ehCovers(?a%%literal1%%, ?b%%literal2%%) as ?ehCovers)
 }

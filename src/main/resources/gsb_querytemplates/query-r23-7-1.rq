@@ -5,8 +5,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT (xsd:boolean(?ehInside) as ?inside)
 WHERE {
   my:F geo:hasDefaultGeometry ?fGeom .
-  ?fGeom geo:asWKT ?fWKT .
+  ?fGeom %%literalrel1%% ?f%%literal1%% .
   my:A geo:hasDefaultGeometry ?aGeom .
-  ?aGeom geo:asWKT ?aWKT .
-  BIND (geof:ehInside(?fWKT, ?aWKT) as ?ehInside)
+  ?aGeom %%literalrel2%% ?a%%literal2%% .
+  BIND (geof:ehInside(?f%%literal1%%, ?a%%literal2%%) as ?ehInside)
 }

@@ -5,6 +5,6 @@ PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
 SELECT ?buffer
 WHERE {
   my:A geo:hasDefaultGeometry ?geom .
-  ?geom geo:asWKT ?wkt .
-  BIND (geof:buffer(?wkt, 10.0, uom:metre) as ?buffer)
+  ?geom %%literalrel1%% ?%%literal1%% .
+  BIND (geof:buffer(?%%literal1%%, 10.0, uom:metre) as ?buffer)
 }

@@ -5,13 +5,13 @@ PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
 SELECT ?f ?distance
 WHERE {
   my:C my:hasExactGeometry ?cGeom .
-  ?cGeom geo:asWKT ?cWKT .
+  ?cGeom %%literalrel1%% ?c%%literal1%% .
   ?f my:hasExactGeometry ?fGeom .
-  ?fGeom geo:asWKT ?fWKT .
+  ?fGeom %%literalrel1%% ?f%%literal2%% .
   FILTER (?fGeom != ?cGeom)
   FILTER (?f != my:H )
   FILTER (?f != my:I )
-  BIND (geof:distance(?cWKT, ?fWKT, uom:metre) as ?distance)
+  BIND (geof:distance(?c%%literal1%%, ?f%%literal2%%, uom:metre) as ?distance)
 }
 ORDER BY ASC(?distance)
 LIMIT 3
