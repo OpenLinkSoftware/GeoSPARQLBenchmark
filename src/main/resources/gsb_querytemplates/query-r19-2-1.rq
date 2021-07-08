@@ -1,0 +1,10 @@
+PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+SELECT ?buffer
+WHERE {
+  my:A geo:hasDefaultGeometry ?geom .
+  ?geom geo:asWKT ?wkt .
+  BIND (geof:buffer(?wkt, 10.0, uom:metre) as ?buffer)
+}
