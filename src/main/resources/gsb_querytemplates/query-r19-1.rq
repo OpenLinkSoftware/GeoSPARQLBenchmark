@@ -1,0 +1,6 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT (geof:asWKT(?wktt) as ?wkt)
+WHERE {
+  my:AExactGeom geo:%%literalrel1%% ?wktt
+} 

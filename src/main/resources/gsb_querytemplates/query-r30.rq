@@ -1,0 +1,10 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT ?geom
+WHERE {
+  ?geom geo:asKML ?kml
+  FILTER(regex(str(?kml), ".*(Point|Polygon|LineString|LinearRing|MultiGeometry|Model|MultiPolygon|MultiLineString|MultiPoint).*", "i"))
+  FILTER(datatype(?kml) = geo:kmlLiteral)
+}
+ORDER BY ?geom 
+ 

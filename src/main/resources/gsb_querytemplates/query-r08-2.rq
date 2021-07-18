@@ -1,6 +1,8 @@
 PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-SELECT ?defaultGeom
+SELECT ?f
 WHERE {
-  my:A geo:hasDefaultGeometry ?defaultGeom .
+  my:B geo:sfDisjoint ?f
 }
+ORDER BY ?f
+LIMIT 1

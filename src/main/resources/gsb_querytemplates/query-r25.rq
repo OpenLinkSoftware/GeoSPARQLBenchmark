@@ -1,0 +1,10 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT ?geom
+WHERE {
+  ?geom geo:asGeoJSON ?geojson
+  FILTER(regex(str(?geojson), ".*(Point|Polygon|LineString|MultiPolygon|MultiLineString|MultiPoint).*", "i"))
+  FILTER(regex(str(?geojson), "\{.*\:\{.*\:.*\}\}", "i"))
+  FILTER(datatype(?geojson) = geo:geoJSONLiteral)
+}
+ORDER BY ?geom 
