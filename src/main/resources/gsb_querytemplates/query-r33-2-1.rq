@@ -1,8 +1,0 @@
-PREFIX my: <http://example.org/ApplicationSchema#>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREIFX geof: <http://www.opengis.net/def/function/geosparql/>
-SELECT (geof:centroid(?%%literal1%%) AS ?centroid)
-WHERE {
-  ?geom %%literalrel1%% ?%%literal1%% .
-}
-GROUP BY ?%%literal1%%

@@ -56,6 +56,7 @@
     <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#AExactGeom"/>
     <my:hasPointGeometry rdf:resource="http://example.org/ApplicationSchema#APointGeom"/>
     <geo:hasDefaultGeometry rdf:resource="http://example.org/ApplicationSchema#AExactGeom"/>
+    <geo:defaultGeometry rdf:resource="http://example.org/ApplicationSchema#AExactGeom"/>
     <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#AExactGeom"/>
     <geo:sfEquals rdf:resource="http://example.org/ApplicationSchema#A"/>
     <geo:ehEquals rdf:resource="http://example.org/ApplicationSchema#A"/>
@@ -145,6 +146,7 @@
     <my:hasExactGeometry rdf:resource="http://example.org/ApplicationSchema#BExactGeom"/>
     <my:hasPointGeometry rdf:resource="http://example.org/ApplicationSchema#BPointGeom"/>
     <geo:hasDefaultGeometry rdf:resource="http://example.org/ApplicationSchema#BExactGeom"/>
+    <geo:defaultGeometry rdf:resource="http://example.org/ApplicationSchema#BExactGeom"/>
     <geo:hasGeometry rdf:resource="http://example.org/ApplicationSchema#BExactGeom"/>
     <geo:sfEquals rdf:resource="http://example.org/ApplicationSchema#B"/>
     <geo:ehEquals rdf:resource="http://example.org/ApplicationSchema#B"/>
@@ -606,6 +608,15 @@
             <LineString xmlns="https://www.opengis.net/gml"><posList></posList></LineString>
         ]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#kmlLiteral">
+            <![CDATA[<Point><coordinates></coordinates></Point>]]>
+    </geo:asKML>
+    <geo:asDggs rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+            <![CDATA[]]>    
+    </geo:asDggs>
 </sf:LineString>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#IPointGeom">

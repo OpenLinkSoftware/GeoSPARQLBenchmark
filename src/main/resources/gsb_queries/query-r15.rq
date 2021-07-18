@@ -1,9 +1,12 @@
 PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-SELECT ?geom
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (xsd:boolean(?sfEquals) as ?equals)
 WHERE {
-  ?geom geo:asGML ?gml
-  FILTER(regex(str(?gml), ".*(AbstractCurveSegment|ArcByCenterPoint|CircleByCenterPoint|ArcString|Arc|Circle|ArcStringByBulge|ArcByBulge|Clothoid|GeodesicString|Geodesic|LineStringSegment|LineString|OffsetCurve|SplineCurve|BSpline|Bezier|PolynomialSpline|CubicSpline|Curve|OrientableCurve|CompositeCurve|Ring|LinearRing|OrientableSurface|CompositeSurface|Shell|Surface|Polygon|PolyhedralSurface|TriangulatedSurface|TriangulatedIrrefularNetwork|Point|Solid|CompositeSolid|GeometricComplex|Composite|CompositeCurve|MultiGeometry|MultiCurve|MultiPoint|MultiSolid|MultiSurface|Cone|Cylinder|Sphere|Rectangle|Triangle).*", "i"))
-  FILTER(datatype(?gml) = geo:gmlLiteral)
+  my:J geo:hasDefaultGeometry ?jGeom .
+  ?jGeom geo:asWKT ?jWKT .
+  my:K geo:hasDefaultGeometry ?kGeom .
+  ?kGeom geo:asWKT ?kWKT .
+  BIND (geof:sfEquals(?jWKT, ?kWKT) as ?sfEquals)
 }
-ORDER BY ?geom

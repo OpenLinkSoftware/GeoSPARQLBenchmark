@@ -1,8 +1,0 @@
-# INFERENCE
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-SELECT DISTINCT ?f
-WHERE {
-  ?f rdf:type geo:Feature 
-}
-ORDER BY ?f

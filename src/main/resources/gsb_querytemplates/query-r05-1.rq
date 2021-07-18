@@ -1,6 +1,0 @@
-PREFIX my: <http://example.org/ApplicationSchema#>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-SELECT ?f
-WHERE {
-  my:A geo:ehEquals ?f
-}

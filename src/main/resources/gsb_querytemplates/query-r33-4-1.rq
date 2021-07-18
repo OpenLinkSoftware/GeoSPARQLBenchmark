@@ -1,8 +1,0 @@
-PREFIX my: <http://example.org/ApplicationSchema#>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-SELECT (geof:concaveHull(?%%literal1%%,"0.99"^^xsd:double) AS ?concavehull)
-WHERE {
-  ?geom %%literalrel1%% ?%%literal1%% .
-}
-GROUP BY ?%%literal1%%

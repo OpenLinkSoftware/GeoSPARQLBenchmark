@@ -1,12 +1,7 @@
 PREFIX my: <http://example.org/ApplicationSchema#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-SELECT (xsd:boolean(?sfEquals) as ?equals)
+SELECT ?dimension
 WHERE {
-  my:I geo:hasDefaultGeometry ?iGeom .
-  ?iGeom geo:asWKT ?iWKT .
-  my:H geo:hasDefaultGeometry ?hGeom .
-  ?hGeom geo:asWKT ?hWKT .
-  BIND (geof:sfEquals(?iWKT, ?hWKT) as ?sfEquals)
+  my:A geo:hasGeometry ?aGeom .
+  ?aGeom geo:dimension ?dimension .
 }

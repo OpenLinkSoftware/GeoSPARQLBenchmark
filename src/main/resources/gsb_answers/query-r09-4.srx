@@ -1,10 +1,10 @@
 <sparql xmlns="http://www.w3.org/2005/sparql-results#">
  <head>
-  <variable name="isEmpty"/>
+  <variable name="f"/>
  </head>
  <results distinct="false" ordered="true">
   <result>
-   <binding name="isEmpty"><literal datatype="http://www.w3.org/2001/XMLSchema#boolean">0</literal></binding>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#D</uri></binding>
   </result>
  </results>
 </sparql>
