@@ -3,10 +3,21 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:sf="http://www.opengis.net/ont/sf#"
+    xmlns:qudt="http://qudt.org/vocab/unit/"
     xmlns:geo="http://www.opengis.net/ont/geosparql#"
     xmlns:my="http://example.org/ApplicationSchema#">
 
 <!-- Integration with GeoSPARQL classes and properties -->
+
+<rdfs:Class rdf:about="http://www.opengis.net/ont/geosparql#SpatialObjectCollection"/>    
+
+<rdfs:Class rdf:about="http://www.opengis.net/ont/geosparql#FeatureCollection">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObjectCollection"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="http://www.opengis.net/ont/geosparql#GeometryCollection">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObjectCollection"/>
+</rdfs:Class>
 
 <rdfs:Class rdf:about="http://www.opengis.net/ont/sf#Polygon">
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Surface"/>
@@ -32,6 +43,8 @@
 <rdf:Property rdf:about="http://example.org/ApplicationSchema#hasPointGeometry">
     <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
 </rdf:Property>
+
+
 
 <!-- Instance-level statements -->
 
@@ -61,6 +74,16 @@
     <geo:rcc8ntppi rdf:resource="http://example.org/ApplicationSchema#G"/>
 </my:PlaceOfInterest>
 
+<geo:GeometryCollection rdf:about="http://example.org/ApplicationSchema#AGeometryCollection">
+    <rdfs:member rdf:resource="http://example.org/ApplicationSchema#AExactGeom"/>
+    <rdfs:member rdf:resource="http://example.org/ApplicationSchema#BExactGeom"/>
+</geo:GeometryCollection>
+
+<geo:FeatureCollection rdf:about="http://example.org/ApplicationSchema#FeatureCollectionA">
+    <rdfs:member rdf:resource="http://example.org/ApplicationSchema#A"/>
+    <rdfs:member rdf:resource="http://example.org/ApplicationSchema#B"/>
+</geo:FeatureCollection>
+
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#AExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <rdf:type rdf:resource="http://www.opengis.net/ont/gml#Polygon"/>
@@ -82,6 +105,12 @@
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:exterior><gml:LinearRing><gml:posList>-83.6 34.1 -83.2 34.1 -83.2 34.5 -83.6 34.5 -83.6 34.1</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type": "Polygon", "coordinates": [[[-83.6, 34.1], [-83.2, 34.1], [-83.2, 34.5], [-83.6, 34.5], [-83.6, 34.1]]]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#asKML">
+        <![CDATA[<Polygon><outerBoundaryIs><LinearRing><coordinates>-83.6,34.1 -83.2,34.1 -83.2,34.5 -83.6,34.5 -83.6,34.1</coordinates></LinearRing></outerBoundaryIs></Polygon>]]>
+    </geo:asKML>
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#APointGeom">
@@ -100,6 +129,12 @@
 	<geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Point xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:pos>-83.4 34.3</gml:pos></gml:Point>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type":"Point","coordinates":[-83.4, 34.3]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#asKML">
+        <![CDATA[<Point><coordinates>-83.4,34.3</coordinates></Point>]]>
+    </geo:asKML>
 </sf:Point>
 
 <!-- B -->
@@ -138,6 +173,15 @@
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:exterior><gml:LinearRing><gml:posList>-83.6 34.1 -83.4 34.1 -83.4 34.3 -83.6 34.3 -83.6 34.1</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type": "Polygon", "coordinates": [[[-83.6, 34.1], [-83.4, 34.1], [-83.4, 34.3], [-83.6, 34.3], [-83.6, 34.1]]]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#kmlLiteral">
+        <![CDATA[<Polygon><outerBoundaryIs><LinearRing><coordinates>-83.6,34.1 -83.4,34.1 -83.4,34.3 -83.6,34.3 -83.6,34.1</coordinates></LinearRing></outerBoundaryIs></Polygon>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#BPointGeom">
@@ -155,6 +199,15 @@
 	<geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Point xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:pos>-83.5 34.2</gml:pos></gml:Point>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type":"Point","coordinates":[-83.5, 34.2]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#asKML">
+        <![CDATA[<Point><coordinates>-83.5,34.2</coordinates></Point>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Point>
 
 <!-- C -->
@@ -172,10 +225,47 @@
     <geo:sfDisjoint rdf:resource="http://example.org/ApplicationSchema#B"/>
     <geo:ehDisjoint rdf:resource="http://example.org/ApplicationSchema#B"/>
     <geo:rcc8dc rdf:resource="http://example.org/ApplicationSchema#B"/>
+    <geo:hasCentroid rdf:resource="http://example.org/ApplicationSchema#C_centroid"/>
+    <geo:hasArea rdf:resource="http://example.org/ApplicationSchema#C_area"/>
+    <geo:hasLength rdf:resource="http://example.org/ApplicationSchema#C_length"/>
+    <geo:hasMetricLength rdf:resource="http://example.org/ApplicationSchema#C_metriclength"/>
+    <geo:hasBoundingBox rdf:resource="http://example.org/ApplicationSchema#C_bbox"/>
     <!-- <geo:sfTouches rdf:resource="http://example.org/ApplicationSchema#A"/> -->
     <!-- <geo:ehMeet rdf:resource="http://example.org/ApplicationSchema#A"/> -->
     <!-- <geo:rcc8ec rdf:resource="http://example.org/ApplicationSchema#A"/> -->
 </my:PlaceOfInterest>
+
+<geo:SpatialMeasure rdf:about="http://example.org/ApplicationSchema#C_area">
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/AC"></qudt:unit>
+    <qudt:numericValue>101064.28</qudt:numericValue>
+</geo:SpatialMeasure>
+
+<geo:SpatialMeasure rdf:about="http://example.org/ApplicationSchema#C_metricarea">
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/M2"></qudt:unit>
+    <qudt:numericValue>408993009.32</qudt:numericValue>
+</geo:SpatialMeasure>
+
+<geo:SpatialMeasure rdf:about="http://example.org/ApplicationSchema#C_length">
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/MI"></qudt:unit>
+    <qudt:numericValue>50.50</qudt:numericValue>
+</geo:SpatialMeasure>
+
+<geo:SpatialMeasure rdf:about="http://example.org/ApplicationSchema#C_metriclength">
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/M"></qudt:unit>
+    <qudt:numericValue>81268.22</qudt:numericValue>
+</geo:SpatialMeasure>
+
+<sf:Point rdf:about="http://example.org/ApplicationSchema#C_centroid">
+    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
+        <![CDATA[POINT (-83.1 34.4)]]>
+    </geo:asWKT>
+</sf:Point>
+
+<sf:Polygon rdf:about="http://example.org/ApplicationSchema#C_bbox">
+    <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
+        <![CDATA[<http://www.opengis.net/def/crs/OGC/1.3/CRS84> Polygon((-83.2 34.3, -83.0 34.3, -83.0 34.5, -83.2 34.5, -83.2 34.3))]]>
+    </geo:asWKT>
+</sf:Polygon>
 
 <sf:Polygon rdf:about="http://example.org/ApplicationSchema#CExactGeom">
     <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
@@ -193,6 +283,15 @@
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:exterior><gml:LinearRing><gml:posList>-83.2 34.3 -83.0 34.3 -83.0 34.5 -83.2 34.5 -83.2 34.3</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type": "Polygon", "coordinates": [[[-83.2, 34.3], [-83.0, 34.3], [-83.0, 34.5], [-83.2, 34.5], [-83.2, 34.3]]]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#kmlLiteral">
+        <![CDATA[<Polygon><outerBoundaryIs><LinearRing><coordinates>-83.2,34.3 -83,34.3 -83,34.5 -83.2,34.5 -83.2,34.3</coordinates></LinearRing></outerBoundaryIs></Polygon>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#CPointGeom">
@@ -211,6 +310,15 @@
 	<geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Point xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:pos>-83.1 34.4</gml:pos></gml:Point>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type":"Point","coordinates":[-83.1, 34.4]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#asKML">
+        <![CDATA[<Point><coordinates>-83.1,34.4</coordinates></Point>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Point>
 
 <!-- D -->
@@ -244,6 +352,15 @@
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:exterior><gml:LinearRing><gml:posList>-83.3 34.0 -83.1 34.0 -83.1 34.2 -83.3 34.2 -83.3 34.0</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type": "Polygon", "coordinates": [[[-83.3, 34.0], [-83.1, 34.0], [-83.1, 34.2], [-83.3, 34.2], [-83.3, 34.0]]]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#kmlLiteral">
+        <![CDATA[<Polygon><outerBoundaryIs><LinearRing><coordinates>-83.3,34.0 -83.1,34.0 -83.1,34.2 -83.3,34.2 -83.3,34.0</coordinates></LinearRing></outerBoundaryIs></Polygon>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#DPointGeom">
@@ -262,6 +379,15 @@
 	<geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Point xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:pos>-83.2 34.1</gml:pos></gml:Point>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type":"Point","coordinates":[-83.2, 34.1]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#asKML">
+        <![CDATA[<Point><coordinates>-83.2,34.1</coordinates></Point>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Point>
 
 <!-- E -->
@@ -294,6 +420,12 @@
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:LineString srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84" xmlns:gml="http://www.opengis.net/ont/gml"><gml:posList>-83.4 34.0 -83.3 34.3</gml:posList></gml:LineString>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type": "LineString", "coordinates": [[-83.4, 34.0], [-83.3, 34.3]]}]]>
+    </geo:asGeoJSON>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:LineString>
 
 <!-- F -->
@@ -326,6 +458,15 @@
 	<geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Point xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:pos>-83.4 34.4</gml:pos></gml:Point>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type":"Point","coordinates":[-83.4, 34.4]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#asKML">
+        <![CDATA[<Point><coordinates>-83.4,34.4</coordinates></Point>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Point>
 
 <!-- G -->
@@ -361,6 +502,15 @@
             <gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:exterior><gml:LinearRing><gml:posList>-83.5 34.2 -83.3 34.2 -83.3 34.4 -83.5 34.4 -83.5 34.2</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>
         ]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type": "Polygon", "coordinates": [[[-83.5, 34.2], [-83.3, 34.2], [-83.3, 34.4], [-83.5, 34.4], [-83.5, 34.2]]] }]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#asKML">
+        <![CDATA[<Polygon><outerBoundaryIs><LinearRing><coordinates>-83.5,34.2 -83.3,34.2 -83.3,34.4 -83.5,34.4 -83.5,34.2</coordinates></LinearRing></outerBoundaryIs></Polygon>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Polygon>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#GPointGeom">
@@ -379,6 +529,15 @@
 	<geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Point xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:pos>-83.4 34.3</gml:pos></gml:Point>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type":"Point","coordinates":[-83.4, 34.3]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#asKML">
+        <![CDATA[<Point><coordinates>-83.4,34.3</coordinates></Point>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Point>
 
 <!-- H -->
@@ -402,6 +561,9 @@
     <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral"></geo:asWKT>
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral"></geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral"></geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#kmlLiteral"></geo:asKML>
+    <geo:asDggs rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral"></geo:asDggs>
 </sf:LineString>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#HPointGeom">
@@ -414,6 +576,9 @@
     <geo:coordinateDimension rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</geo:coordinateDimension>
     <geo:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral"></geo:asWKT>
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral"></geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral"></geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#kmlLiteral"></geo:asKML>
+    <geo:asDggs rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral"></geo:asDggs>
 </sf:Point>
 
 <!-- I -->
@@ -485,6 +650,15 @@
 	<geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:exterior><gml:LinearRing><gml:posList>-77.089005 38.913574 -77.029953 38.913574 -77.029953 38.886321 -77.089005 38.886321 -77.089005 38.913574</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{ "type": "Polygon", "coordinates": [[[-77.089005, 38.913574], [-77.029953, 38.913574], [-77.029953, 38.886321], [-77.089005, 38.886321], [-77.089005, 38.913574]]] }]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#kmlLiteral">
+        <![CDATA[<Polygon><outerBoundaryIs><LinearRing><coordinates>-77.089005,38.913574 -77.029953,38.913574 -77.029953,38.886321 -77.089005,38.886321 -77.089005,38.913574</coordinates></LinearRing></outerBoundaryIs></Polygon>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Polygon>
 
 <!-- K -->
@@ -513,6 +687,15 @@
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Polygon xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:exterior><gml:LinearRing><gml:posList>-77.089005 38.913574 -77.029953 38.913574 -77.029953 38.886321 -77.089005 38.886321 -77.089005 38.913574</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{ "type": "Polygon", "coordinates": [[[-77.089005, 38.913574], [-77.029953, 38.913574], [-77.029953, 38.886321], [-77.089005, 38.886321], [-77.089005, 38.913574]]] }]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#asKML">
+        <![CDATA[<Polygon><outerBoundaryIs><LinearRing><coordinates>-77.089005,38.913574 -77.029953,38.913574 -77.029953,38.886321 -77.089005,38.886321 -77.089005,38.913574</coordinates></LinearRing></outerBoundaryIs></Polygon>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Polygon>
 
 <!-- L -->
@@ -541,6 +724,15 @@
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Point xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/OGC/1.3/CRS84"><gml:pos>-88.38 31.95</gml:pos></gml:Point>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type":"Point","coordinates":[-88.38, 31.95]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#asKML">
+        <![CDATA[<Point><coordinates>-88.38,31.95</coordinates></Point>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Point>
 
 <!-- M -->
@@ -566,6 +758,14 @@
     <geo:asGML rdf:datatype="http://www.opengis.net/ont/geosparql#gmlLiteral">
         <![CDATA[<gml:Point xmlns:gml="http://www.opengis.net/ont/gml" srsName="http://www.opengis.net/def/crs/EPSG/0/4326"><gml:pos>31.95 -88.38</gml:pos></gml:Point>]]>
     </geo:asGML>
+    <geo:asGeoJSON rdf:datatype="http://www.opengis.net/ont/geosparql#geoJSONLiteral">
+        <![CDATA[{"type":"Point","coordinates":[-88.38, 31.95]}]]>
+    </geo:asGeoJSON>
+    <geo:asKML rdf:datatype="http://www.opengis.net/ont/geosparql#asKML">
+        <![CDATA[<Point><coordinates>-88.38,31.95</coordinates></Point>]]>
+    </geo:asKML>
+    <geo:asDGGS rdf:datatype="http://www.opengis.net/ont/geosparql#dggsLiteral">
+        <![CDATA[]]>
+    </geo:asDGGS>
 </sf:Point>
-
 </rdf:RDF>
