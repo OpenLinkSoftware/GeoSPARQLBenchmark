@@ -1,0 +1,627 @@
+{
+  "head" : {
+    "vars" : [
+      "result"
+    ]
+  },
+  "results" : {
+    "bindings" : [
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.342376 54.079201, 11.342376 60.108495, 25.196764 60.108495, 25.196764 54.079201, 11.342376 54.079201))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.036145 54.027961, 11.036145 60.104, 24.98 60.104, 24.98 54.027961, 11.036145 54.027961))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-1.474628 56.549124, -1.474628 61.396323, 8.270068 61.396323, 8.270068 56.549124, -1.474628 56.549124))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((0.560803 50.49657, 0.560803 52.487068, 4.415996 52.487068, 4.415996 50.49657, 0.560803 50.49657))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.191528 54.065487, 11.191528 60.104969, 25.189305 60.104969, 25.189305 54.065487, 11.191528 54.065487))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((18.894033 69.62859, 18.894033 75.605305, 39.45137 75.605305, 39.45137 69.62859, 18.894033 69.62859))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.195 54.047522, 11.195 60.102168, 24.979479 60.102168, 24.979479 54.047522, 11.195 54.047522))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.980845 54.194563, 10.980845 60.107697, 25.19391 60.107697, 25.19391 54.194563, 10.980845 54.194563))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.161481 54.008765, 11.161481 60.104401, 25.189328 60.104401, 25.189328 54.008765, 11.161481 54.008765))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-15.954978 57.645861, -15.954978 66.022755, 5.080984 66.022755, 5.080984 57.645861, -15.954978 57.645861))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.161615 54.113248, 11.161615 60.109443, 25.189078 60.109443, 25.189078 54.113248, 11.161615 54.113248))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((2.411986 51.214773, 2.411986 51.683171, 2.91601 51.683171, 2.91601 51.214773, 2.411986 51.214773))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.313303 54.197964, 11.313303 60.104178, 25.189825 60.104178, 25.189825 54.197964, 11.313303 54.197964))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.248194 54.034543, 11.248194 60.247796, 29.805112 60.247796, 29.805112 54.034543, 11.248194 54.034543))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.150012 69.279507, 11.150012 75.206516, 26.532077 75.206516, 26.532077 69.279507, 11.150012 69.279507))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.074598 54.093726, 11.074598 60.246556, 29.804 60.246556, 29.804 54.093726, 11.074598 54.093726))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((25.264 69.952, 25.264 73.396831, 40.484 73.396831, 40.484 69.952, 25.264 69.952))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.872584 53.932757, 10.872584 60.106773, 25.191164 60.106773, 25.191164 53.932757, 10.872584 53.932757))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.182938 54.128406, 11.182938 60.103145, 24.979637 60.103145, 24.979637 54.128406, 11.182938 54.128406))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((2.799026 51.230256, 2.799026 51.352606, 3.048329 51.352606, 3.048329 51.230256, 2.799026 51.230256))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.188054 54.00542, 11.188054 60.10593, 24.987551 60.10593, 24.987551 54.00542, 11.188054 54.00542))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((17.364377 69.436215, 17.364377 76.382881, 36.278223 76.382881, 36.278223 69.436215, 17.364377 69.436215))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((2.516392 51.2425, 2.516392 51.417261, 2.91582 51.417261, 2.91582 51.2425, 2.516392 51.2425))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-10.07034 42.070906, -10.07034 43.431278, -8.365444 43.431278, -8.365444 42.070906, -10.07034 42.070906))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-12.720756 61.544, -12.720756 74.718902, 20.003611 74.718902, 20.003611 61.544, -12.720756 61.544))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-17.496 68.724, -17.496 75.075367, 19.67254 75.075367, 19.67254 68.724, -17.496 68.724))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((0.184071 49.986121, 0.184071 52.516114, 4.489931 52.516114, 4.489931 49.986121, 0.184071 49.986121))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.321156 54.197922, 11.321156 60.225873, 29.804 60.225873, 29.804 54.197922, 11.321156 54.197922))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.055054 54.017796, 11.055054 60.150427, 25.224831 60.150427, 25.224831 54.017796, 11.055054 54.017796))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.320984 54.194871, 11.320984 60.222928, 29.801 60.222928, 29.801 54.194871, 11.320984 54.194871))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.125507 54.190062, 11.125507 60.206572, 29.805 60.206572, 29.805 54.190062, 11.125507 54.190062))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.102548 54.086666, 11.102548 60.104623, 25.188914 60.104623, 25.188914 54.086666, 11.102548 54.086666))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.979054 54.19659, 10.979054 60.104007, 25.18903 60.104007, 25.18903 54.19659, 10.979054 54.19659))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((0.646907 50.399263, 0.646907 52.249485, 3.231113 52.249485, 3.231113 50.399263, 0.646907 50.399263))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((9.523785 68.403661, 9.523785 71.428762, 31.158661 71.428762, 31.158661 68.403661, 9.523785 68.403661))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.913688 54.044191, 10.913688 60.113666, 25.196729 60.113666, 25.196729 54.044191, 10.913688 54.044191))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.040585 54.015505, 11.040585 60.10462, 25.189834 60.10462, 25.189834 54.015505, 11.040585 54.015505))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-2.511651 53.599499, -2.511651 62.075212, 11.310278 62.075212, 11.310278 53.599499, -2.511651 53.599499))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.886974 53.979395, 10.886974 60.104, 24.98 60.104, 24.98 53.979395, 10.886974 53.979395))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.031807 53.964656, 11.031807 60.113617, 25.236418 60.113617, 25.236418 53.964656, 11.031807 53.964656))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.349979 54.196849, 11.349979 60.108902, 25.20677 60.108902, 25.20677 54.196849, 11.349979 54.196849))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-48.762266 52.515125, -48.762266 79.30479, 45.819759 79.30479, 45.819759 52.515125, -48.762266 52.515125))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-10.42305 41.989913, -10.42305 43.049534, -8.813874 43.049534, -8.813874 41.989913, -10.42305 41.989913))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.248194 54.034543, 11.248194 60.247796, 29.805112 60.247796, 29.805112 54.034543, 11.248194 54.034543))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.31792 54.197922, 11.31792 60.238112, 29.804 60.238112, 29.804 54.197922, 11.31792 54.197922))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.987397 54.01153, 10.987397 60.236257, 29.832088 60.236257, 29.832088 54.01153, 10.987397 54.01153))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((2.611702 60.138948, 2.611702 69.886014, 16.521 69.886014, 16.521 60.138948, 2.611702 60.138948))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((15.726019 69.104479, 15.726019 70.238654, 18.946 70.238654, 18.946 69.104479, 15.726019 69.104479))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.346 54.071854, 11.346 60.116293, 25.246567 60.116293, 25.246567 54.071854, 11.346 54.071854))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.190402 54.127201, 11.190402 60.104056, 25.189264 60.104056, 25.189264 54.127201, 11.190402 54.127201))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.279996 54.171576, 11.279996 60.209384, 29.8 60.209384, 29.8 54.171576, 11.279996 54.171576))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.290877 54.196809, 11.290877 60.182598, 29.802 60.182598, 29.802 54.196809, 11.290877 54.196809))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.088391 53.976528, 11.088391 60.106329, 25.191149 60.106329, 25.191149 53.976528, 11.088391 53.976528))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-10.737466 -70.773945, -10.737466 -35.1381, 17.3383 -35.1381, 17.3383 -70.773945, -10.737466 -70.773945))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.946534 54.197, 10.946534 60.105011, 25.189212 60.105011, 25.189212 54.197, 10.946534 54.197))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-2.251613 56.70007, -2.251613 61.16359, 8.356662 61.16359, 8.356662 56.70007, -2.251613 56.70007))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((2.77951 51.24128, 2.77951 51.356337, 2.91744 51.356337, 2.91744 51.24128, 2.77951 51.24128))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.063544 54.027223, 11.063544 60.103, 25.187 60.103, 25.187 54.027223, 11.063544 54.027223))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.316 54.172138, 11.316 60.106425, 25.191193 60.106425, 25.191193 54.172138, 11.316 54.172138))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.325002 54.198, 11.325002 60.25101, 29.801 60.25101, 29.801 54.198, 11.325002 54.198))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((2.832652 51.120123, 2.832652 51.461538, 4.40851 51.461538, 4.40851 51.120123, 2.832652 51.120123))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.842001 53.956536, 10.842001 60.103405, 25.188327 60.103405, 25.188327 53.956536, 10.842001 53.956536))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-10.341561 41.743833, -10.341561 43.428891, -8.364337 43.428891, -8.364337 41.743833, -10.341561 41.743833))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.32072 54.195805, 11.32072 60.223159, 29.802 60.223159, 29.802 54.195805, 11.32072 54.195805))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.350228 54.14457, 11.350228 60.109934, 25.211418 60.109934, 25.211418 54.14457, 11.350228 54.14457))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-7.613503 63.521, -7.613503 79.415268, 19.959118 79.415268, 19.959118 63.521, -7.613503 63.521))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.91793 54.198, 10.91793 60.105208, 25.189987 60.105208, 25.189987 54.198, 10.91793 54.198))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.944794 54.196069, 10.944794 60.105666, 25.190538 60.105666, 25.190538 54.196069, 10.944794 54.196069))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.855734 53.956073, 10.855734 60.107488, 25.198645 60.107488, 25.198645 53.956073, 10.855734 53.956073))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.092243 53.795714, 11.092243 60.104247, 24.980049 60.104247, 24.980049 53.795714, 11.092243 53.795714))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((1.223719 50.83565, 1.223719 52.518544, 3.783586 52.518544, 3.783586 50.83565, 1.223719 50.83565))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((2.867832 51.24315, 2.867832 51.474189, 3.069545 51.474189, 3.069545 51.24315, 2.867832 51.24315))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.179886 54.125986, 11.179886 60.104773, 25.190694 60.104773, 25.190694 54.125986, 11.179886 54.125986))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-51.92001 59.588593, -51.92001 64.170253, -10.582 64.170253, -10.582 59.588593, -51.92001 59.588593))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-52.437441 58.739131, -52.437441 64.170811, -38.875 64.170811, -38.875 58.739131, -52.437441 58.739131))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((2.559406 51.144765, 2.559406 51.355374, 2.923748 51.355374, 2.923748 51.144765, 2.559406 51.144765))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((2.648283 51.168037, 2.648283 51.291769, 2.919 51.291769, 2.919 51.168037, 2.648283 51.168037))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((-10.419848 42.031578, -10.419848 43.410229, -8.36057 43.410229, -8.36057 42.031578, -10.419848 42.031578))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.178057 54.124637, 11.178057 60.13859, 25.224257 60.13859, 25.224257 54.124637, 11.178057 54.124637))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.064606 54.144775, 11.064606 60.223948, 29.897 60.223948, 29.897 54.144775, 11.064606 54.144775))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((16.137058 69.650489, 16.137058 75.43012, 29.679 75.43012, 29.679 69.650489, 16.137058 69.650489))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.07396 54.198, 11.07396 60.215809, 29.803 60.215809, 29.803 54.198, 11.07396 54.198))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.33 54.126959, 11.33 60.132276, 25.263943 60.132276, 25.263943 54.126959, 11.33 54.126959))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.05895 53.925565, 11.05895 60.167905, 25.2479 60.167905, 25.2479 53.925565, 11.05895 53.925565))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((11.324909 54.196769, 11.324909 60.106504, 25.191418 60.106504, 25.191418 54.196769, 11.324909 54.196769))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((10.749652 54.195546, 10.749652 60.108032, 25.205982 60.108032, 25.205982 54.195546, 10.749652 54.195546))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((2.835099 51.103888, 2.835099 51.452754, 4.408045 51.452754, 4.408045 51.103888, 2.835099 51.103888))"
+        }
+      },
+      {
+        "result" : {
+          "datatype" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type" : "literal",
+          "value" : "POLYGON ((2.704641 51.165299, 2.704641 51.345, 2.936238 51.345, 2.936238 51.165299, 2.704641 51.165299))"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix geof: <http://www.opengis.net/def/function/geosparql/>
+prefix sf: <http://www.opengis.net/ont/sf#>
+select distinct ?result {
+  ?geom1 a sf:LineString;
+    geo:asWKT ?result.
+  ?geom2 a sf:Polygon;
+    geo:asWKT ?coord.
+  filter(geof:sfIntersects(?result, ?coord))
+}
+order by ?result

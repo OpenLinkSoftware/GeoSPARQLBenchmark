@@ -1,0 +1,81 @@
+{
+  "head": {
+    "vars": [
+      "result"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(12.101398 55.680682)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(13.10177 58.34063)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(13.41897 56.09763)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(13.41897 56.09763)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(17.479455 60.086441)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(17.47946 60.08644)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(18.984339 57.430061)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(21.36717 59.7839)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(23.95952 60.64183)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(24.96104 60.20289)"
+        }
+      }
+    ]
+  }
+}

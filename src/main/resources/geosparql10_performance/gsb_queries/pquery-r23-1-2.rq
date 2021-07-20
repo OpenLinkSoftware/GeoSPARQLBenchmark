@@ -1,0 +1,9 @@
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix geof: <http://www.opengis.net/def/function/geosparql/>
+prefix sf: <http://www.opengis.net/ont/sf#>
+select ?result {
+  ?geom1 a sf:Polygon;
+    geo:asWKT ?result.
+  filter(geof:ehEquals(?result, "Polygon((11.269861 54.034543,15.168792 55.336793,18.585725 56.828099,22.425709 59.301356,29.805112 59.96095,29.165639 60.247796,23.763893 60.0552,17.899336 57.815479,16.68 56.142,12.515636 54.859636,12.533385 54.717942,12.576021 54.718478,12.874306 54.780347,12.875032 54.776845,12.864769 54.775192,12.574 54.718,12.556 54.716,12.530651 54.706441,12.52323 54.762456,11.248194 54.168128,11.269861 54.034543))"^^geo:wktLiteral))
+}
+order by ?result

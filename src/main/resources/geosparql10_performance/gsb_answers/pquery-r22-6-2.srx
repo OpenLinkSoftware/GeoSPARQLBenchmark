@@ -1,0 +1,74 @@
+{
+  "head": {
+    "vars": [
+      "result"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(18.984339 57.430061)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(3.113968 51.360925)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(8.252 58.388)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(9.3341 56.0737)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(8.4048 55.9127)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(9.16085 56.03766)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(19.05048 68.35420)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(2.934924 51.226774)"
+        }
+      },
+      {
+        "result": {
+          "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+          "type": "literal",
+          "value": "POINT(2.993167 51.579167)"
+        }
+      }
+    ]
+  }
+}
