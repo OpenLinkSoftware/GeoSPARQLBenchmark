@@ -5,9 +5,9 @@ import itertools
 def replaceInString(toreplace, firstliteral, secondliteral,firstliteralrel,secondliteralrel):
 	return toreplace.replace("%%literal1%%",firstliteral).replace("%%literal2%%",secondliteral).replace("%%literalrel1%%",firstliteralrel).replace("%%literalrel2%%",secondliteralrel)
 
-querypath = 'src/main/resources/gsb_querytemplates/'
+querypath = 'src/main/resources/geosparql11_compliance/gsb_querytemplates/'
 
-answerpath = 'src/main/resources/gsb_answertemplates/'
+answerpath = 'src/main/resources/geosparql11_compliance/gsb_answertemplates/'
 
 amountOfRequirements=38
 

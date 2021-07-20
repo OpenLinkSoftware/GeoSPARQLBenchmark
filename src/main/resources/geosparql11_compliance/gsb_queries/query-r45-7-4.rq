@@ -1,0 +1,12 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (xsd:boolean(?ehInside) as ?inside)
+WHERE {
+  my:F geo:hasDefaultGeometry ?fGeom .
+  ?fGeom geo:asGML ?fGML .
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom geo:asWKT ?aWKT .
+  BIND (geof:ehInside(?fGML, ?aWKT) as ?ehInside)
+}

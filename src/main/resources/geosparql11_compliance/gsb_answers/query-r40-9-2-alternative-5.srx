@@ -1,0 +1,10 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+ <head>
+  <variable name="boundary"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="boundary"><literal datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POLYGON(-83.6 34.1,-83.2 34.1,-83.2 34.5,-83.6 34.5,-83.6 34.1)</literal></binding>
+  </result>
+ </results>
+</sparql>
