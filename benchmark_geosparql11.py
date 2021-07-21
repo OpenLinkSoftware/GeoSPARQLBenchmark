@@ -437,7 +437,17 @@ def getResultFilesList(testid):
 			f.close()
 	return results
 
+configfile="geosparql10_compliance.json"
+if len(sys.argv)>1:
+    configfile=sys.argv[1]
+  
+f = open(configfile, 'r')  
+content = f.read()
+config=json.loads(content)
+  
 
+f = open(, 'r')  
+print(reqWeights)
 for name in os.listdir(queryFolder):
 	print(name)
 	f = open(queryFolder+"/"+name, 'r')  
