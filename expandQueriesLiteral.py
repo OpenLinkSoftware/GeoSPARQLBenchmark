@@ -126,7 +126,7 @@ for f in files:
 			answerfiles[ans]=filec
 	print(answerfiles)
 	variantcounter=1
-	if not "%%literal1%%" in filecontent and not "%%literal2%%" in filecontent:
+	if not "%%literal1%%" in filecontent and not "%%literalrel1%%" in filecontent and not "%%literal2%%" in filecontent and not "%%literalrel1%%" in filecontent:
 		with open(querypath+"result/"+f, "w") as f2:
 			f2.write(filecontent)
 		gsbconstants+="\tpublic static final String GSB_QUERY_"+f.replace(".rq","").replace("query-r","").replace("-","_")+" = \""+f+"\";\n"

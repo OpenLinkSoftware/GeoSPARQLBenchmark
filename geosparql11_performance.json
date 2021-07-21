@@ -250,5 +250,5 @@
 "query-r29":"http://www.opengis.net/spec/geosparql/1.0/req/query-rewrite-extension/eh-query-rewrite",
 "query-r30":"http://www.opengis.net/spec/geosparql/1.0/req/query-rewrite-extension/rcc8-query-rewrite"
 },
-"queryFolders":{"src/main/resources/geosparql11_compliance/gsb_queries/":"src/main/resources/geosparql1_compliance/gsb_answers/"}
+"queryFolders":{"src/main/resources/geosparql11_performance/gsb_queries/":"src/main/resources/geosparql11_performance/gsb_answers/"}
 }
