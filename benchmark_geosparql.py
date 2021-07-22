@@ -138,9 +138,10 @@ def calculateComplianceScore(resultMap):
 	for res in resultMapReq:
 		print(res)
 		for assessment in resultMapReq[res]:
-			percperThisReq=reqWeights[assessment]
-			if resultMapReq[res][assessment]:
-				compliancescore+=percperThisReq
+			if assessment in reqWeights:
+				percperThisReq=reqWeights[assessment]
+				if resultMapReq[res][assessment]:
+					compliancescore+=percperThisReq
 		print("ComplianceScore: "+str(compliancescore*100)+"%")
 	print("Amount of correct tests: "+str(correctScore)+"/"+str(amountOfQueries)+"="+str((correctScore/amountOfQueries)))
 	print("ComplianceScore: "+str(round(compliancescore*100,2))+"%")
@@ -156,13 +157,17 @@ def calculateComplianceScore(resultMap):
 			if req in resultMapReq:
 				#percperThisReq=reqWeights[req] #percentagePerReq/len(resultMapReq[req])
 				for assessment in resultMapReq[req]:
-					percperThisReq=reqWeights[assessment]
-					if resultMapReq[req][assessment]:
-						curextscore+=percperThisReq
-					extmaxscore+=percperThisReq
+					if assessment in reqWeights:
+						percperThisReq=reqWeights[assessment]
+						if resultMapReq[req][assessment]:
+							curextscore+=percperThisReq
+						extmaxscore+=percperThisReq
 			#else:
 			#	curextscore+=percentagePerReq
-		f.write("Extension "+str(ext)+": "+str(round((curextscore/extmaxscore)*100,2))+"%\n")
+		if curextscore==0 or extmaxscore==0:
+			f.write("Extension "+str(ext)+": 0%\n")
+		else:
+			f.write("Extension "+str(ext)+": "+str(round((curextscore/extmaxscore)*100,2))+"%\n")
 	f.close()
 
 
@@ -182,16 +187,17 @@ def benchmarkResultsToRDF(resultMap):
 				#percperThisReq=reqWeights[req]#percentagePerReq/len(resultMapReq[req])
 				asscounter=1
 				for assessment in resultMapReq[req]:
-					percperThisReq=reqWeights[assessment]
+					if assessment in reqWeights:
+						percperThisReq=reqWeights[assessment]
+                        if resultMapReq[req][assessment]:
+                            curextscore+=percperThisReq
+                        extmaxscore+=percperThisReq
 					ttlstring+="<"+reqToURI[req]+"_eval> geo:hasEvaluationQuery <"+reqToURI[req]+"/query_"+str(asscounter)+"> .\n"
 					ttlstring+="<"+reqToURI[req]+"/query_"+str(asscounter)+"> rdf:type geo:RequirementQuery .\n"
 					ttlstring+="<"+reqToURI[req]+"/query_"+str(asscounter)+"> rdfs:label \""+str(reqToURI[req])+" query "+str(asscounter)+"\"@en .\n"
 					ttlstring+="<"+reqToURI[req]+"/query_"+str(asscounter)+"_eval> rdf:type geo:RequirementQueryEvaluation .\n"
 					ttlstring+="<"+reqToURI[req]+"/query_"+str(asscounter)+"_eval> geo:evaluation \""+str(resultMapReq[req][assessment])+"\"^^xsd:boolean .\n"
 					asscounter+=1
-					if resultMapReq[req][assessment]:
-						curextscore+=percperThisReq
-					extmaxscore+=percperThisReq
 			#else:
 			#	curextscore+=percentagePerReq
 		ttlstring+="<"+reqToURI[req]+"_eval> geo:evaluation \""+str(curextscore)+"\"^^xsd:double .\n"
