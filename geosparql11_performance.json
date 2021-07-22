@@ -6,7 +6,8 @@
 			  "GEOEXT":["pquery-r19","pquery-r24","pquery-r29","pquery-r34","pquery-r39","pquery-r40","pquery-r41","pquery-r42"],
 			  "GTOP":["pquery-r43","pquery-r44","pquery-r45","pquery-r46"],
 			  "RDFSE":[],
-			  "QRW":["pquery-r50","pquery-r51","pquery-r52"]			  
+			  "QRW":["pquery-r50","pquery-r51","pquery-r52"]	
+	       },
 "reqTimes":{
 	"requirement":["min":0,"avg":1,"max":2]
 },
