@@ -126,7 +126,7 @@ for f in files:
 			answerfiles[ans]=filec
 	print(answerfiles)
 	variantcounter=1
-	if not "%%literal1%%" in filecontent and not "%%literal2%%" in filecontent:
+	if not "%%literal1%%" in filecontent and not "%%literalrel1%%" in filecontent and not "%%literal2%%" in filecontent and not "%%literalrel1%%" in filecontent:
 		with open(querypath+"result/"+f, "w") as f2:
 			f2.write(filecontent)
 		gsbconstants+="\tpublic static final String GSB_QUERY_"+f.replace(".rq","").replace("query-r","").replace("-","_")+" = \""+f+"\";\n"
@@ -173,12 +173,18 @@ for f in files:
 			answercounter=0
 			for ans in answerfiles:
 				if first:
-					with open(answerpath+"result/"+f[0:f.rfind("-")]+"-"+str(variantcounter)+".srx", "w") as f2:
-						f2.write(answerfiles[ans])
+					try:
+						with open(answerpath+"result/"+f[0:f.rfind("-")]+"-"+str(variantcounter)+".srx", "w") as f2:
+							f2.write(answerfiles[ans])
+					except:
+						print("except")
 					first=False                    
 				else:
-					with open(answerpath+"result/"+f[0:f.rfind("-")]+"-"+str(variantcounter)+"-alternative-"+str(answercounter)+".srx", "w") as f2:
-						f2.write(answerfiles[ans])					
+					try:
+						with open(answerpath+"result/"+f[0:f.rfind("-")]+"-"+str(variantcounter)+"-alternative-"+str(answercounter)+".srx", "w") as f2:
+							f2.write(answerfiles[ans])	
+					except:
+						print("except")                    
 				answercounter+=1                    
 			variantcounter=variantcounter+1
 		file.close()
