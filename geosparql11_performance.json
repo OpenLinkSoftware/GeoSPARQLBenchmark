@@ -9,7 +9,7 @@
 			  "QRW":["pquery-r50","pquery-r51","pquery-r52"]	
 	       },
 "reqTimes":{
-	"requirement":["min":0,"avg":1,"max":2]
+	"requirement":{"min":0,"avg":1,"max":2}
 },
 "reqWeights":{
 	"pquery-r19-1-1.rq": 0.0012345679012345679,
