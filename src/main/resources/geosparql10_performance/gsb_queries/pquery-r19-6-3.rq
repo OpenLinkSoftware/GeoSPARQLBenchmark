@@ -1,0 +1,11 @@
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix geof: <http://www.opengis.net/def/function/geosparql/>
+prefix sf: <http://www.opengis.net/ont/sf#>
+select ?coord2 ?result {
+  ?geom1 a sf:Polygon;
+    geo:asWKT ?coord1.
+  ?geom2 a sf:Polygon ;
+    geo:asWKT ?coord2.
+  bind(geof:difference(?coord1,?coord2) as ?result)
+}
+order by ?result
