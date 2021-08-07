@@ -14,6 +14,8 @@ bench:GSComplianceBenchmark  a   hobbit:Benchmark;
     hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-datagenerator";
     hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-seqtaskgenerator";
     hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-evaluationmodule";
+	hobbit:hasParameter bench:benchmarkVersion ;
+	hobbit:hasParameter	bench:performanceEvaluation;
     hobbit:measuresKPI bench:Q01Status ;
     hobbit:measuresKPI bench:Q02Status ;
     hobbit:measuresKPI bench:Q03Status ;
