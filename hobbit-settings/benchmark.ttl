@@ -14,8 +14,8 @@ bench:GSComplianceBenchmark  a   hobbit:Benchmark;
     hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-datagenerator";
     hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-seqtaskgenerator";
     hobbit:usesImage    "git.project-hobbit.eu:4567/mjovanovik/gsb-evaluationmodule";
-	hobbit:hasParameter bench:benchmarkVersion ;
-	hobbit:hasParameter	bench:performanceEvaluation;
+    hobbit:hasParameter bench:benchmarkVersion ;
+    hobbit:hasParameter	bench:performanceEvaluation;
     hobbit:measuresKPI bench:Q01Status ;
     hobbit:measuresKPI bench:Q02Status ;
     hobbit:measuresKPI bench:Q03Status ;
@@ -228,6 +228,23 @@ bench:GSComplianceBenchmark  a   hobbit:Benchmark;
 <https://project-hobbit.eu/challenges/MOCHA2017-API>    a   hobbit:API .
 
 # --- Parameters ---
+
+bench:benchmarkVersion a hobbit:Parameter, hobbit:ConfigurableParameter, hobbit:FeatureParameter;
+    rdfs:label "GeoSPARQL Version"@en;
+    rdfs:comment "The version of GeoSPARQL to be tested"@en;
+    rdfs:domain	hobbit:Benchmark;
+    rdfs:range bench:BenchmarkVersion ;
+    hobbit:defaultValue bench:geosparql10 .
+
+bench:BenchmarkVersion a rdfs:Class, owl:Class .
+
+bench:geosparql10 a bench:BenchmarkVersion;
+	rdfs:label "GeoSPARQL 1.0"@en;
+	rdfs:comment "GeoSPARQL 1.0"@en .
+
+bench:geosparql11 a bench:BenchmarkVersion;
+	rdfs:label "GeoSPARQL 1.1"@en;
+	rdfs:comment "GeoSPARQL 1.1"@en .
 
 # --- KPIs ---
 bench:Q01Status a   hobbit:KPI;
