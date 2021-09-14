@@ -1,3 +1,11 @@
+# GeoSPARQL Compliance Benchmark (develop/3 branch)
+
+This is a branch for the new version (v3) of the GeoSPARQL Compliance Benchmark which will include compliance testing with the upcoming GeoSPARQL 1.1 standard, and performance testing.
+
+Below is the original README content from the master branch, when this branch was created.
+
+---
+
 # GeoSPARQL Compliance Benchmark
 
 This is the GeoSPARQL Compliance Benchmark, integrated into the [HOBBIT Platform](https://github.com/hobbit-project/platform).
