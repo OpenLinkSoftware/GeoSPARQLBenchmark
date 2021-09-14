@@ -1,0 +1,7 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+SELECT ?f
+WHERE {
+  my:C geo:sfTouches ?f
+}
+ORDER BY ?f

@@ -1,0 +1,8 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+SELECT (geof:asGML(?gmll) as ?gml)
+WHERE {
+  my:AExactGeom geo:%%literalrel1%% ?gmll
+} 
+ 

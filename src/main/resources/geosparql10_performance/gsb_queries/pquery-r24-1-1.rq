@@ -1,0 +1,9 @@
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix geof: <http://www.opengis.net/def/function/geosparql/>
+prefix sf: <http://www.opengis.net/ont/sf#>
+select ?result {
+  ?geom1 a sf:LineString;
+    geo:asWKT ?result.
+  filter(geof:rcc8eq(?result, "LineString(-42.983 59.343,-41.927 59.179,-41.168 59.104,-40.03101 59.137,-37.384 59.382,-36.268 59.538,-34.50699 59.756,-32.87201 59.939,-31.17999 60.088,-30.06799 60.195,-28.18701 60.33,-24.71201 60.532,-21.578 60.606,-18.43399 60.614,-12.10901 60.418,-8.091 60.138,-4.05801 59.719,-2.396 59.51,7.444 57.683,10.013 57.775)"^^geo:wktLiteral))
+}
+order by ?result

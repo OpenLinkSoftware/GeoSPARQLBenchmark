@@ -1,0 +1,11 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (xsd:boolean(?sfEquals) as ?equals)
+WHERE {
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom geo:asWKT ?aWKT ;
+         geo:asGML ?aGML .
+  BIND (geof:sfEquals(?aGML, ?aWKT) as ?sfEquals)
+}

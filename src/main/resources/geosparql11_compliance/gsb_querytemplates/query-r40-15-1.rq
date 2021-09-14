@@ -1,0 +1,11 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+SELECT ?symDifference
+WHERE {
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
+  my:D geo:hasDefaultGeometry ?dGeom .
+  ?dGeom %%literalrel2%% ?d%%literal2%% .
+  BIND (geof:symDifference(?a%%literal1%% , ?d%%literal2%%) as ?symDifference)
+}

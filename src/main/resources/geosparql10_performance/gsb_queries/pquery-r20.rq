@@ -1,0 +1,8 @@
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix geof: <http://www.opengis.net/def/function/geosparql/>
+prefix sf: <http://www.opengis.net/ont/sf#>
+select ?result {
+  ?geometry geo:asWKT ?coord1.
+  bind(geof:getSRID(?coord1) as ?result)
+}
+order by ?result

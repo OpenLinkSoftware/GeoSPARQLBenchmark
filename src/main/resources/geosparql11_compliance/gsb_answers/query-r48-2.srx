@@ -1,0 +1,16 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+ <head>
+  <variable name="f"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#EExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#HExactGeom</uri></binding>
+  </result>
+  <result>
+   <binding name="f"><uri>http://example.org/ApplicationSchema#IExactGeom</uri></binding>
+  </result>
+ </results>
+</sparql>

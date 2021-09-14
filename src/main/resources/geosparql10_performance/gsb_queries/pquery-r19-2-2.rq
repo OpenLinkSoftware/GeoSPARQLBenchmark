@@ -1,0 +1,9 @@
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix geof: <http://www.opengis.net/def/function/geosparql/>
+prefix sf: <http://www.opengis.net/ont/sf#>
+prefix uom: <http://www.opengis.net/def/uom/OGC/1.0/>
+select ?result {
+  ?geom1 a sf:Polygon;
+    geo:asWKT ?coord1.
+  bind(geof:buffer(?coord1, 100.0, uom:metre) as ?result)
+}

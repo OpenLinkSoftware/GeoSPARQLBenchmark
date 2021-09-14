@@ -1,0 +1,8 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREIFX geof: <http://www.opengis.net/def/function/geosparql/>
+SELECT (geof:centroid(?wkt) AS ?centroid)
+WHERE {
+  ?geom geo:asWKT ?wkt .
+}
+GROUP BY ?wkt

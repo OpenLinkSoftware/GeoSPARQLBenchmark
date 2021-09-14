@@ -1,0 +1,12 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (xsd:boolean(?ehContains) as ?contains)
+WHERE {
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
+  my:F geo:hasDefaultGeometry ?fGeom .
+  ?fGeom %%literalrel2%% ?f%%literal2%% .
+  BIND (geof:ehContains(?a%%literal1%%, ?f%%literal2%%) as ?ehContains)
+}

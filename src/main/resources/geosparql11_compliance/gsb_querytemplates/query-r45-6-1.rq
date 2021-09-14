@@ -1,0 +1,12 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (xsd:boolean(?ehCoveredBy) as ?coveredBy)
+WHERE {
+  my:B geo:hasDefaultGeometry ?bGeom .
+  ?bGeom %%literalrel1%% ?b%%literal1%% .
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom %%literalrel2%% ?a%%literal2%% .
+  BIND (geof:ehCoveredBy(?b%%literal1%%, ?a%%literal2%%) as ?ehCoveredBy)
+}

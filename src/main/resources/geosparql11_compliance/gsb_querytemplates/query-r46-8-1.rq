@@ -1,0 +1,12 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (xsd:boolean(?rcc8ntppi) as ?nonTangentialProperPartInverse)
+WHERE {
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
+  my:G geo:hasDefaultGeometry ?gGeom .
+  ?gGeom %%literalrel2%% ?g%%literal2%% .
+  BIND (geof:rcc8ntppi(?a%%literal1%%, ?g%%literal2%%) as ?rcc8ntppi)
+}
