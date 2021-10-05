@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 
@@ -23,6 +24,7 @@ public final class GSBConstants {
     public static String GSB_PATH="";
     public static Map<String,String> GSB_EVALUATION_STATUS=new TreeMap<String,String>();
     public static Map<String,String> GSB_REQUIREMENTS_MAP=new TreeMap<String,String>();
+    public static Map<String,List<String>> GSB_EXTENSION_MAP=new TreeMap<String,List<String>>();
     public static List<String> GSB_QUERIES=new LinkedList<String>();
     public static List<String> GSB_ANSWERS=new LinkedList<String>();
     public static Map<String,Double> GSB_ANSWERS_WEIGHTS=new TreeMap<String,Double>();
@@ -33,6 +35,7 @@ public final class GSBConstants {
 	
 	public GSBConstants(String configfolder,String configfile) throws IOException, URISyntaxException {
 	    GSB_EVALUATION_STATUS=new TreeMap<String,String>();
+	    GSB_EXTENSION_MAP=new TreeMap<String,List<String>>();
 	    GSB_REQUIREMENTS_MAP=new TreeMap<String,String>();
 	    GSB_QUERIES=new LinkedList<String>();
 	    GSB_ANSWERS=new LinkedList<String>();
@@ -49,6 +52,14 @@ public final class GSBConstants {
 		for(String key:reqToURI.keySet()) {
 			GSB_REQUIREMENTS_MAP.put(key, reqToURI.getString(key));
 		}		
+		JSONObject extensions = jsonobj.getJSONObject("extensionMap");
+		for(String ext: extensions.keySet()) {
+			GSB_EXTENSION_MAP.put(ext, new LinkedList<String>());
+			JSONArray extarray=extensions.getJSONArray(ext);
+			for(int i=0;i<extarray.length();i++) {
+				GSB_EXTENSION_MAP.get(ext).add(extarray.getString(i));
+			}
+		}
 		URL res = getClass().getClassLoader().getResource(configfolder);
 		System.out.println(res.toURI());
 		File folder = Paths.get(res.toURI()).toFile();
@@ -64,6 +75,8 @@ public final class GSBConstants {
 		System.out.println(GSB_EVALUATION_STATUS);
 		System.out.println(GSB_ANSWERS);
 		System.out.println(GSB_ANSWERS_WEIGHTS);
+		System.out.println(GSB_REQUIREMENTS_MAP);
+		System.out.println(GSB_EXTENSION_MAP);
 		System.out.println(GSB_NUMBER_OF_QUERIES);
 		System.out.println(GSB_NUMBER_OF_REQUIREMENTS);
 	}
