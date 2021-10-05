@@ -39,10 +39,10 @@ public class GSBBenchmarkController extends AbstractBenchmarkController {
     private static final String performanceTest="http://example.org/performanceYes";
 
     public GSBBenchmarkController() { 
-    	BenchmarkVersions.put("http://example.org/GeoSPARQL10Compliance","geosparql10_compliance");
-    	BenchmarkVersions.put("http://example.org/GeoSPARQL10Performance","geosparql10_performance");
-    	BenchmarkVersions.put("http://example.org/GeoSPARQL11Compliance","geosparql11_compliance");
-    	BenchmarkVersions.put("http://example.org/GeoSPARQL11Performance","geosparql11_performance");
+    	BenchmarkVersions.put("http://w3id.org/bench#GeoSPARQL10Compliance","geosparql10_compliance");
+    	BenchmarkVersions.put("http://w3id.org/bench#GeoSPARQL10Performance","geosparql10_performance");
+    	BenchmarkVersions.put("http://w3id.org/bench#GeoSPARQL11Compliance","geosparql11_compliance");
+    	BenchmarkVersions.put("http://w3id.org/bench#GeoSPARQL11Performance","geosparql11_performance");
     }
 
     @Override
@@ -56,7 +56,7 @@ public class GSBBenchmarkController extends AbstractBenchmarkController {
         //	        NodeIterator iterator = benchmarkParamModel.listObjectsOfProperty(benchmarkParamModel
         //	                    .getProperty("http://example.org/myParameter"));
 
-        NodeIterator iterator = benchmarkParamModel.listObjectsOfProperty(benchmarkParamModel.getProperty("http://example.org/benchmarkVersion"));
+        NodeIterator iterator = benchmarkParamModel.listObjectsOfProperty(benchmarkParamModel.getProperty("http://w3id.org/bench#benchmarkVersion"));
         
         //Check the benchmark version to test
         GSBConstants configuration=null;
