@@ -2,9 +2,15 @@ package org.hobbit.geosparql;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.jena.rdf.model.NodeIterator;
+import org.apache.jena.rdf.model.Resource;
 import org.hobbit.core.Commands;
 import org.hobbit.core.Constants;
 import org.hobbit.core.components.AbstractBenchmarkController;
@@ -28,8 +34,15 @@ public class GSBBenchmarkController extends AbstractBenchmarkController {
     /* Evaluation module Docker image */
     private static final String EVALUATION_MODULE_CONTAINER_IMAGE = "git.project-hobbit.eu:4567/mjovanovik/gsb-evaluationmodule";
 
-    public GSBBenchmarkController() { 
+    private static final Map<String,String> BenchmarkVersions=new TreeMap<>();
     
+    private static final String performanceTest="http://example.org/performanceYes";
+
+    public GSBBenchmarkController() { 
+    	BenchmarkVersions.put("http://example.org/GeoSPARQL10Compliance","geosparql10_compliance");
+    	BenchmarkVersions.put("http://example.org/GeoSPARQL10Performance","geosparql10_performance");
+    	BenchmarkVersions.put("http://example.org/GeoSPARQL11Compliance","geosparql11_compliance");
+    	BenchmarkVersions.put("http://example.org/GeoSPARQL11Performance","geosparql11_performance");
     }
 
     @Override
@@ -43,6 +56,29 @@ public class GSBBenchmarkController extends AbstractBenchmarkController {
         //	        NodeIterator iterator = benchmarkParamModel.listObjectsOfProperty(benchmarkParamModel
         //	                    .getProperty("http://example.org/myParameter"));
 
+        NodeIterator iterator = benchmarkParamModel.listObjectsOfProperty(benchmarkParamModel.getProperty("http://example.org/benchmarkVersion"));
+        
+        //Check the benchmark version to test
+        GSBConstants configuration=null;
+        if(iterator.hasNext()) {
+        	try {
+        		Resource res=iterator.next().asResource();
+        		if(res==null) {
+        			throw new Exception("Local error: Benchmark Version resource was not found!");
+        		}else {
+        			String uri=res.getURI();
+        			if(BenchmarkVersions.containsKey(uri)) {
+        				configuration=new GSBConstants(BenchmarkVersions.get(uri), BenchmarkVersions.get(uri)+".json");	
+        			}   			
+        		}
+        	}catch(Exception e) {
+        		LOGGER.error("Exception while passing parameter to benchmark",e);
+        	}
+        }
+        if(configuration==null) {
+        	configuration=new GSBConstants("geosparql10_compliance", "geosparql10_compliance.json");
+        }
+        
         // Create data generators
         int numberOfDataGenerators = 1;
         String[] envVariables = new String[]{};

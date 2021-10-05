@@ -20,17 +20,24 @@ public final class GSBConstants {
 	
     public static int GSB_NUMBER_OF_QUERIES=0;
     public static int GSB_NUMBER_OF_REQUIREMENTS=0;
-    public static final Map<String,String> GSB_EVALUATION_STATUS=new TreeMap<String,String>();
-    public static final Map<String,String> GSB_REQUIREMENTS_MAP=new TreeMap<String,String>();
-    public static final List<String> GSB_QUERIES=new LinkedList<String>();
-    public static final List<String> GSB_ANSWERS=new LinkedList<String>();
-    public static final Map<String,Double> GSB_ANSWERS_WEIGHTS=new TreeMap<String,Double>();
+    public static String GSB_PATH="";
+    public static Map<String,String> GSB_EVALUATION_STATUS=new TreeMap<String,String>();
+    public static Map<String,String> GSB_REQUIREMENTS_MAP=new TreeMap<String,String>();
+    public static List<String> GSB_QUERIES=new LinkedList<String>();
+    public static List<String> GSB_ANSWERS=new LinkedList<String>();
+    public static Map<String,Double> GSB_ANSWERS_WEIGHTS=new TreeMap<String,Double>();
 
     public static final String EVALUATION_NUMBER_OF_CORRECT_ANSWERS = "evaluation_number_of_correct_answers";
 
     public static final String EVALUATION_PERCENTAGE_OF_SATISFIED_REQUIREMENTS = "evaluation_percentage_of_satisfied_requirements";
 	
 	public GSBConstants(String configfolder,String configfile) throws IOException, URISyntaxException {
+	    GSB_EVALUATION_STATUS=new TreeMap<String,String>();
+	    GSB_REQUIREMENTS_MAP=new TreeMap<String,String>();
+	    GSB_QUERIES=new LinkedList<String>();
+	    GSB_ANSWERS=new LinkedList<String>();
+	    GSB_ANSWERS_WEIGHTS=new TreeMap<String,Double>();
+		GSB_PATH=configfolder;
 		String filecontent=readFileAsString(configfile);		
 		JSONObject jsonobj=new JSONObject(filecontent);
 		JSONObject weights = jsonobj.getJSONObject("reqWeights");
