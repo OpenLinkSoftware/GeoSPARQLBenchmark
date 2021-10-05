@@ -40,19 +40,19 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
     }
     
     private void internalInit() {
-        answers = new String[GSBConstants.GSB_ANSWERS.length];
+        answers = new String[GSBConstants.GSB_ANSWERS.size()];
         
     	// reading query answers
         try {
-            for (int i=0; i < GSBConstants.GSB_ANSWERS.length; i++) {
-                InputStream inputStream = new FileInputStream("gsb_answers/" + GSBConstants.GSB_ANSWERS[i]);
-                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-                ResultSetFactory rsf = new ResultSetFactory();                
-                ResultSetFormatter.outputAsJSON(outputStream, rsf.fromXML(inputStream));
+        	int i=0;
+            for (String ans: GSBConstants.GSB_ANSWERS) {
+                InputStream inputStream = new FileInputStream("gsb_answers/" + GSBConstants.GSB_ANSWERS.get(i));
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();               
+                ResultSetFormatter.outputAsJSON(outputStream, ResultSetFactory.fromXML(inputStream));
                 answers[i] = outputStream.toString();
                 inputStream.close();
                 for (int k=1; ; k++) {
-                    String alternativeAnswerFileName = GSBConstants.GSB_ANSWERS[i].replace(".srx","") + "-alternative-" + k + ".srx";
+                    String alternativeAnswerFileName = ans.replace(".srx","") + "-alternative-" + k + ".srx";
                     LOGGER.info("Looking for an alternative file called: " + alternativeAnswerFileName);
                     File alternativeAnswerFile = new File("gsb_answers/" + alternativeAnswerFileName);
                     if (!alternativeAnswerFile.exists()) break;
@@ -60,15 +60,15 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
                         LOGGER.info("Alternative file found: " + alternativeAnswerFileName);
                         InputStream alternativeAnswerInputStream = new FileInputStream(alternativeAnswerFile);
                         ByteArrayOutputStream alternativeAnswerOutputStream = new ByteArrayOutputStream();
-                        ResultSetFormatter.outputAsJSON(alternativeAnswerOutputStream, rsf.fromXML(alternativeAnswerInputStream));
+                        ResultSetFormatter.outputAsJSON(alternativeAnswerOutputStream, ResultSetFactory.fromXML(alternativeAnswerInputStream));
                         answers[i] = answers[i] + "======" + alternativeAnswerOutputStream.toString(); // add the detected alternative expected answer with a corresponding delimiter
                         alternativeAnswerInputStream.close();
                         LOGGER.info("answers[" + i + "]: " + answers[i]);
                     }
                 }
+                i++;
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
