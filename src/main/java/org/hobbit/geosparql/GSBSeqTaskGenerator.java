@@ -46,7 +46,7 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
         try {
         	int i=0;
             for (String ans: GSBConstants.GSB_ANSWERS) {
-                InputStream inputStream = new FileInputStream("gsb_answers/" + GSBConstants.GSB_ANSWERS.get(i));
+                InputStream inputStream = new FileInputStream(GSBConstants.GSB_PATH+"/gsb_answers/" + GSBConstants.GSB_ANSWERS.get(i));
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();               
                 ResultSetFormatter.outputAsJSON(outputStream, ResultSetFactory.fromXML(inputStream));
                 answers[i] = outputStream.toString();
@@ -54,7 +54,7 @@ public class GSBSeqTaskGenerator extends AbstractSequencingTaskGenerator {
                 for (int k=1; ; k++) {
                     String alternativeAnswerFileName = ans.replace(".srx","") + "-alternative-" + k + ".srx";
                     LOGGER.info("Looking for an alternative file called: " + alternativeAnswerFileName);
-                    File alternativeAnswerFile = new File("gsb_answers/" + alternativeAnswerFileName);
+                    File alternativeAnswerFile = new File(GSBConstants.GSB_PATH+"/gsb_answers/" + alternativeAnswerFileName);
                     if (!alternativeAnswerFile.exists()) break;
                     else {
                         LOGGER.info("Alternative file found: " + alternativeAnswerFileName);
