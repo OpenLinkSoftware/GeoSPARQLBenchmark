@@ -75,12 +75,16 @@
     <geo:rcc8ntppi rdf:resource="http://example.org/ApplicationSchema#G"/>
 </my:PlaceOfInterest>
 
+
+<rdfs:Class rdf:about="http://qudt.org/vocab/unit#Unit">
+</rdfs:Class>
+
 <geo:GeometryCollection rdf:about="http://example.org/ApplicationSchema#AGeometryCollection">
     <rdfs:member rdf:resource="http://example.org/ApplicationSchema#AExactGeom"/>
     <rdfs:member rdf:resource="http://example.org/ApplicationSchema#BExactGeom"/>
 </geo:GeometryCollection>
 
-<geo:FeatureCollection rdf:about="http://example.org/ApplicationSchema#FeatureCollectionA">
+<geo:FeatureCollection rdf:about="http://example.org/ApplicationSchema#AFeatureCollection">
     <rdfs:member rdf:resource="http://example.org/ApplicationSchema#A"/>
     <rdfs:member rdf:resource="http://example.org/ApplicationSchema#B"/>
 </geo:FeatureCollection>
@@ -229,8 +233,9 @@
     <geo:rcc8dc rdf:resource="http://example.org/ApplicationSchema#B"/>
     <geo:hasCentroid rdf:resource="http://example.org/ApplicationSchema#C_centroid"/>
     <geo:hasArea rdf:resource="http://example.org/ApplicationSchema#C_area"/>
-    <geo:hasLength rdf:resource="http://example.org/ApplicationSchema#C_length"/>
-    <geo:hasMetricLength rdf:resource="http://example.org/ApplicationSchema#C_metriclength"/>
+	<geo:hasMetricArea rdf:datatype="http://www.w3.org/2001/XMLSchema#double">408992630.59323</geo:hasMetricArea>
+    <geo:hasPerimeterLength rdf:resource="http://example.org/ApplicationSchema#C_perimeterlength"/>
+    <geo:hasMetricPerimeterLength rdf:datatype="http://www.w3.org/2001/XMLSchema#double">81152</geo:hasMetricPerimeterLength>
     <geo:hasBoundingBox rdf:resource="http://example.org/ApplicationSchema#C_bbox"/>
     <!-- <geo:sfTouches rdf:resource="http://example.org/ApplicationSchema#A"/> -->
     <!-- <geo:ehMeet rdf:resource="http://example.org/ApplicationSchema#A"/> -->
@@ -242,19 +247,9 @@
     <qudt:numericValue>101064.28</qudt:numericValue>
 </geo:SpatialMeasure>
 
-<geo:SpatialMeasure rdf:about="http://example.org/ApplicationSchema#C_metricarea">
-    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/M2"></qudt:unit>
-    <qudt:numericValue>408993009.32</qudt:numericValue>
-</geo:SpatialMeasure>
-
-<geo:SpatialMeasure rdf:about="http://example.org/ApplicationSchema#C_length">
+<geo:SpatialMeasure rdf:about="http://example.org/ApplicationSchema#C_perimeterLength">
     <qudt:unit rdf:resource="http://qudt.org/vocab/unit/MI"></qudt:unit>
-    <qudt:numericValue>50.50</qudt:numericValue>
-</geo:SpatialMeasure>
-
-<geo:SpatialMeasure rdf:about="http://example.org/ApplicationSchema#C_metriclength">
-    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/M"></qudt:unit>
-    <qudt:numericValue>81268.22</qudt:numericValue>
+    <qudt:numericValue>50.42</qudt:numericValue>
 </geo:SpatialMeasure>
 
 <sf:Point rdf:about="http://example.org/ApplicationSchema#C_centroid">
