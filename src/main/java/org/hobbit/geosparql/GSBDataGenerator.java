@@ -57,7 +57,8 @@ public class GSBDataGenerator extends AbstractDataGenerator {
     }
     
     private void getFileAndSendData() {
-        String datasetFile = "gsb_dataset/dataset.rdf";
+    	// TODO  
+        String datasetFile = GSBConstants.GSB_PATH+"/gsb_dataset/dataset.rdf";
         String datasetURI = "http://openlinksw.com/geosparql/dataset.rdf";
         
         try {
@@ -78,7 +79,6 @@ public class GSBDataGenerator extends AbstractDataGenerator {
             sendToCmdQueue(VirtuosoSystemAdapterConstants.BULK_LOAD_DATA_GEN_FINISHED_FROM_DATAGEN, buffer.array());
         }   	
         catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
     	}
     }
@@ -88,14 +88,16 @@ public class GSBDataGenerator extends AbstractDataGenerator {
         if (command == VirtuosoSystemAdapterConstants.BULK_LOADING_DATA_FINISHED) {
             LOGGER.info("Getting queries");
             try {            
-                for (int i=0; i < GSBConstants.GSB_QUERIES.length; i++) {
-                    InputStream inputStream = new FileInputStream("gsb_queries/" + GSBConstants.GSB_QUERIES[i]);
+            	int i=0;
+                for (String query: GSBConstants.GSB_QUERIES) {
+                    InputStream inputStream = new FileInputStream(GSBConstants.GSB_PATH+"/gsb_queries/" + query);
                     String fileContent = IOUtils.toString(inputStream);
                     fileContent = "#Q-" + (i+1) + "\n" + fileContent; // add a comment line at the beginning of the query, to denote the query number (#Q-1, #Q-2, ...)
                     byte[] bytesArray = null;
                     bytesArray = RabbitMQUtils.writeString(fileContent);
                     sendDataToTaskGenerator(bytesArray);
                     inputStream.close();
+                    i++;
                 }
                 LOGGER.info("Files with queries have been loaded and successfully sent.");
             } catch (IOException ex) {
