@@ -1,0 +1,10 @@
+PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+SELECT ?transformed
+WHERE {
+  my:A geo:hasDefaultGeometry ?geom .
+  ?geom %%literalrel1%% ?%%literal1%% .
+  BIND (geof:transform(?%%literal1%%,"http://www.opengis.net/def/crs/OGC/1.3/CRS84") as ?transformed)
+} 

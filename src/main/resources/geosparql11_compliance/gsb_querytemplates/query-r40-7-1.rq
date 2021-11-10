@@ -1,0 +1,12 @@
+PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+SELECT ?isSimple
+WHERE {
+  my:A geo:hasDefaultGeometry ?geom .
+  ?geom %%literalrel1%% ?%%literal1%% .
+  BIND (geof:isSimple(?%%literal1%%) as ?isSimple)
+}
+ 
+ 

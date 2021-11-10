@@ -1,0 +1,12 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (xsd:boolean(?sfCrosses) as ?crosses)
+WHERE {
+  my:E geo:hasDefaultGeometry ?eGeom .
+  ?eGeom geo:asGML ?eGML .
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom geo:asWKT ?aWKT .
+  BIND (geof:sfCrosses(?eGML, ?aWKT) as ?sfCrosses)
+}

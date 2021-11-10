@@ -1,0 +1,17 @@
+PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+SELECT ?f ?distance
+WHERE {
+  my:C my:hasExactGeometry ?cGeom .
+  ?cGeom %%literalrel1%% ?c%%literal1%% .
+  ?f my:hasExactGeometry ?fGeom .
+  ?fGeom %%literalrel2%% ?f%%literal2%% .
+  FILTER (?fGeom != ?cGeom)
+  FILTER (?f != my:H )
+  FILTER (?f != my:I )
+  BIND (geof:distance(?c%%literal1%%, ?f%%literal2%%, uom:metre) as ?distance)
+}
+ORDER BY ASC(?distance)
+LIMIT 3

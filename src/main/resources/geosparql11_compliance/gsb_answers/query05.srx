@@ -1,0 +1,19 @@
+<sparql xmlns='http://www.w3.org/2005/sparql-results#'>
+<head>
+<variable name='f'/>
+</head>
+<results>
+<result>
+<binding name='f'><uri>http://example.org/ApplicationSchema#D</uri></binding>
+</result>
+<result>
+<binding name='f'><uri>http://example.org/ApplicationSchema#DExactGeom</uri></binding>
+</result>
+<result>
+<binding name='f'><uri>http://example.org/ApplicationSchema#E</uri></binding>
+</result>
+<result>
+<binding name='f'><uri>http://example.org/ApplicationSchema#EExactGeom</uri></binding>
+</result>
+</results>
+</sparql>

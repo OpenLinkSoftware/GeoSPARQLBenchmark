@@ -1,0 +1,10 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+ <head>
+  <variable name="symDifference"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="symDifference"><literal datatype="http://www.opengis.net/ont/geosparql#wktLiteral"><![CDATA[<http://www.opengis.net/def/crs/OGC/1.3/CRS84>MULTIPOLYGON(((-83.3 34.1,-83.6 34.1,-83.6 34.5,-83.2 34.5,-83.2 34.2,-83.3 34.2,-83.3 34.1)),((-83.3 34.1,-83.2 34.1,-83.2 34.2,-83.1 34.2,-83.1 34,-83.3 34,-83.3 34.1)))]]></literal></binding>
+  </result>
+ </results>
+</sparql>

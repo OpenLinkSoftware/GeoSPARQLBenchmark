@@ -1,0 +1,9 @@
+prefix geo: <http://www.opengis.net/ont/geosparql#>
+prefix geof: <http://www.opengis.net/def/function/geosparql/>
+prefix sf: <http://www.opengis.net/ont/sf#>
+select ?result {
+  ?geom1 a sf:LineString;
+    geo:asWKT ?coord1.
+  bind(geof:envelope(?coord1) as ?result)
+}
+order by ?result

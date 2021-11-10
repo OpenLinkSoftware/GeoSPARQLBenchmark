@@ -1,0 +1,11 @@
+PREFIX my: <http://example.org/ApplicationSchema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+SELECT ?intersection
+WHERE {
+  my:A geo:hasDefaultGeometry ?aGeom .
+  ?aGeom %%literalrel1%% ?a%%literal1%% .
+  my:B geo:hasDefaultGeometry ?bGeom .
+  ?bGeom %%literalrel2%% ?b%%literal2%% .
+  BIND (geof:intersection(?a%%literal1%%, ?b%%literal2%%) as ?intersection)
+}
