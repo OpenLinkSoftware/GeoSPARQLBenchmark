@@ -1,3 +1,11 @@
+# GeoSPARQL Compliance Benchmark (dggs branch)
+
+This is a branch for the special version of the GeoSPARQL Compliance Benchmark which includes compliance testing with the existing GeoSPARQL 1.0 standard and testing the new DGGS literal types.
+
+Below is the original README content from the master branch, when this branch was created.
+
+---
+
 # GeoSPARQL Compliance Benchmark
 
 This is the GeoSPARQL Compliance Benchmark, integrated into the [HOBBIT Platform](https://github.com/hobbit-project/platform).
